@@ -1,0 +1,52 @@
+﻿<Window x:Class="Nemo.Utilities.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nemo.Utilities"
+        mc:Ignorable="d"
+        Title="Bad Nemo, Error!" Height="300" Width="500">
+    <Border  Margin="14">
+        <StackPanel>
+            
+
+                <TextBlock 
+                x:Name="messageText"
+                Padding="4 4 4 4 "
+                Text="Here is what is SHOULD to be shown LONG LONG LONG LONG LONG" 
+                TextWrapping="Wrap"
+                FontSize="20"
+                FontWeight="Bold"
+                TextAlignment="Center"             
+                Foreground="{StaticResource WordRedBrush}" Margin="10 10 10 10"/>
+                    
+                <Image x:Name="errImg" Width="110" Height="100">
+                    <Image.Source>
+                            <BitmapImage DecodePixelWidth="400" UriSource="../Images/lazy.ico"/>
+                    </Image.Source>
+                </Image>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+ 
+                     
+                </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="I swear I will be good Nemo" Style="{StaticResource MsgBox}"   Margin="4 4 4 4" Grid.Column="0" Click="Button_Click_1"/>
+                <Button Content="I swear I will be good Nemo" Style="{StaticResource MsgBox}" Grid.Column="1" Click="Button_Click" />
+
+            </Grid>
+            
+        </StackPanel>
+    </Border>
+
+</Window>

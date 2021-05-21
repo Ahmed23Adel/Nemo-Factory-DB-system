@@ -1,0 +1,71 @@
+﻿<Window x:Class="Nemo.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nemo"
+        mc:Ignorable="d"
+        Title="Welcome Nemo!" Height="450" Width="800"
+        Icon="Images/logo/nemoLogo.ico"
+
+        >
+    <Border Background="{StaticResource WordBlueBrush}" Margin="14">
+        
+        <Grid >
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+                    <Border Background="{StaticResource ForegroundLightBrush}"
+                            CornerRadius="10"
+                            Padding="15 50 15 15"
+                            Width="400"
+                            Margin="50 50 50 50"
+                            >
+                        <StackPanel>
+                            <TextBlock Text="Sign in" FontSize="30" FontStyle="Oblique" FontWeight="DemiBold" Foreground="{StaticResource WordBlueBrush}"/>
+                            <TextBlock Text="It's about to get fun" FontSize="14"  FontWeight="Normal" Foreground="Black"/>
+
+                            <!--user name-->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="mustEnter" Grid.Column="0" Height="10">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="200" UriSource="Images/Logo/nemoLogo.ico"/>
+                                    </Image.Source>
+                                </Image>
+                                <TextBox x:Name="userName" Style="{StaticResource loginTextBox}" Grid.Column="1"/>
+                            </Grid>
+                            
+                            <!--user name-->
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image  Grid.Column="0" Height="10">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="200" UriSource="Images/Logo/nemoLogo.ico"/>
+                                    </Image.Source>
+                                </Image>
+                                <PasswordBox x:Name="password" Style="{StaticResource passTextBox}" Grid.Column="1"/>
+                            </Grid>
+
+                            <Button  Click="LogIn" Content="Log in" HorizontalAlignment="Center" FontWeight="Bold" Style="{StaticResource Login}"/>
+                        </StackPanel>
+
+                    </Border>
+                </StackPanel>
+
+            </ScrollViewer>
+        </Grid>
+
+        
+    </Border>
+</Window>
