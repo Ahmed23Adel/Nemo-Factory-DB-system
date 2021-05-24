@@ -23,7 +23,7 @@ namespace Nemo
         public MainWindow()
         {
             InitializeComponent();
-            new Login().Show();
+            new Manager.Manager_options("201901464","123").Show();
             this.Close();
         }
     }

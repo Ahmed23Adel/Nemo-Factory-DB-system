@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
         Title="Welcome Nemo (Ahmed)" Height="700" Width="1200">
+  
+    
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
 
         <StackPanel>

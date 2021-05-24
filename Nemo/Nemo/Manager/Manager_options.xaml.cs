@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace Nemo.Manager
 {
@@ -23,7 +24,11 @@ namespace Nemo.Manager
         production_lines prod_line_page;
         employees emp_page;
         machines machine_page;
-        public Manager_options()
+        string userName;
+        string pasword;
+        Database.AppLayer appLayer;
+        bool _shown;
+        public Manager_options(string userName,string pasword)
         {
             InitializeComponent();
             this.stats_clicked.Visibility = Visibility.Hidden;
@@ -34,11 +39,22 @@ namespace Nemo.Manager
             //create instances of pages instead of creating new instance of them every time user click on on different tap.
             stats_page = new Statistics();
             prod_line_page = new production_lines();
-            emp_page = new employees();
+            emp_page = new employees(this);
             machine_page = new machines();
+
+            this.userName = userName;
+            this.pasword = pasword;
+            appLayer = Database.AppLayer.getInstance();
+            loadBasicData();
+
         }
 
-        
+        private void loadBasicData()
+        {
+            DataTable dt = appLayer.getBasicDataForUserNamePass(userName, pasword);
+
+            this.Title = "Welcome Nemo ("+dt.Rows[0]["Fname"].ToString()+")";
+        }
 
         private void stats_click_event(object sender, MouseButtonEventArgs e)
         {
@@ -122,6 +138,14 @@ namespace Nemo.Manager
             l2.Visibility = Visibility.Hidden;
             l3.Visibility = Visibility.Hidden;
             l4.Visibility = Visibility.Hidden;
+        }
+
+       
+
+        public void ModShow()
+        {
+            emp_page.refresh();
+            this.Show();
         }
     }
 }

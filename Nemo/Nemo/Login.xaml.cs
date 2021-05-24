@@ -20,18 +20,22 @@ namespace Nemo
     public partial class Login : Window
     {
         int numError;
+        Database.AppLayer appLayer;
         public Login()
         {
             
             InitializeComponent();
+            appLayer = Database.AppLayer.getInstance();
             numError = 0;
-            new Manager.Manager_options().Show();
+            password.PreviewKeyDown += EnterClicked;
+            userName.PreviewKeyDown += EnterClicked;
         }
 
         private void LogIn(object sender, RoutedEventArgs e)
         {
             if (isDataValid())
-            { 
+            {
+                checkUserNamePass();
 
             }
         }
@@ -40,38 +44,66 @@ namespace Nemo
         {
             if (string.IsNullOrEmpty(userName.Text))
             {
-                if (numError == 0)
-                {
-                    new Utilities.CustomMessageBox("User name is Empty, I'm not going to fill it for you! fill it and try again.").Show();
-                    numError = 1;
-                }
-                else 
-                {
-                    new Utilities.CustomMessageBox("But you swore! user name is still wrong").Show();
-                }
-
+                ifNum0PrintFOrS("User name is Empty, I'm not going to fill it for you! fill it and try again.", "But you swore! user name is still wrong");
                 return false;
             }
             
             if (string.IsNullOrEmpty(password.Password))
             {
-                if (numError == 0)
-                {
-                    new Utilities.CustomMessageBox("Password" +
-                     " is Empty, I'm not going to fill it for you! fill it and try again.").Show();
-                    numError = 1;
-                }
-                else
-                {
-                    new Utilities.CustomMessageBox("But you swore! password is still wrong").Show();
-                    numError = 1;
-                }
-
-                
-
+                ifNum0PrintFOrS("Password is Empty, I'm not going to fill it for you! fill it and try again. ", "But you swore! password is still wrong");
+                return false;
+            }
+            if (userName.Text.Length > 50)
+            {
+                ifNum0PrintFOrS("User name length is more than 50 characters, please fix it and try again.", "But you swore! user name is still so long; it's more than 50 characters");
+                return false;
+            }
+            
+            if (password.Password.Length > 50)
+            {
+                ifNum0PrintFOrS("password length is more than 50 characters, please fix it and try again.", "But you swore! password is still so long; it's more than 50 characters");
                 return false;
             }
             return true;
+        }
+
+        void EnterClicked(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                checkUserNamePass();
+            }
+        }
+
+        private void checkUserNamePass()
+        {
+
+            if (appLayer.isUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.NONE)
+            {
+                ifNum0PrintFOrS("User name or password is wrong", "But you swore! User name or password is still wrong");
+                
+            }
+
+            if (appLayer.isUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
+            {
+                new Manager.Manager_options(userName.Text, password.Password).Show();
+                this.Close();
+            }    
+        }
+
+
+        //this function checks if numError ==1 if 1 then it will print msg2 otherwiser will print msg1
+        private void ifNum0PrintFOrS(string msg1, string msg2)
+        {
+            if (numError == 0)
+            {
+                new Utilities.CustomMessageBox(msg1).Show();
+                numError = 1;
+            }
+            else
+            {
+                new Utilities.CustomMessageBox(msg2).Show();
+            }
         }
     }
 }

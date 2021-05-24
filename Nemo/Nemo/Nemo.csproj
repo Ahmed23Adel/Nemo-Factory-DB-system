@@ -58,6 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Database\AppLayer.cs" />
+    <Compile Include="DEFs.cs" />
     <Compile Include="Manager\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
     </Compile>
@@ -72,6 +74,9 @@
     </Compile>
     <Compile Include="Manager\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\UpdateEmployee.xaml.cs">
+      <DependentUpon>UpdateEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\CustomMessageBox.xaml.cs">
       <DependentUpon>CustomMessageBox.xaml</DependentUpon>
@@ -114,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manager\Statistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\UpdateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

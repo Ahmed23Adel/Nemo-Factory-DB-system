@@ -26,11 +26,20 @@
     <Color x:Key="WordOrange">#ffa800</Color>
     <SolidColorBrush x:Key="WordOrangeBrush" Color="{StaticResource WordOrange}" />
 
+    <Color x:Key="WordOrangeLessFocus">#f5c25f</Color>
+    <SolidColorBrush x:Key="WordOrangeBrushLessFocus" Color="{StaticResource WordOrangeLessFocus}" />
+
     <Color x:Key="WordRed">#ff4747</Color>
     <SolidColorBrush x:Key="WordRedBrush" Color="{StaticResource WordRed}" />
 
     <Color x:Key="WordGreen">#00c541</Color>
     <SolidColorBrush x:Key="WordGreenBrush" Color="{StaticResource WordGreen}" />
+    
+    <Color x:Key="WordBlack">#001</Color>
+    <SolidColorBrush x:Key="WordBlackBrush" Color="{StaticResource WordBlack}" />
+
+    <Color x:Key="WordBlackLessFocus">#808080</Color>
+    <SolidColorBrush x:Key="WordBlackBrushLessFocus" Color="{StaticResource WordBlackLessFocus}" />
     
     
 </ResourceDictionary>

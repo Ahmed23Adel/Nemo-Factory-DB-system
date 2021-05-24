@@ -7,6 +7,21 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="employees">
+    <Page.Resources>
+        <ContextMenu x:Key="rowsOptions">
+            <ContextMenu.Items>
+                <MenuItem Header="Update" Click="MenuItem_MouseDown_update"/>
+                <MenuItem Header="Delete"  Click="MenuItem_MouseDown_delete"/>
+                <MenuItem Header="Make it Manager" Click="MenuItem_MouseDown_MakeManger" />
+                <MenuItem Header="Make it Worker" Click="MenuItem_MouseDown_Worker" />
+                <MenuItem Header="Make it Supervisor"  Click="MenuItem_MouseDown_supervisor"/>
+                <MenuItem Header="Give Bonus"  Click="give_bonus" Command="{Binding DataContext.TicketsViewModel.ViewTicketInBrowser_Command, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                CommandParameter="{Binding DataContext.TicketNumber, RelativeSource={RelativeSource Mode=Self}}"/>
+                
+            </ContextMenu.Items>
+        </ContextMenu>
+    </Page.Resources>
+    
 
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
         <Grid >
@@ -14,17 +29,31 @@
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png" />
             </Grid.Background>
 
-            <DataGrid Margin="14 14 14 14" Background="Transparent" Foreground="Black">
+            <DataGrid
+                x:Name="allEmps"
+                Margin="14 14 14 14" Background="Transparent" Foreground="Black"  
+                RowBackground="Transparent"
+                ItemsSource="{Binding Path=Collection}"
+                 AutoGenerateColumns="False" 
+                >
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="ContextMenu" Value="{StaticResource rowsOptions}" />
+                    </Style>
+                </DataGrid.CellStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name " FontSize="20" Width="*" Foreground="White" />
-                    <DataGridTextColumn Header="Salary" Width="*"/>
-                    <DataGridTextColumn Header="Birth date " Width="*"/>
+                    <DataGridTextColumn FontSize="20" Width="*" Foreground="White" Header="Name" 
+                                        Binding="{Binding Path=Name,  Mode=OneWay}"
+                                        />
+                    <DataGridTextColumn  FontSize="20" Width="*" Foreground="White" Header="Job description"
+                                         Binding="{Binding Path=Jop_description ,  Mode=OneWay}"/>
+                    <DataGridTextColumn   FontSize="20" Width="*" Foreground="White" Header="Balance" 
+                                          Binding="{Binding Path=Balance ,  Mode=OneWay}"/>
                 </DataGrid.Columns>
                 
             </DataGrid>
-            
-            
-            
+
+
         </Grid>
 
     </Border>
