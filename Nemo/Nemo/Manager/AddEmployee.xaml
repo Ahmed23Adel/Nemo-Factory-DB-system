@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
-        Title="AddEmployee" Height="450" Width="800">
+        Title="AddEmployee" Height="450" Width="800"
+        Closing="Window_Closing">
     <!--To give better looing maring 14 in each way-->
     <Border Background="{StaticResource WordBlueBrush}"
             Margin="14">

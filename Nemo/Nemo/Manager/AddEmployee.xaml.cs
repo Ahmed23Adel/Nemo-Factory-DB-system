@@ -152,5 +152,9 @@ namespace Nemo.Manager
                 appLayer.InsertEmp(fNameText, lNameText, balanceText, bDateText, jopTitleText, userNameText, passText, nationalIdText);
             
         }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            parentInstance.Show();
+        }
     }
 }
