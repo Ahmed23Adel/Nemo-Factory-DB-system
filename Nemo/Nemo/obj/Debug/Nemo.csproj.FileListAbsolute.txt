@@ -68,3 +68,5 @@ D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Mana
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.baml
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.baml
+D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.baml

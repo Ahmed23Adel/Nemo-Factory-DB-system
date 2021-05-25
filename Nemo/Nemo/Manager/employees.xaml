@@ -42,45 +42,60 @@
                             Viewport="0 0 500 500"
                             ImageSource="/Images/Backgrounds/emoji-background.png" />
             </Grid.Background>
+            <!--StackPanel that contains add button and Grid View-->
+            <StackPanel>
+                <!--Image for add button to add new Employee-->
+                <Image UIElement.MouseDown="AddEmp"
+                    Height="30"
+                    Margin="16  4 16 4"
+                    RenderTransformOrigin="0.5,0.57"
+                    Width="35" 
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right">
 
-            <DataGrid
-                x:Name="allEmps"
-                Margin="14 14 14 14" 
-                Background="Transparent" 
-                Foreground="Black"  
-                RowBackground="Transparent"
-                ItemsSource="{Binding Path=Collection}"
-                 AutoGenerateColumns="False" 
-                >
-                <!--This is for, if user right clicked on any row in dataGrid it should show this contextMenu-->
-                <DataGrid.CellStyle>
-                    <Style TargetType="DataGridCell">
-                        <Setter Property="ContextMenu" Value="{StaticResource rowsOptions}" />
-                    </Style>
-                </DataGrid.CellStyle>
-                <!--End of ContextMenu showing-->
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="400" UriSource="../Images/plus.ico"/>
+                    </Image.Source>
+                </Image>
                 
-                <!--Columns defintion, Here I say when data comes what columns From DataTable which is coming from DataTable to choose-->
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" 
-                                        FontSize="20" Width="*"
-                                        Foreground="White"
-                                        Binding="{Binding Path=Name,  Mode=OneWay}"
-                                        />
-                    <DataGridTextColumn  Header="Job description"
-                                         FontSize="20" Width="*" 
-                                         Foreground="White" 
-                                         Binding="{Binding Path=Jop_description ,  Mode=OneWay}"/>
+                <DataGrid
+                    x:Name="allEmps"
+                    Margin="14 14 14 14" 
+                    Background="Transparent" 
+                    Foreground="Black"  
+                    RowBackground="Transparent"
+                    ItemsSource="{Binding Path=Collection}"
+                     AutoGenerateColumns="False" 
+                    >
+                    <!--This is for, if user right clicked on any row in dataGrid it should show this contextMenu-->
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="ContextMenu" Value="{StaticResource rowsOptions}" />
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <!--End of ContextMenu showing-->
+                
+                    <!--Columns defintion, Here I say when data comes what columns From DataTable which is coming from DataTable to choose-->
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            Binding="{Binding Path=Name,  Mode=OneWay}"
+                                            />
+                        <DataGridTextColumn  Header="Job description"
+                                             FontSize="20" Width="*" 
+                                             Foreground="White" 
+                                             Binding="{Binding Path=Jop_description ,  Mode=OneWay}"/>
 
-                    <DataGridTextColumn   Header="Balance" 
-                                          FontSize="20" Width="*"
-                                          Foreground="White" 
-                                          Binding="{Binding Path=Balance ,  Mode=OneWay}"/>
-                </DataGrid.Columns>
-                <!--End of columns definition-->
-            </DataGrid>
-            <!--End of dataGrid-->
-
+                        <DataGridTextColumn   Header="Balance" 
+                                              FontSize="20" Width="*"
+                                              Foreground="White" 
+                                              Binding="{Binding Path=Balance ,  Mode=OneWay}"/>
+                    </DataGrid.Columns>
+                    <!--End of columns definition-->
+                </DataGrid>
+                <!--End of dataGrid-->
+            </StackPanel>
         </Grid>
 
     </Border>

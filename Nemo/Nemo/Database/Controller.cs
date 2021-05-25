@@ -34,7 +34,7 @@ namespace Nemo.Database
         ////////////////////////////////Employees////////////////////////////////
         public DataTable selectAllEmps() 
         {
-            string query = " SELECT ID,CONCAT(Fname,' ',Lname)AS 'Name',CASE  WHEN Jop_title = 'M'  THEN 'Manager' WHEN Jop_title = 'E' THEN 'Employee' WHEN Jop_title = 'S'  THEN 'Supervisor' END as 'Jop_description', Balance FROM Employee;";
+            string query = " SELECT ID,CONCAT(Fname,' ',Lname)AS 'Name',CASE  WHEN Jop_title = 'M'  THEN 'Manager' WHEN Jop_title = 'W' THEN 'Worker' WHEN Jop_title = 'S'  THEN 'Supervisor' END as 'Jop_description', Balance FROM Employee;";
             return dbMan.ExcuteReader(query);
 
         }
@@ -67,6 +67,32 @@ namespace Nemo.Database
         public int deleteAtId(string id)
         {
             string query = "DELETE FROM Employee WHERE id='"+id+"'; ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateJopDesc(string id, string Jop_title)
+        {
+            string query = "UPDATE Employee " +
+                "SET " +
+                "Jop_title = '" + Jop_title + "' " +
+                "WHERE ID = '" + id + "';";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        ////////////////////////////////insert Employees////////////////////////////////
+        public int InsertEmp(string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password, string nationalID)
+        {
+            string query = "INSERT INTO Employee" +
+                "(Fname,Lname,Balance,Bdata,Jop_title,userName,password,nationalID)" +
+                " VALUES('" + Fname + "'" +
+                ", '" + Lname + "'" +
+                ", '" + Balance + "'" +
+                ", '" + Bdata + "'" +
+                ", '" + Jop_title + "'" +
+                ", '" + userName + "'" +
+                ", '" + password + "'" +
+                ", '" + nationalID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 

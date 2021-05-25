@@ -18,7 +18,7 @@ namespace Nemo.Manager
         public UpdateEmployee(string id, ManagerOptoins parentInstance)
         {
             InitializeComponent();
-            appLayer = Database.AppLayer.getInstance();
+            appLayer = Database.AppLayer.GetInstance();
             this.id = id;
             numError = 0;
             this.parentInstance = parentInstance;
@@ -31,7 +31,7 @@ namespace Nemo.Manager
         /// </summary>
         private void LoadData()
         {
-            DataTable dt = appLayer.selectEmpAtId(id);
+            DataTable dt = appLayer.SelectEmpAtId(id);
 
             //First check for jop title if could be either M: Manager W:Worker S:Supervisor or null:Not defined
             string jptle = dt.Rows[0]["Jop_title"].ToString();
@@ -50,6 +50,8 @@ namespace Nemo.Manager
             bdate.Text = dt.Rows[0]["Bdata"].ToString();
             userName.Text = dt.Rows[0]["userName"].ToString();
             pass.Text = dt.Rows[0]["password"].ToString();
+            NationalId.Text = dt.Rows[0]["NationalId"].ToString();
+            
         }
 
         /// <summary>
@@ -134,9 +136,13 @@ namespace Nemo.Manager
         private void UpdateEmp()
         {
             string index = jop_title.SelectedIndex.ToString();
-            appLayer.updateEmpAtId(id, fName.Text, lName.Text,balance.Text,bdate.Text,GetJopTitleAtIndex(index),userName.Text,pass.Text);
+            appLayer.UpdateEmpAtId(id, fName.Text, lName.Text,balance.Text,bdate.Text,GetJopTitleAtIndex(index),userName.Text,pass.Text);
         }
-
+        /// <summary>
+        /// from index got from combo box of jop title {not defined, worker,supervisor,Manager} it returns the prober letter
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private string GetJopTitleAtIndex(string index)
         {
             if (index == "0")
@@ -170,7 +176,7 @@ namespace Nemo.Manager
             //Make sure that user is sure to delete this employee
             if (MessageBox.Show("Are you sure you want to delete this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                appLayer.deleteAtId(id);
+                appLayer.DeleteAtId(id);
                 this.Close();
                 parentInstance.ModShow();
             }

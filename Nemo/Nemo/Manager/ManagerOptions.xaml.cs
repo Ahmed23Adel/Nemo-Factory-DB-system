@@ -42,7 +42,7 @@ namespace Nemo.Manager
             this.userName = userName;
             this.pasword = pasword;
 
-            appLayer = Database.AppLayer.getInstance();
+            appLayer = Database.AppLayer.GetInstance();
             loadBasicData();
 
         }
@@ -51,7 +51,7 @@ namespace Nemo.Manager
         /// </summary>
         private void loadBasicData()
         {
-            DataTable dt = appLayer.getBasicDataForUserNamePass(userName, pasword);
+            DataTable dt = appLayer.GetBasicDataForUserNamePass(userName, pasword);
             this.Title = "Welcome Nemo ("+dt.Rows[0]["Fname"].ToString()+")";
         }
 

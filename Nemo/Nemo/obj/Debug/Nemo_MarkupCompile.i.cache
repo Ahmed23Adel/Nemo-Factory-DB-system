@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml
-13-642184182
+141479484819
 
-18-484470100
+191697961637
 13-1505183044
-Login.xaml;MainWindow.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Utilities\CustomMessageBox.xaml;
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Utilities\CustomMessageBox.xaml;
 
-False
+True
 

@@ -25,7 +25,7 @@ namespace Nemo
         {
             
             InitializeComponent();
-            appLayer = Database.AppLayer.getInstance();
+            appLayer = Database.AppLayer.GetInstance();
             numError = 0;
             password.PreviewKeyDown += EnterClicked;
             userName.PreviewKeyDown += EnterClicked;
@@ -78,13 +78,13 @@ namespace Nemo
         private void checkUserNamePass()
         {
 
-            if (appLayer.isUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.NONE)
+            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.NONE)
             {
                 ifNum0PrintFOrS("User name or password is wrong", "But you swore! User name or password is still wrong");
                 
             }
 
-            if (appLayer.isUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
+            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
             {
                 new Manager.ManagerOptoins(userName.Text, password.Password).Show();
                 this.Close();

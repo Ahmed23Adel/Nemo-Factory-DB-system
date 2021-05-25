@@ -60,6 +60,9 @@
     </ApplicationDefinition>
     <Compile Include="Database\AppLayer.cs" />
     <Compile Include="DEFs.cs" />
+    <Compile Include="Manager\AddEmployee.xaml.cs">
+      <DependentUpon>AddEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Manager\AddEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Manager\employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\right-arrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plus.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,14 +17,14 @@ namespace Nemo.Database
             controller = Controller.getInstance();
         }
 
-        public static AppLayer getInstance()
+        public static AppLayer GetInstance()
         {
             if (instance == null)
                 instance = new AppLayer();
             return instance;
         }
 
-        public DEFs.JOP_TITLES isUserNamePassExist(string userName, string pass)
+        public DEFs.JOP_TITLES IsUserNamePassExist(string userName, string pass)
         {
             if(string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(pass) ||userName.Length>50 ||pass.Length>50)
                 return DEFs.JOP_TITLES.NONE;
@@ -47,7 +47,7 @@ namespace Nemo.Database
 
         }
 
-        public DataTable getBasicDataForUserNamePass(string userName, string pass)
+        public DataTable GetBasicDataForUserNamePass(string userName, string pass)
         {
             DataTable dt = controller.isUserNamePassExist(userName, pass);
             if (dt == null)
@@ -55,16 +55,16 @@ namespace Nemo.Database
             return dt;
         }
 
-        public DataTable selectAllEmps()
+        public DataTable SelectAllEmps()
         {
             return controller.selectAllEmps();
         }
-        public DataTable selectEmpAtId(string id)
+        public DataTable SelectEmpAtId(string id)
         {
             return controller.selectEmpAtId(id);
         }
 
-        public int updateEmpAtId(string id, string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password)
+        public int UpdateEmpAtId(string id, string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password)
         {
             if (string.IsNullOrEmpty(Fname))
                 Fname = "NULL";
@@ -84,9 +84,44 @@ namespace Nemo.Database
             return controller.updateEmpAtId(id, Fname, Lname, Balance, Bdata, Jop_title, userName, password);
 
         }
-        public int deleteAtId(string id)
+        public int DeleteAtId(string id)
         {
             return controller.deleteAtId(id);
+        }
+
+        public int MakeEmpManager(string id)
+        {
+            return controller.UpdateJopDesc(id, "M");
+        }
+        
+        public int MakeEmpWorker(string id)
+        {
+            return controller.UpdateJopDesc(id, "W");
+        }
+        public int MakeEmpSupervisor(string id)
+        {
+            return controller.UpdateJopDesc(id, "S");
+        }
+
+        public int InsertEmp(string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password, string nationalID)
+        {
+            if (string.IsNullOrEmpty(Fname))
+                Fname = "NULL";
+            if (string.IsNullOrEmpty(Lname))
+                Lname = "NULL";
+            if (string.IsNullOrEmpty(Balance))
+                Balance = "NULL";
+            if (string.IsNullOrEmpty(Bdata))
+                Bdata = null;
+            if (string.IsNullOrEmpty(Jop_title))
+                Jop_title = "NULL";
+            if (string.IsNullOrEmpty(userName))
+                userName = "NULL";
+            if (string.IsNullOrEmpty(password))
+                password = "NULL";
+            if (string.IsNullOrEmpty(nationalID))
+                nationalID = "NULL";
+            return controller.InsertEmp(Fname, Lname, Balance, Bdata, Jop_title, userName, password, nationalID);
         }
     }
 }

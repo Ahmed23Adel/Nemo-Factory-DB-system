@@ -19,7 +19,7 @@ namespace Nemo.Manager
 
             InitializeComponent();
             this.parentInstance = parentInstance;
-            appLayer = Database.AppLayer.getInstance();
+            appLayer = Database.AppLayer.GetInstance();
 
             loadData();
         }
@@ -29,7 +29,7 @@ namespace Nemo.Manager
         /// </summary>
         private void loadData()
         {
-            DataTable dt = appLayer.selectAllEmps();
+            DataTable dt = appLayer.SelectAllEmps();
             allEmps.ItemsSource = dt.DefaultView;       
         }
 
@@ -52,7 +52,11 @@ namespace Nemo.Manager
           /// <param name="e"></param>
         private void MenuItemMouseDownDelete(object sender, RoutedEventArgs e)
         {
-            new Utilities.CustomMessageBox("DELETE").Show();
+            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result = (drv["ID"]).ToString();//get the id to search by it.
+            appLayer.DeleteAtId(result);
+            Refresh();
+
         }
 
         /// <summary>
@@ -62,7 +66,10 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MenuItemMouseDownMakeManger(object sender, RoutedEventArgs e)
         {
-            new Utilities.CustomMessageBox("DELETE").Show();
+            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result = (drv["ID"]).ToString();//get the id to search by it.
+            appLayer.MakeEmpManager(result);
+            Refresh();
         }
 
         /// <summary>
@@ -72,7 +79,10 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MenuItemMouseDownMakeWorker(object sender, RoutedEventArgs e)
         {
-            new Utilities.CustomMessageBox("DELETE").Show();
+            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result = (drv["ID"]).ToString();//get the id to search by it.
+            appLayer.MakeEmpWorker(result);
+            Refresh();
         }
         /// <summary>
         /// This event is triggerd if user right clicked on any row of employese and check make supervisor
@@ -81,7 +91,10 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MenuItemMouseDownMakeSupervisor(object sender, RoutedEventArgs e)
         {
-            new Utilities.CustomMessageBox("DELETE").Show();
+            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result = (drv["ID"]).ToString();//get the id to search by it.
+            appLayer.MakeEmpSupervisor(result);
+            Refresh();
         }
         /// <summary>
         /// This event is triggerd if user right clicked on any row of employese and check give bonus
@@ -92,7 +105,16 @@ namespace Nemo.Manager
         {
            
         }
-
+        /// <summary>
+        /// triggered at click on add button to add new employee.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddEmp(object sender, RoutedEventArgs e)
+        {
+            new AddEmployee(parentInstance).Show();
+            parentInstance.Hide();
+        }
 
         /// <summary>
         /// It loads again the dat in dataGrid by removing last values and select them again.
