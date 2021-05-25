@@ -40,7 +40,6 @@ D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Logi
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\MainWindow.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\employees.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\machines.g.cs
-D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Manager_options.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\production_lines.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Statistics.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Utilities\CustomMessageBox.g.cs
@@ -52,7 +51,6 @@ D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Logi
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\MainWindow.baml
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\employees.baml
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\machines.baml
-D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Manager_options.baml
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\production_lines.baml
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Statistics.baml
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Buttons.baml
@@ -68,3 +66,5 @@ D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.pdb
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.baml
+D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.baml

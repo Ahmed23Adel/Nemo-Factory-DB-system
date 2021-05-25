@@ -1,4 +1,4 @@
-﻿<Page x:Class="Nemo.Manager.employees"
+﻿<Page x:Class="Nemo.Manager.Employees"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,51 +8,78 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="employees">
     <Page.Resources>
+        <!--This ContextMenu this will be shown for user if he right clicked on any row in DataGrid-->
         <ContextMenu x:Key="rowsOptions">
             <ContextMenu.Items>
-                <MenuItem Header="Update" Click="MenuItem_MouseDown_update"/>
-                <MenuItem Header="Delete"  Click="MenuItem_MouseDown_delete"/>
-                <MenuItem Header="Make it Manager" Click="MenuItem_MouseDown_MakeManger" />
-                <MenuItem Header="Make it Worker" Click="MenuItem_MouseDown_Worker" />
-                <MenuItem Header="Make it Supervisor"  Click="MenuItem_MouseDown_supervisor"/>
-                <MenuItem Header="Give Bonus"  Click="give_bonus" Command="{Binding DataContext.TicketsViewModel.ViewTicketInBrowser_Command, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                <MenuItem Click="MenuItemMouseDownUpdate" 
+                          Header="Update" />
+                <MenuItem  Click="MenuItemMouseDownDelete" 
+                           Header="Delete" />
+                <MenuItem Click="MenuItemMouseDownMakeManger" 
+                          Header="Make it Manager"  />
+                <MenuItem Click="MenuItemMouseDownMakeWorker" 
+                          Header="Make it Worker"  />
+                <MenuItem  Click="MenuItemMouseDownMakeSupervisor" 
+                           Header="Make it Supervisor" />
+                <MenuItem  Click="give_bonus" Header="Give Bonus" 
+                           Command="{Binding DataContext.TicketsViewModel.ViewTicketInBrowser_Command, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
                 CommandParameter="{Binding DataContext.TicketNumber, RelativeSource={RelativeSource Mode=Self}}"/>
                 
             </ContextMenu.Items>
         </ContextMenu>
     </Page.Resources>
+    <!--End of context menu-->
     
 
-    <Border Background="{StaticResource WordBlueBrush}" Margin="14">
+    <!--This is give good looking 14 maring in evey way-->
+    <Border Background="{StaticResource WordBlueBrush}"
+            Margin="14">
         <Grid >
+            <!--To prove the emoji background, -->
             <Grid.Background>
-                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png" />
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute"
+                            Viewport="0 0 500 500"
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
             </Grid.Background>
 
             <DataGrid
                 x:Name="allEmps"
-                Margin="14 14 14 14" Background="Transparent" Foreground="Black"  
+                Margin="14 14 14 14" 
+                Background="Transparent" 
+                Foreground="Black"  
                 RowBackground="Transparent"
                 ItemsSource="{Binding Path=Collection}"
                  AutoGenerateColumns="False" 
                 >
+                <!--This is for, if user right clicked on any row in dataGrid it should show this contextMenu-->
                 <DataGrid.CellStyle>
                     <Style TargetType="DataGridCell">
                         <Setter Property="ContextMenu" Value="{StaticResource rowsOptions}" />
                     </Style>
                 </DataGrid.CellStyle>
+                <!--End of ContextMenu showing-->
+                
+                <!--Columns defintion, Here I say when data comes what columns From DataTable which is coming from DataTable to choose-->
                 <DataGrid.Columns>
-                    <DataGridTextColumn FontSize="20" Width="*" Foreground="White" Header="Name" 
+                    <DataGridTextColumn Header="Name" 
+                                        FontSize="20" Width="*"
+                                        Foreground="White"
                                         Binding="{Binding Path=Name,  Mode=OneWay}"
                                         />
-                    <DataGridTextColumn  FontSize="20" Width="*" Foreground="White" Header="Job description"
+                    <DataGridTextColumn  Header="Job description"
+                                         FontSize="20" Width="*" 
+                                         Foreground="White" 
                                          Binding="{Binding Path=Jop_description ,  Mode=OneWay}"/>
-                    <DataGridTextColumn   FontSize="20" Width="*" Foreground="White" Header="Balance" 
+
+                    <DataGridTextColumn   Header="Balance" 
+                                          FontSize="20" Width="*"
+                                          Foreground="White" 
                                           Binding="{Binding Path=Balance ,  Mode=OneWay}"/>
                 </DataGrid.Columns>
-                
+                <!--End of columns definition-->
             </DataGrid>
-
+            <!--End of dataGrid-->
 
         </Grid>
 

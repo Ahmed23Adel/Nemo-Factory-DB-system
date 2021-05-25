@@ -1,0 +1,376 @@
+﻿<Window x:Class="Nemo.Manager.ManagerOptoins"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nemo.Manager"
+        mc:Ignorable="d"
+        Title="Welcome Nemo (Ahmed)" Height="700" Width="1200">
+  
+    <!-- This is to provide margin 14 in each side-->
+    <Border Background="{StaticResource WordBlueBrush}" 
+            Margin="14">
+
+        <!--This is to provide the top panel which contains the (expand and collapse button) the the bottom panel which contains the left
+        and right panel which; left is a stack panel of {statistics, production lines, employees, and machinsee} right panel is 
+        {window for more info}-->
+        <StackPanel>
+            <!--Expand and collapse buttons
+            Here, I set width of expand and collapse 1/30 to be more tight to left-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="30*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Collase (Left arrow)-->
+                <Image x:Name="expand" 
+                    UIElement.MouseDown="CollapseEvent"
+                    Grid.Column="0"
+                    Height="15"
+                    Margin="16  4 4 4"
+                    RenderTransformOrigin="0.5,0.57"
+                    Width="20" 
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left">
+                    
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="200" UriSource="../Images/left-arrow.ico"/>
+                    </Image.Source>
+                </Image>
+                <!--End of collapse button-->
+
+                <!--Exapnd button (right arrow)-->
+                <Image  UIElement.MouseDown="ExpandEvent"
+                    Grid.Column="1"
+                    Height="15"
+                    Margin="4 4 8 4"         
+                    Width="20"          
+                    RenderTransformOrigin="0.667,0.5"
+                    HorizontalAlignment="Right">
+                    
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="200" UriSource="../Images/right-arrow.ico"/>
+                    </Image.Source>
+                </Image>
+                <!--End of expand button-->
+            </Grid>
+            <!--end of expand and collapse button-->
+
+            <!--Left and right panel left contains a stack of some options manager can see, right panel has more info manager can see if he
+            clicks on one of the options provided in the left panel-->
+            
+            <!--Left and right panel -->
+            <Grid x:Name="leftRightPanel" 
+                  Height="Auto">
+                <!--This is to provide the emoji background over the blue background-->
+                <Grid.Background>
+                    <ImageBrush  TileMode="Tile"
+                                 ImageSource="/Images/Backgrounds/emoji-background.png"
+                                 ViewportUnits="Absolute" 
+                                 Viewport="0 0 500 500"  />
+                    
+                </Grid.Background>
+                
+                <Grid.ColumnDefinitions>
+                    <!--For Left panel-->
+                    <ColumnDefinition Width="2.1*"/>
+                    <!--For line-->
+                    <ColumnDefinition Width="0.2*"/>
+                    <!--Fort right panel(More info)-->
+                    <ColumnDefinition Width="9*"/>
+                </Grid.ColumnDefinitions>
+
+
+                    <!--Left panel. Here i put stack panel of some options manager can click on to more info about it in the right panel-->
+                    <!--But I provided first the scrollViewr to enable the user to scroll if user resize it to be so small.-->
+                    <ScrollViewer 
+                        Grid.Column="0" Grid.ColumnSpan="2" 
+                        Height="Auto" 
+                        VerticalScrollBarVisibility="Auto"
+                        HorizontalScrollBarVisibility="Auto" 
+                        Margin="0,0,0,17">
+                        
+                     <!--Left panel -->
+                    <StackPanel x:Name="leftPanel" >
+
+                       <!--first thing is just a word that says "You can see..." and picture of dory as hint for helping-->
+                        <Grid Height="Auto">
+                            
+                            <Grid.ColumnDefinitions>
+                                <!--For the sentence  "You can see.."-->
+                                <ColumnDefinition Width="9*"/>
+                                <!--For the dory picture-->
+                                <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--You can see sentence-->
+                            <TextBlock Grid.Column="0"
+                                Text="You can see.." 
+                                FontWeight="DemiBold" 
+                                Foreground="White"
+                                Margin="14 7 14 0"/>
+                            
+                            <!--The dory image-->
+                            <Image Grid.Column="1"
+                               Width="40" 
+                               Height="30"
+                               Margin="5 0 5 5" 
+                               RenderTransformOrigin="0.5,0.57"
+                               >
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200" 
+                                                 UriSource="../Images/dory.ico"/>
+                                </Image.Source>
+                            </Image>
+
+                        </Grid>
+                        <!--End of You can see button-->
+                        
+                        <!--Extra options, for profile and settings button -->
+                        <Grid Height="Auto">
+                            <Grid.ColumnDefinitions>
+                                <!--For profile -->
+                                <ColumnDefinition Width="*"/>
+                                <!--For settings-->
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Profile image-->
+                            <Image   Grid.Column="0"
+                                Width="30" 
+                                Height="20"
+                                Margin="14 4 8 4"
+                                RenderTransformOrigin="0.5,0.57"
+                                HorizontalAlignment="Left" >
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200"
+                                                 UriSource="../Images/profile.ico"/>
+                                </Image.Source>
+                            </Image>
+                            <!--End of profile image-->
+
+                            <!--Settings icon-->
+                            <Image Grid.Column="1"
+                                Width="30" 
+                                Height="20"
+                                Margin="4 4 8 4"
+                                RenderTransformOrigin="0.5,0.57"
+                                HorizontalAlignment="Center">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200"
+                                                 UriSource="../Images/settings.ico"/>
+                                </Image.Source>
+                            </Image>
+                            <!--End of setting icon-->
+
+
+                        </Grid>
+                        <!--End of profile and setting row -->
+
+
+                        <!--Stastiscs button; it divided into three parts; first part is the orange rectangle that tells user that he clicked on it,
+                        second is the icon, third is the name of that button-->
+                        <Grid UIElement.PreviewMouseDown="StatsEventClicked"
+                              Height="50"  >
+                            <Grid.ColumnDefinitions>
+                                <!--For orange rectangle-->
+                                <ColumnDefinition Width="0.3*"/>
+                                <!--For icon-->
+                                <ColumnDefinition Width="2*"/>
+                                <!--For Statistics word-->
+                                <ColumnDefinition Width="5*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <!--Orange rectangle, when  it's shown, it's a hing that user clicked on it.-->
+                            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                                <Line x:Name="statsClicked"
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0" 
+                                      Y2="50" 
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" 
+                                      Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <!--Icon for statstics -->
+                            <Image  Grid.Column="1"
+                                    Margin="0 10 0 10" >
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200" 
+                                                 UriSource="../Images/stats.ico"/>
+                                </Image.Source>
+                            </Image>
+                            <!--stastics word-->
+                            <TextBlock  Grid.Column="2"
+                                   Text="statistics" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White" 
+                                    Grid.ColumnSpan="2" 
+                                    Margin="52,12,52,11"
+                                   />
+
+                        </Grid>
+                        <!--End of statistics row
+                        -->
+                        <Separator Width="200" Margin="1 1 1 1"/>
+                        
+                        
+                        <!--Production lines-->
+                        <Grid Height="50" UIElement.PreviewMouseDown="ProdLineClickEvent">
+                            <Grid.ColumnDefinitions>
+                                <!--For orange rectangle-->
+                                <ColumnDefinition Width="0.3*"/>
+                                <!--For icon-->
+                                <ColumnDefinition Width="2*"/>
+                                <!--For "Production line" word-->
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <StackPanel Orientation="Horizontal" >
+                                <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                                <Line x:Name="prodLinedClicked" 
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0"
+                                      Y2="50"
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <!--Image for production line -->
+                            <Image  Grid.Column="1" 
+                                    Margin="2 10 0 10">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200" 
+                                                 UriSource="../Images/production_lines.ico"/>
+                                </Image.Source>
+                            </Image>
+                            <!--"Production line word-->
+                            <TextBlock Grid.Column="2" 
+                                   Text="Production lines" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   FontSize="20"
+                                   Foreground="White"
+                                   />
+
+                        </Grid>
+                        <!--End of production line row-->
+                        
+                        <Separator Width="200" Margin="1 1 1 1"/>
+
+                        <!--Employees-->
+                        <Grid UIElement.PreviewMouseDown="EmpsClickedEvent" 
+                            Height="50">
+                            
+                            <Grid.ColumnDefinitions>
+                                <!--For orange rectangle-->
+                                <ColumnDefinition Width="0.3*"/>
+                                <!--For icon-->
+                                <ColumnDefinition Width="2*"/>
+                                <!--For "Production line" word-->
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <StackPanel Orientation="Horizontal" >
+                                <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                                <Line x:Name="empsClicked"
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0" 
+                                      Y2="50" 
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                            </StackPanel>
+                            
+                            <!--Icon for employees-->
+                            <Image  Grid.Column="1"
+                                    Margin="2 10 0 10">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200" UriSource="../Images/emps.ico"/>
+                                </Image.Source>
+                            </Image>
+    
+                            <!--Employees Word-->
+                            <TextBlock Grid.Column="2"  
+                                   Text="Employees" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White"
+                                   />
+
+                        </Grid>
+                        <!--End of employee row-->
+                        
+                        <Separator Width="200" Margin="1 1 1 1"/>
+
+                        <!--Machines-->
+                        <Grid Height="50" UIElement.PreviewMouseDown="MachinesClickEvent">
+                            <Grid.ColumnDefinitions>
+                                <!--For orange rectangle-->
+                                <ColumnDefinition Width="0.3*"/>
+                                <!--For icon-->
+                                <ColumnDefinition Width="2*"/>
+                                <!--For "Production line" word-->
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <StackPanel Orientation="Horizontal" >
+                                <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                                <Line x:Name="machineClicked"
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0" 
+                                      Y2="50" 
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                            </StackPanel>
+                            
+                            <!--Icon for machines-->
+                            <Image  Grid.Column="1" 
+                                    Margin="2 10 0 10">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200"
+                                                 UriSource="../Images/machines.ico"/>
+                                </Image.Source>
+                            </Image>
+
+                            <TextBlock Grid.Column="2" 
+                                   Text="Machines" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White"
+                                   />
+                        </Grid>
+                        <!--End of machine -->
+                        
+                        <Separator Width="200" Margin="1 1 1 1"/>
+
+                    </StackPanel>
+                    <!--End of Stack panel that contains {statistics,production line, employees, and machies}-->
+
+                </ScrollViewer>
+                <!--End of scrollView that contails stack panel that contains  {statistics,production line, employees, and machies}-->
+
+                <!--Line that seperate left and right panel-->
+                <Rectangle x:Name="sep" VerticalAlignment="Stretch" Width="1.5" Margin="5,2,5,19" Stroke="{StaticResource ForegroundDarkBrush}"   Grid.Column="1"/>
+
+                <!--More info. It's empty frame that will hold window for more info to be shown-->
+                <Frame x:Name="moreInfo" Grid.Column="2" NavigationUIVisibility="Hidden" Margin="0,0,0,17"/>
+
+
+            </Grid>
+            <!--End of grid that contains left and right panel-->
+        </StackPanel>
+        <!--End of stack panel that contins{Grid that contains left and right panel, first row that contains expand and collapse buttons}-->
+    </Border>
+</Window>

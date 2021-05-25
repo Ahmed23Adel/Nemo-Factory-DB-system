@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Data;
 
 namespace Nemo.Manager
@@ -19,67 +8,96 @@ namespace Nemo.Manager
     /// <summary>
     /// Interaction logic for employees.xaml
     /// </summary>
-    public partial class employees : Page
+    public partial class Employees : Page
     {
         Database.AppLayer appLayer;
-        Manager_options parentInstance;
-        public employees(Manager_options parentInstance)
+        //Here I get Instance of ManagerOptions, to enable to show it agagin after it's hidder if user clicks on to update some employee or somethig, 
+        ManagerOptoins parentInstance;
+
+        public Employees(ManagerOptoins parentInstance)
         {
 
             InitializeComponent();
-
-            appLayer = Database.AppLayer.getInstance();
-            loadData();
             this.parentInstance = parentInstance;
-        }
+            appLayer = Database.AppLayer.getInstance();
 
+            loadData();
+        }
+        
+        /// <summary>
+        /// This will load all employees and will show them into DataGrid
+        /// </summary>
         private void loadData()
         {
             DataTable dt = appLayer.selectAllEmps();
-            allEmps.ItemsSource = dt.DefaultView;
+            allEmps.ItemsSource = dt.DefaultView;       
+        }
 
+       /// <summary>
+       /// This event is triggerd if user right clicked on any row of employese and check update
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
+        private void MenuItemMouseDownUpdate(object sender, RoutedEventArgs e)
+        {
+            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result = (drv["ID"]).ToString();//get the id to search by it.
+            new UpdateEmployee(result,parentInstance).Show();//showing updateEmployee to update Data
+            parentInstance.Hide();
+
+        } /// <summary>
+          /// This event is triggerd if user right clicked on any row of employese and check Delete
+          /// </summary>
+          /// <param name="sender"></param>
+          /// <param name="e"></param>
+        private void MenuItemMouseDownDelete(object sender, RoutedEventArgs e)
+        {
+            new Utilities.CustomMessageBox("DELETE").Show();
+        }
+
+        /// <summary>
+        /// This event is triggerd if user right clicked on any row of employese and check Make manager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemMouseDownMakeManger(object sender, RoutedEventArgs e)
+        {
+            new Utilities.CustomMessageBox("DELETE").Show();
+        }
+
+        /// <summary>
+        /// This event is triggerd if user right clicked on any row of employese and check make worker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemMouseDownMakeWorker(object sender, RoutedEventArgs e)
+        {
+            new Utilities.CustomMessageBox("DELETE").Show();
+        }
+        /// <summary>
+        /// This event is triggerd if user right clicked on any row of employese and check make supervisor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemMouseDownMakeSupervisor(object sender, RoutedEventArgs e)
+        {
+            new Utilities.CustomMessageBox("DELETE").Show();
+        }
+        /// <summary>
+        /// This event is triggerd if user right clicked on any row of employese and check give bonus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void give_bonus(object sender, RoutedEventArgs e)
+        {
            
         }
 
-       
-        private void MenuItem_MouseDown_update(object sender, RoutedEventArgs e)
-        {
-            DataRowView drv = (DataRowView)allEmps.SelectedItem;
-            String result = (drv["ID"]).ToString();
-            new UpdateEmployee(result,parentInstance).Show();
-            parentInstance.Hide();
 
-        }
-        private void MenuItem_MouseDown_delete(object sender, RoutedEventArgs e)
-        {
-            new Utilities.CustomMessageBox("DELETE").Show();
-        }
-        
-        private void MenuItem_MouseDown_MakeManger(object sender, RoutedEventArgs e)
-        {
-            new Utilities.CustomMessageBox("DELETE").Show();
-        }
-        
-        private void MenuItem_MouseDown_Worker(object sender, RoutedEventArgs e)
-        {
-            new Utilities.CustomMessageBox("DELETE").Show();
-        }
-        
-        private void MenuItem_MouseDown_supervisor(object sender, RoutedEventArgs e)
-        {
-            new Utilities.CustomMessageBox("DELETE").Show();
-        }
-        
-        private void give_bonus(object sender, RoutedEventArgs e)
-        {
-            DataRowView drv = (DataRowView)allEmps.SelectedItem;
-            String result = (drv["ID"]).ToString();
-            new Utilities.CustomMessageBox(result).Show();
-    
-
-        }
-
-        public void refresh()
+        /// <summary>
+        /// It loads again the dat in dataGrid by removing last values and select them again.
+        /// </summary>
+        public void Refresh()
         {
             allEmps.ItemsSource = null;
             loadData();

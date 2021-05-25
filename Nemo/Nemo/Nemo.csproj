@@ -66,8 +66,8 @@
     <Compile Include="Manager\machines.xaml.cs">
       <DependentUpon>machines.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Manager\Manager_options.xaml.cs">
-      <DependentUpon>Manager_options.xaml</DependentUpon>
+    <Compile Include="Manager\ManagerOptions.xaml.cs">
+      <DependentUpon>ManagerOptions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\production_lines.xaml.cs">
       <DependentUpon>production_lines.xaml</DependentUpon>
@@ -110,7 +110,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Manager\Manager_options.xaml">
+    <Page Include="Manager\ManagerOptions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

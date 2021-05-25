@@ -86,7 +86,7 @@ namespace Nemo
 
             if (appLayer.isUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
             {
-                new Manager.Manager_options(userName.Text, password.Password).Show();
+                new Manager.ManagerOptoins(userName.Text, password.Password).Show();
                 this.Close();
             }    
         }
