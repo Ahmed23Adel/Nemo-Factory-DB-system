@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -8,9 +9,14 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Media = System.Windows.Media;
+using Input= System.Windows.Input;
+using Imaging = System.Windows.Media.Imaging;
+using Controls = System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Nemo.Manager
 {
@@ -31,6 +37,22 @@ namespace Nemo.Manager
             this.parentInstance = parentInstance;
             numError = 0;
 
+           
+            /*string server = "https://images2.boardingschoolreview.com";
+
+            Uri serverUri = new Uri(server);
+
+            string relativePath = "photo/780x600/1000/593/img-academy-bgYfVkg.webp";
+
+            // needs UriKind arg, or UriFormatException is thrown
+            Uri relativeUri = new Uri(relativePath, UriKind.Relative);
+
+            // Uri(Uri, Uri) is the preferred constructor in this case
+            Uri fullUri = new Uri(serverUri, relativeUri);
+
+            Uri fullUriC = new Uri(@"D:\Zewail\Year 2\Spring\Database\friends.jpg");
+
+            tempPic.Source = new BitmapImage(fullUriC);*/
         }
         /// <summary>
         /// This event is fired when user clicks on insert 

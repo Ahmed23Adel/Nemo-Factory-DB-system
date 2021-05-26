@@ -5,16 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
-        Title="Welcome Nemo (Ahmed)" Height="700" Width="1200">
+        Title="Welcome Nemo (Ahmed)" Height="700"
+        Width="1200"
+        WindowStartupLocation="CenterScreen"
+        >
   
     <!-- This is to provide margin 14 in each side-->
     <Border Background="{StaticResource WordBlueBrush}" 
-            Margin="14">
+            Margin="14"
+            CornerRadius="30"
+            >
 
         <!--This is to provide the top panel which contains the (expand and collapse button) the the bottom panel which contains the left
         and right panel which; left is a stack panel of {statistics, production lines, employees, and machinsee} right panel is 
         {window for more info}-->
-        <StackPanel>
+        <StackPanel Margin="14 14 14 14">
             <!--Expand and collapse buttons
             Here, I set width of expand and collapse 1/30 to be more tight to left-->
             <Grid>

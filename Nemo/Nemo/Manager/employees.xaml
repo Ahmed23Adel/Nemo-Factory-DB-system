@@ -66,6 +66,7 @@
                     RowBackground="Transparent"
                     ItemsSource="{Binding Path=Collection}"
                      AutoGenerateColumns="False" 
+                    Style="{StaticResource dGrid}"
                     >
                     <!--This is for, if user right clicked on any row in dataGrid it should show this contextMenu-->
                     <DataGrid.CellStyle>

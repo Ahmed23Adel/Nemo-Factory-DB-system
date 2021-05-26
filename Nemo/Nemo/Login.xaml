@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="Welcome Nemo!" Height="450" Width="800"
         Icon="Images/logo/nemoLogo.ico"
-
         >
-    <Border Background="{StaticResource WordBlueBrush}" Margin="14">
+    <Border Background="{StaticResource WordBlueBrush}" 
+            Margin="14"
+            CornerRadius="30"
+            >
         
         <Grid >
             <Grid.Background>

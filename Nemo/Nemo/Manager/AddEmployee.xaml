@@ -204,6 +204,7 @@
                         <ColumnDefinition Width="*"/>
                         <!--Update-->
                         <ColumnDefinition Width="*"/>
+                        <!--ColumnDefinition Width="*"/>-->
                     </Grid.ColumnDefinitions>
 
                     <!--Cancel-->
@@ -214,6 +215,9 @@
                             FontWeight="Bold" 
                             Style="{StaticResource cancel}"/>
                    
+                    <!--<Image x:Name="tempPic" Grid.Column="1" >
+   
+                    </Image>-->
                     <!--Update-->
                     <Button  Click="InserteInfo" 
                              Grid.Column="2" 
