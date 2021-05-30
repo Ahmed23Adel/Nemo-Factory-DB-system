@@ -13,26 +13,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
-namespace Nemo.Manager
+namespace Nemo.supervisor
 {
     /// <summary>
-    /// Interaction logic for production_lines.xaml
+    /// Interaction logic for workersAndMachinesPage.xaml
     /// </summary>
-    public partial class production_lines : Page
+    public partial class workersAndMachinesPage : Page
     {
 
         Database.AppLayer applayer;
-        public production_lines()
+        DataTable data;
+        public workersAndMachinesPage(string userName)
         {
             InitializeComponent();
             applayer = Database.AppLayer.GetInstance();
-            getAllLines();
-        }
-        public void getAllLines()
-        {
-            prodLinesGrid.ItemsSource = applayer.getAllLines().DefaultView;
+            loadData(userName);
+
         }
 
-       
+        public void loadData(string userName)
+        {
+            data = applayer.getWorkersAndMachines(userName);
+            workersAndMachinesGrid.ItemsSource = data.DefaultView;
+        }
     }
 }

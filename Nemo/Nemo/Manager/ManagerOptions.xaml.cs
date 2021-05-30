@@ -80,6 +80,9 @@ namespace Nemo.Manager
             //Here I set prodLinedClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
             visibleFirstHideRest(prodLinedClicked,statsClicked, empsClicked, machineClicked);
             //I set the prodLinePage to stas page 
+
+            //refresh (retrieve again) data of the page then show it (pass it to the frame "moreinfo")
+            prodLinePage.getAllLines();
             moreInfo.Content = prodLinePage;
         }
         /// <summary>

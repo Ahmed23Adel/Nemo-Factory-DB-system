@@ -37,7 +37,7 @@ namespace Nemo.supervisor
             data = applayer.loadAssignedMachines(userName);
             machinesGrid.ItemsSource = data.DefaultView;
         }
-
+        
     }
 
 }

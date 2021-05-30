@@ -103,5 +103,26 @@ namespace Nemo.Database
             return dbMan.ExcuteReader(query);
 
         }
+        public DataTable getAllLines()
+        {
+            string query = "";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable loadWorkerData(string userName)
+        {
+            string query = "";
+            return dbMan.ExcuteReader(query);
+        }
+        public DataTable getAssignedLines(string userName)
+        {
+            string query = "";
+            return dbMan.ExcuteReader(query);
+        }
+        public DataTable getWorkersAndMachines(string userName)
+        {
+            string query = "";
+            return dbMan.ExcuteReader(query);
+        }
     }
 }

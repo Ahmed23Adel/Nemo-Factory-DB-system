@@ -84,8 +84,14 @@
     <Compile Include="supervisor\supervisor.xaml.cs">
       <DependentUpon>supervisor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="supervisor\viewAssignedLinesPage.xaml.cs">
+      <DependentUpon>viewAssignedLinesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="supervisor\viewAssignedMachinesPage.xaml.cs">
       <DependentUpon>viewAssignedMachinesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\workersAndMachinesPage.xaml.cs">
+      <DependentUpon>workersAndMachinesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\CustomMessageBox.xaml.cs">
       <DependentUpon>CustomMessageBox.xaml</DependentUpon>
@@ -162,7 +168,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="supervisor\viewAssignedLinesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="supervisor\viewAssignedMachinesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="supervisor\workersAndMachinesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,6 +257,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="supervisor\emoji-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Worker\worker background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

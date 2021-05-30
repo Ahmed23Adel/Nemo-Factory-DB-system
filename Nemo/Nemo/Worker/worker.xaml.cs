@@ -36,6 +36,8 @@ namespace Nemo.Worker
         {
             DataTable dt = applayer.GetBasicDataForUserNamePass(username, password);
             this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
+            
         }
+
     }
 }

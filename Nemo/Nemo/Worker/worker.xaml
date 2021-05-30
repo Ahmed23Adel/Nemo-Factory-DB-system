@@ -5,8 +5,181 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Worker"
         mc:Ignorable="d"
-        Title="worker" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="worker" Height="600" Width="800">
+
+    <Border Padding="20 10">
+        <Border.Background>
+            <ImageBrush Opacity="0.3" ImageSource="worker background.png" />
+        </Border.Background>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Welcome to your transcript!"
+                HorizontalAlignment="Center" FontSize="24"
+                       FontFamily="Comic Sans MS" Padding="0 0 0 10"></TextBlock>
+
+            <!--Main grid-->
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--1st-->
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel >
+                        <TextBlock  Text="Name" FontFamily="Comic Sans MS"
+                           FontSize="16" >
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4" />
+                            </TextBlock.Effect>
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+                        <TextBlock Text="hossam" Margin="0 5"
+                               FontFamily="Comic Sans MS" FontSize="16"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="ID" FontFamily="Comic Sans MS"
+                           FontSize="16" >
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4" />
+                            </TextBlock.Effect>
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+                        <TextBlock Text="hossam2" Margin="0 5"
+                               FontFamily="Comic Sans MS" FontSize="16"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <!--2nd-->
+                <Grid Grid.Row="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel >
+                        <TextBlock  Text="Salary" FontFamily="Comic Sans MS"
+                           FontSize="16" >
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4" />
+                            </TextBlock.Effect>
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+                        <TextBlock Text="hossam" Margin="0 5"
+                               FontFamily="Comic Sans MS" FontSize="16"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Balance" FontFamily="Comic Sans MS"
+                           FontSize="16" >
+
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4" />
+                            </TextBlock.Effect>
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+                        <TextBlock Text="hossam2" Margin="0 5"
+                               FontFamily="Comic Sans MS" FontSize="16"/>
+                    </StackPanel>
+
+                </Grid>
+                <!--3rd-->
+                <Grid Grid.Row="2">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel >
+                        <TextBlock  Text="Supervisor" FontFamily="Comic Sans MS"
+                           FontSize="16" >
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4" />
+                            </TextBlock.Effect>
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+                        <TextBlock Text="hossam" Margin="0 5"
+                               FontFamily="Comic Sans MS" FontSize="16"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Machine" FontFamily="Comic Sans MS"
+                           FontSize="16" >
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4"/>
+                            </TextBlock.Effect>
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="SkyBlue" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+                        <TextBlock Text="hossam2" Margin="0 5"
+                               FontFamily="Comic Sans MS" FontSize="16"/>
+                    </StackPanel>
+
+                </Grid>
+
+
+
+
+
+            </Grid>
+            <!--End of main stack-->
+        </Grid>
+
+    </Border>
+
 </Window>
