@@ -49,7 +49,14 @@ namespace Nemo.supervisor
         {
             linesPage.loadData(this.username);
             supervisorframe.Content = linesPage;
-        }private void loadWorkers()
+        }
+
+        private void SupervisorFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
+
+        private void loadWorkers()
         {
             workersPage.loadData(this.username);
             supervisorframe.Content = workersPage;

@@ -261,5 +261,12 @@
   <ItemGroup>
     <Resource Include="Worker\worker background.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\back.png" />
+    <Resource Include="Images\screw.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="supervisor\back.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
