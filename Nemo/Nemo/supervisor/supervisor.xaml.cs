@@ -22,6 +22,7 @@ namespace Nemo.supervisor
     {
         Database.AppLayer applayer;
         string username, password;
+        viewAssignedMachinesPage machinesPage;
         public supervisor(string username, string password)
         {
             InitializeComponent();
@@ -29,12 +30,17 @@ namespace Nemo.supervisor
             this.username = username;
             this.password = password;
             loadBasicData();
+            machinesPage = new viewAssignedMachinesPage(username);
         }
         private void loadBasicData()
         {
             DataTable dt = applayer.GetBasicDataForUserNamePass(username, password);
             this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
         }
-
+        private void loadAssignedMachines()
+        {
+            machinesPage.loadData(this.username);
+            supervisorframe.Content = machinesPage;
+        }
     }
 }

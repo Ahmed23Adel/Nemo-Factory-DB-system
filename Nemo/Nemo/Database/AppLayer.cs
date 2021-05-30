@@ -126,14 +126,17 @@ namespace Nemo.Database
 
         //hossam
 
-        public DataTable loadAssignedMachines()
+        public DataTable loadAssignedMachines(string username)
         {
-            ;
+            DataTable data=controller.viewAssignedMachines(username);
+            return data;
         }
-        public DataTable loadWorkerData()
+        /*public DataTable loadWorkerData()
         {
-
-        }
+            
+            DataTable data;
+            return data;
+        }*/
         //hossam end
     }
 }
