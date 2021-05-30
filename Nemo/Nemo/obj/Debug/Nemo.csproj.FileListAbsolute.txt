@@ -70,3 +70,22 @@ D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Mana
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.baml
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.baml
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csprojAssemblyReference.cache
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Login.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\MainWindow.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\employees.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\machines.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\production_lines.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Statistics.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\supervisor.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedMachines.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Utilities\CustomMessageBox.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Worker\worker.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\App.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.cache
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.lref
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.exe
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.pdb

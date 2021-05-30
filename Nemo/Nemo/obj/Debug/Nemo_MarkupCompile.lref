@@ -1,17 +1,20 @@
 ﻿
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Login.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\MainWindow.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Manager\AddEmployee.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Manager\employees.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Manager\machines.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Manager\ManagerOptions.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Manager\production_lines.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Manager\Statistics.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Manager\UpdateEmployee.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Buttons.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Colors.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Fonts.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Texts.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\Utilities\CustomMessageBox.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Login.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\MainWindow.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Manager\AddEmployee.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Manager\employees.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Manager\machines.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Manager\ManagerOptions.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Manager\production_lines.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Manager\Statistics.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Manager\UpdateEmployee.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Buttons.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Colors.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Fonts.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Styles\Texts.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Utilities\CustomMessageBox.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\supervisor\supervisor.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\supervisor\viewAssignedMachines.xaml;;
+FH:\Nemo-Factory-DB-system\Nemo\Nemo\Worker\worker.xaml;;
 

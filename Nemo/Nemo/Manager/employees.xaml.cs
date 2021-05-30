@@ -27,6 +27,9 @@ namespace Nemo.Manager
         /// <summary>
         /// This will load all employees and will show them into DataGrid
         /// </summary>
+        /// 
+
+
         private void loadData()
         {
             DataTable dt = appLayer.SelectAllEmps();

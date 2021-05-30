@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\
 Nemo
 none
 false
 DEBUG;TRACE
-D:\Zewail\Year 2\Spring\Database\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml
-141479484819
+H:\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml
+17-2003589194
 
-18-1754646292
+21-1148367240
 13-1505183044
-Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Utilities\CustomMessageBox.xaml;
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedMachines.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
 
-False
+True
 

@@ -1,0 +1,26 @@
+﻿<Page x:Class="Nemo.supervisor.viewAssignedMachines"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Nemo.supervisor"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="viewAssignedMachines">
+
+    <Border Padding="10">
+        
+        <DataGrid x:Name="machinesgrid" CanUserAddRows="False" SelectionChanged="machinesgrid_SelectionChanged" >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding}" Header="Machine ID" FontWeight="Bold" Width="*"/>
+                <DataGridTextColumn Binding="{Binding}"  Header="Start Date" FontWeight="Bold" Width="*"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+
+
+    </Border>
+
+</Page>
