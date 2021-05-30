@@ -89,6 +89,17 @@ namespace Nemo
                 new Manager.ManagerOptoins(userName.Text, password.Password).Show();
                 this.Close();
             }    
+            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.SPRVSR)
+            {
+                new supervisor.supervisor(userName.Text, password.Password).Show();
+                this.Close();
+            }    
+            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.WRKR)
+            {
+                new Worker.worker(userName.Text, password.Password).Show();
+                this.Close();
+            }    
+            
         }
 
 

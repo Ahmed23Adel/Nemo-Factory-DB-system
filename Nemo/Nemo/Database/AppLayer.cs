@@ -123,5 +123,17 @@ namespace Nemo.Database
                 nationalID = "NULL";
             return controller.InsertEmp(Fname, Lname, Balance, Bdata, Jop_title, userName, password, nationalID);
         }
+
+        //hossam
+
+        public DataTable loadAssignedMachines()
+        {
+            ;
+        }
+        public DataTable loadWorkerData()
+        {
+
+        }
+        //hossam end
     }
 }
