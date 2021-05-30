@@ -7,12 +7,29 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="viewAssignedMachinesPage">
-    <Border Padding="10">
-        
-    <Grid>
-            <DataGrid x:Name="machinesGrid">
-                
+
+
+
+    <Border Background="{StaticResource WordBlueBrush}" Margin="14">
+        <Grid Background="#FFDAE6FF" >
+
+            <DataGrid x:Name="machinesGrid" AutoGenerateColumns="True"  FontSize="20">
+                <DataGrid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF94EDD2" Offset="0"/>
+                        <GradientStop Color="#FF3099C5" Offset="1"/>
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Machine name" Width="*" />
+                    <DataGridTextColumn Header="Machine ID" Width="*" />
+                    <DataGridTextColumn Header="Line name" Width="*" />
+                </DataGrid.Columns>
             </DataGrid>
-    </Grid>
+        </Grid>
+
     </Border>
+
+
 </Page>

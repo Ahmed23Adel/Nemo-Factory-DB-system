@@ -1,21 +1,17 @@
-﻿<Page x:Class="Nemo.Manager.production_lines"
+﻿<Page x:Class="Nemo.supervisor.viewAssignedLinesPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Nemo.Manager"
+      xmlns:local="clr-namespace:Nemo.supervisor"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="production_lines">
-
-
-
-
+      Title="viewAssignedLinesPage">
 
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
         <Grid Background="#FFDAE6FF" >
-           
-            <DataGrid x:Name="prodLinesGrid" AutoGenerateColumns="True" FontSize="20">
+
+            <DataGrid x:Name="assignedProdLinesGrid" AutoGenerateColumns="True"  FontSize="20">
                 <DataGrid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="#FF94EDD2" Offset="0"/>
@@ -24,14 +20,13 @@
                 </DataGrid.Background>
 
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Name" Width="*" />
-                    <DataGridTextColumn Header="ID" Width="*" />
+                    <DataGridTextColumn Header="Line name" Width="*" />
+                    <DataGridTextColumn Header="Line ID" Width="*" />
                     <DataGridTextColumn Header="Location" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
 
     </Border>
-
 
 </Page>

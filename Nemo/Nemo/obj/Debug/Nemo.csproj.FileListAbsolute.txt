@@ -114,3 +114,7 @@ H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.g.resources
 H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.Properties.Resources.resources
 H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.GenerateResource.cache
 H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.CoreCompileInputs.cache
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedLinesPage.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\workersAndMachinesPage.g.cs
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedLinesPage.baml
+H:\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\workersAndMachinesPage.baml

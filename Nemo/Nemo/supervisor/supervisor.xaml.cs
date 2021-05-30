@@ -23,6 +23,8 @@ namespace Nemo.supervisor
         Database.AppLayer applayer;
         string username, password;
         viewAssignedMachinesPage machinesPage;
+        viewAssignedLinesPage linesPage;
+        workersAndMachinesPage workersPage;
         public supervisor(string username, string password)
         {
             InitializeComponent();
@@ -31,6 +33,8 @@ namespace Nemo.supervisor
             this.password = password;
             loadBasicData();
             machinesPage = new viewAssignedMachinesPage(username);
+            linesPage = new viewAssignedLinesPage(username);
+            workersPage = new workersAndMachinesPage(username);
         }
         private void loadBasicData()
         {
@@ -41,6 +45,14 @@ namespace Nemo.supervisor
         {
             machinesPage.loadData(this.username);
             supervisorframe.Content = machinesPage;
+        }private void loadAssignedLines()
+        {
+            linesPage.loadData(this.username);
+            supervisorframe.Content = linesPage;
+        }private void loadWorkers()
+        {
+            workersPage.loadData(this.username);
+            supervisorframe.Content = workersPage;
         }
     }
 }

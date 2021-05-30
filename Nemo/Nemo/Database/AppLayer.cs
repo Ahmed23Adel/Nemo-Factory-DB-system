@@ -128,15 +128,27 @@ namespace Nemo.Database
 
         public DataTable loadAssignedMachines(string username)
         {
-            DataTable data=controller.viewAssignedMachines(username);
-            return data;
+            return controller.viewAssignedMachines(username);
         }
-        /*public DataTable loadWorkerData()
+
+        public DataTable loadWorkerData(string userName)
         {
-            
-            DataTable data;
-            return data;
-        }*/
+            return controller.loadWorkerData(userName);
+        }
+        public DataTable getAssignedLines(string userName)
+        {
+            return controller.getAssignedLines(userName);
+        }
+        public DataTable getWorkersAndMachines(string userName)
+        {
+            return controller.getWorkersAndMachines(userName);
+        }
+
+        public DataTable getAllLines()
+        {
+            return controller.getAllLines();
+        }
+
         //hossam end
     }
 }
