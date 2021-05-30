@@ -84,8 +84,8 @@
     <Compile Include="supervisor\supervisor.xaml.cs">
       <DependentUpon>supervisor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="supervisor\viewAssignedMachines.xaml.cs">
-      <DependentUpon>viewAssignedMachines.xaml</DependentUpon>
+    <Compile Include="supervisor\viewAssignedMachinesPage.xaml.cs">
+      <DependentUpon>viewAssignedMachinesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\CustomMessageBox.xaml.cs">
       <DependentUpon>CustomMessageBox.xaml</DependentUpon>
@@ -162,7 +162,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="supervisor\viewAssignedMachines.xaml">
+    <Page Include="supervisor\viewAssignedMachinesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

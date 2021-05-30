@@ -95,6 +95,13 @@ namespace Nemo.Database
                 ", '" + nationalID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable viewAssignedMachines(string username)
+        {
+            string query = "SELECT ID, Start_date" +
+                "from machine,Line_has_machine, manage " +
+                "where machine.ID= machine_id and Line_id=prodLine_id and Supervisor_id=employee.ID and employee.username= '"+username+"' ";
+            return dbMan.ExcuteReader(query);
 
+        }
     }
 }

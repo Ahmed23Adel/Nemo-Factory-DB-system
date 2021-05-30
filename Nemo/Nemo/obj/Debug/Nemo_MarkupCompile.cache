@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 H:\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml
-17-2003589194
+17-695094059
 
-21-1148367240
+211197417842
 13-1505183044
-Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedMachines.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
 
-True
+False
 
