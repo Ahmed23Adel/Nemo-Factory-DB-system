@@ -66,17 +66,22 @@ namespace Nemo.Database
                     DataTable dt = new DataTable();
                     dt.Load(reader);
                     reader.Close();
+                  //  MessageBox.Show("1" + query);
                     return dt;
                 }
                 else
                 {
                     reader.Close();
+                 //   MessageBox.Show("2" + query);
+
                     return null;
 
                 }
             }
             catch (Exception e)
             {
+               MessageBox.Show("3" + query);
+
                 return null;
             }
         }

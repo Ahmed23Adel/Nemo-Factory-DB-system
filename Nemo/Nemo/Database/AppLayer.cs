@@ -131,9 +131,9 @@ namespace Nemo.Database
             return controller.viewAssignedMachines(username);
         }
 
-        public DataTable loadWorkerData(string userName)
+        public DataTable loadWorkerTranscript(string userName)
         {
-            return controller.loadWorkerData(userName);
+            return controller.loadWorkerTranscript(userName);
         }
         public DataTable getAssignedLines(string userName)
         {

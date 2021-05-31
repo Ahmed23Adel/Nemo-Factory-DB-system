@@ -20,7 +20,7 @@ namespace Nemo.Manager
     /// </summary>
     public partial class production_lines : Page
     {
-
+        
         Database.AppLayer applayer;
         public production_lines()
         {

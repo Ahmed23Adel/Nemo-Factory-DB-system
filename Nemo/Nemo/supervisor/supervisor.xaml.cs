@@ -32,9 +32,9 @@ namespace Nemo.supervisor
             this.username = username;
             this.password = password;
             loadBasicData();
-            machinesPage = new viewAssignedMachinesPage(username);
+            /*machinesPage = new viewAssignedMachinesPage(username);
             linesPage = new viewAssignedLinesPage(username);
-            workersPage = new workersAndMachinesPage(username);
+            workersPage = new workersAndMachinesPage(username);*/
         }
         private void loadBasicData()
         {

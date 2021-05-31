@@ -53,7 +53,7 @@
                             </TextBlock.Background>
                         </TextBlock>
 
-                        <TextBlock Text="hossam" Margin="0 5"
+                        <TextBlock x:Name="txtName" Margin="0 5"
                                FontFamily="Comic Sans MS" FontSize="16"/>
 
                     </StackPanel>
@@ -72,7 +72,7 @@
                             </TextBlock.Background>
                         </TextBlock>
 
-                        <TextBlock Text="hossam2" Margin="0 5"
+                        <TextBlock x:Name="txtID" Margin="0 5"
                                FontFamily="Comic Sans MS" FontSize="16"/>
                     </StackPanel>
 
@@ -100,7 +100,7 @@
                             </TextBlock.Background>
                         </TextBlock>
 
-                        <TextBlock Text="hossam" Margin="0 5"
+                        <TextBlock  x:Name="txtSalary" Margin="0 5"
                                FontFamily="Comic Sans MS" FontSize="16"/>
 
                     </StackPanel>
@@ -120,7 +120,7 @@
                             </TextBlock.Background>
                         </TextBlock>
 
-                        <TextBlock Text="hossam2" Margin="0 5"
+                        <TextBlock x:Name="txtBalance" Margin="0 5"
                                FontFamily="Comic Sans MS" FontSize="16"/>
                     </StackPanel>
 
@@ -147,7 +147,7 @@
                             </TextBlock.Background>
                         </TextBlock>
 
-                        <TextBlock Text="hossam" Margin="0 5"
+                        <TextBlock x:Name="txtSupervisor" Margin="0 5"
                                FontFamily="Comic Sans MS" FontSize="16"/>
 
                     </StackPanel>
@@ -166,7 +166,7 @@
                             </TextBlock.Background>
                         </TextBlock>
 
-                        <TextBlock Text="hossam2" Margin="0 5"
+                        <TextBlock x:Name="txtMachine" Margin="0 5"
                                FontFamily="Comic Sans MS" FontSize="16"/>
                     </StackPanel>
 

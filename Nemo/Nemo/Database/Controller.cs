@@ -105,13 +105,13 @@ namespace Nemo.Database
         }
         public DataTable getAllLines()
         {
-            string query = "";
+            string query = "select * from Production_line";
             return dbMan.ExcuteReader(query);
         }
 
-        public DataTable loadWorkerData(string userName)
+        public DataTable loadWorkerTranscript(string userName)
         {
-            string query = "";
+            string query = " select * from employee where username='"+userName+"'   ";
             return dbMan.ExcuteReader(query);
         }
         public DataTable getAssignedLines(string userName)
