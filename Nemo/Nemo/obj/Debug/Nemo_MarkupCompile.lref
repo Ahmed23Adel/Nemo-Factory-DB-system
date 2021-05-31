@@ -3,6 +3,7 @@ FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\App.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Login.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\MainWindow.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\AddEmployee.xaml;;
+FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\AddMachine.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\employees.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\machines.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\ManagerOptions.xaml;;
@@ -10,6 +11,7 @@ FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\production_lines.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\Statistics.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\UpdateEmployee.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\UpdateMachine.xaml;;
+FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\ViewMyProfile.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Styles\Buttons.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Styles\Colors.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Styles\Fonts.xaml;;
@@ -20,6 +22,4 @@ FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\supervisor\viewAssignedMachines
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\supervisor\workersAndMachinesPage.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Utilities\CustomMessageBox.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Worker\worker.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\ViewMyProfile.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\AddMachine.xaml;;
 

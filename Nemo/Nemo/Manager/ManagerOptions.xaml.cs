@@ -212,7 +212,10 @@ namespace Nemo.Manager
             machinePage.Refresh();
             this.Show();
         }
-
+        /// <summary>
+        /// overloaded ModeShow
+        /// this is used specifically when manager changes username/password from profile and come back, so data should be updated.
+        /// </summary>
         public void ModShow(string userName, string pasword)
         {
             this.userName = userName;

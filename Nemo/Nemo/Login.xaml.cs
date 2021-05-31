@@ -19,20 +19,25 @@ namespace Nemo
     /// </summary>
     public partial class Login : Window
     {
+        //num Error is only used in for funny part when shoing error
         int numError;
         Database.AppLayer appLayer;
+
         public Login()
         {
             
             InitializeComponent();
             appLayer = Database.AppLayer.GetInstance();
             numError = 0;
+            //I added an event when user click enter(return) this event should be triggerd instead of clicking on Login button
             password.PreviewKeyDown += EnterClicked;
             userName.PreviewKeyDown += EnterClicked;
         }
 
+        //User clicked on Login button
         private void LogIn(object sender, RoutedEventArgs e)
         {
+            //Check first about data.
             if (isDataValid())
             {
                 checkUserNamePass();
@@ -66,7 +71,8 @@ namespace Nemo
             }
             return true;
         }
-
+        
+        //When user clicks enter either when he/she is in username or password field
         void EnterClicked(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -74,7 +80,9 @@ namespace Nemo
                 checkUserNamePass();
             }
         }
-
+        //Check for user name or password
+        //After checking it will direct him to prober window with prober access
+        //unless jop title is not specified.
         private void checkUserNamePass()
         {
 

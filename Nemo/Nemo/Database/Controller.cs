@@ -197,5 +197,51 @@ namespace Nemo.Database
             return dbMan.ExcuteReader(query);
         }
 
+        //////////////////////////Stats//////////////////////////
+        public DataTable GetMaleFemale()
+        {
+            string query = "select "+
+                            "count(case when Gender = 'M' then 1 end) as maleCount, " +
+                            "count(case when gender = 'F' then 1 end) as FemaleCount "+
+                            "FROM Employee; ";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable GetAvgSalaries()
+        {
+            string query = "SELECT p.Name as 'Production_line',AVG(Balance) as 'Average' " +
+                            "FROM(((Employee as e JOIN Works_on AS w ON e.ID = w.Emp_id)JOIN Line_has_machine AS l ON w.Machine_id = l.machine_id) JOIN Production_line  as p ON p.ID = l.Line_id ) " +
+                            "GROUP BY p.Name,l.Line_id";
+
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable GetReligions()
+        {
+            string query = "SELECT Religion, COUNT(Religion) AS 'Count_religion' " +
+                            "FROM Employee " +
+                            "GROUP BY Religion ;";
+            return dbMan.ExcuteReader(query);
+        }
+        
+        public DataTable GetTopProductionLines()
+        {
+            string query = "SELECT  p.Name as 'prodLine', Product.Name as 'Product',pr.Daily_amount,CONCAT(Employee.Fname,' ',Employee.Lname)AS 'supervisor' " +
+                            "From ((((Production_line as p JOIN Produces as pr ON p.ID=pr.Line_id ) JOIN Product ON Product.ID=pr.product_id )) JOIN Employee on Employee.ID=p.Supervisor_id) " +
+                            "GROUP BY Employee.Lname,Employee.Fname,Product.Name,pr.Daily_amount,p.Name " +
+                            "ORDER BY pr.Daily_amount DESC "+
+                            "OFFSET  0 ROWS " +
+                            "FETCH NEXT 5 ROWS ONLY ;";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable GetOldestMachines()
+        {
+            string query = "SELECT Name, Start_date " +
+                            "FROM Machine " +
+                            " ORDER BY Start_date ASC";
+            return dbMan.ExcuteReader(query);
+        }
+
     }
 }

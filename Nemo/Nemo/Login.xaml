@@ -8,18 +8,26 @@
         Title="Welcome Nemo!" Height="450" Width="800"
         Icon="Images/logo/nemoLogo.ico"
         >
+    <!--For better desing, some border in each corner-->
     <Border Background="{StaticResource WordBlueBrush}" 
             Margin="14"
             CornerRadius="30"
             >
         
         <Grid >
+            <!--For the emoji background-->
             <Grid.Background>
-                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png" />
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute"
+                            Viewport="0 0 500 500" 
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
             </Grid.Background>
+            <!--End of Emoji background-->
 
+            <!--user name and password and login button-->
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+                    <!--For better desgin here is border with corner radius to be rounded-->
                     <Border Background="{StaticResource ForegroundLightBrush}"
                             CornerRadius="10"
                             Padding="15 50 15 15"
@@ -27,8 +35,16 @@
                             Margin="50 50 50 50"
                             >
                         <StackPanel>
-                            <TextBlock Text="Sign in" FontSize="30" FontStyle="Oblique" FontWeight="DemiBold" Foreground="{StaticResource WordBlueBrush}"/>
-                            <TextBlock Text="It's about to get fun" FontSize="14"  FontWeight="Normal" Foreground="Black"/>
+                            <!--Sign in word-->
+                            <TextBlock Text="Sign in" 
+                                       FontSize="30" 
+                                       FontStyle="Oblique" 
+                                       FontWeight="DemiBold" 
+                                       Foreground="{StaticResource WordBlueBrush}"/>
+                            <!--It's about to get fun word-->
+                            <TextBlock Text="It's about to get fun" 
+                                       FontSize="14"  FontWeight="Normal"
+                                       Foreground="Black"/>
 
                             <!--user name-->
                             <Grid>
@@ -36,30 +52,46 @@
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="15*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image x:Name="mustEnter" Grid.Column="0" Height="10">
+                                <!--This is considere to be that this field must be entered-->
+                                <Image Grid.Column="0"
+                                       Height="10">
                                     <Image.Source>
-                                        <BitmapImage DecodePixelWidth="200" UriSource="Images/Logo/nemoLogo.ico"/>
+                                        <BitmapImage DecodePixelWidth="200"
+                                                     UriSource="Images/Logo/nemoLogo.ico"/>
                                     </Image.Source>
                                 </Image>
-                                <TextBox x:Name="userName" Style="{StaticResource loginTextBox}" Grid.Column="1"/>
+                                <TextBox x:Name="userName"
+                                         Style="{StaticResource loginTextBox}"
+                                         Grid.Column="1"/>
                             </Grid>
                             
-                            <!--user name-->
+                            <!--Password textField-->
 
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="15*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image  Grid.Column="0" Height="10">
+                                <!--This is considere to be that this field must be entered-->
+                                <Image  Grid.Column="0" 
+                                        Height="10">
                                     <Image.Source>
-                                        <BitmapImage DecodePixelWidth="200" UriSource="Images/Logo/nemoLogo.ico"/>
+                                        <BitmapImage DecodePixelWidth="200" 
+                                                     UriSource="Images/Logo/nemoLogo.ico"/>
                                     </Image.Source>
                                 </Image>
-                                <PasswordBox x:Name="password" Style="{StaticResource passTextBox}" Grid.Column="1"/>
+                                <!--Password textField-->
+                                <PasswordBox x:Name="password" 
+                                             Style="{StaticResource passTextBox}"
+                                             Grid.Column="1"/>
                             </Grid>
 
-                            <Button  Click="LogIn" Content="Log in" HorizontalAlignment="Center" FontWeight="Bold" Style="{StaticResource Login}"/>
+                            <!--Log in button-->
+                            <Button  Click="LogIn" 
+                                     Content="Log in" 
+                                     HorizontalAlignment="Center" 
+                                     FontWeight="Bold" 
+                                     Style="{StaticResource Login}"/>
                         </StackPanel>
 
                     </Border>

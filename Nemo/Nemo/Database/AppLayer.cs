@@ -219,5 +219,30 @@ namespace Nemo.Database
             return controller.GetAllMachines();
         }
         //hossam end
+
+        //Stats
+        public DataTable GetMaleFemale()
+        {
+            return controller.GetMaleFemale();
+        }
+        public DataTable GetAvgSalaries()
+        {
+            return controller.GetAvgSalaries();
+        }
+        public DataTable GetReligions()
+        {
+            return controller.GetReligions();
+        }
+        public DataTable GetTopProductionLines()
+        {
+            return controller.GetTopProductionLines();
+        }
+        public DataTable GetOldestMachines()
+        {
+            return controller.GetOldestMachines();
+        }
+
+
+
     }
 }
