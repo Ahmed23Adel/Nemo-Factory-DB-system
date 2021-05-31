@@ -60,8 +60,12 @@
     </ApplicationDefinition>
     <Compile Include="Database\AppLayer.cs" />
     <Compile Include="DEFs.cs" />
+    <Compile Include="Exceptions\JopTitleNotFound.cs" />
     <Compile Include="Manager\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\AddMachine.xaml.cs">
+      <DependentUpon>AddMachine.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
@@ -80,6 +84,12 @@
     </Compile>
     <Compile Include="Manager\UpdateEmployee.xaml.cs">
       <DependentUpon>UpdateEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\UpdateMachine.xaml.cs">
+      <DependentUpon>UpdateMachine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ViewMyProfile.xaml.cs">
+      <DependentUpon>ViewMyProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="supervisor\supervisor.xaml.cs">
       <DependentUpon>supervisor.xaml</DependentUpon>
@@ -124,6 +134,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manager\AddMachine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Manager\employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +159,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manager\UpdateEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\UpdateMachine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\ViewMyProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

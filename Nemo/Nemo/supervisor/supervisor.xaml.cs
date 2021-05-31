@@ -31,12 +31,13 @@ namespace Nemo.supervisor
             applayer = Database.AppLayer.GetInstance();
             this.username = username;
             this.password = password;
-            loadBasicData();
+            //loadBasicData();
             machinesPage = new viewAssignedMachinesPage(username);
             linesPage = new viewAssignedLinesPage(username);
             workersPage = new workersAndMachinesPage(username);
         }
-        private void loadBasicData()
+      
+        /*private void loadBasicData()
         {
             DataTable dt = applayer.GetBasicDataForUserNamePass(username, password);
             this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
@@ -44,11 +45,11 @@ namespace Nemo.supervisor
         private void loadAssignedMachines()
         {
             machinesPage.loadData(this.username);
-            supervisorframe.Content = machinesPage;
+            SupervisorFrame.Content = machinesPage;
         }private void loadAssignedLines()
         {
             linesPage.loadData(this.username);
-            supervisorframe.Content = linesPage;
+            SupervisorFrame.Content = linesPage;
         }
 
         private void SupervisorFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
@@ -59,7 +60,7 @@ namespace Nemo.supervisor
         private void loadWorkers()
         {
             workersPage.loadData(this.username);
-            supervisorframe.Content = workersPage;
-        }
+            SupervisorFrame.Content = workersPage;
+        }*/
     }
 }

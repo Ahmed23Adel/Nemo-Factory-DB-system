@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,53 @@ namespace Nemo.Manager
     /// <summary>
     /// Interaction logic for machines.xaml
     /// </summary>
+
     public partial class machines : Page
     {
-        public machines()
+
+        Database.AppLayer appLayer;
+
+        ManagerOptoins parentInstance;
+        public machines(ManagerOptoins parentInstance)
         {
             InitializeComponent();
+            appLayer = Database.AppLayer.GetInstance();
+            this.parentInstance = parentInstance;
+            loadData();
+        }
+
+        private void MenuItemUpdate(object sender, RoutedEventArgs e)
+        {
+            DataRowView drv = (DataRowView)allMachines.SelectedItem;//get selected row
+            String result = (drv["ID"]).ToString();//get the id to search by it.
+            new UpdateMachine(result, parentInstance).Show();//showing updateEmployee to update Data
+            parentInstance.Hide();
+        }
+
+        private void MenuItemDelete(object sender, RoutedEventArgs e)
+        {
+            DataRowView drv = (DataRowView)allMachines.SelectedItem;//get selected row
+            String result = (drv["ID"]).ToString();//get the id to search by it.
+            appLayer.RemoveMachineAtId(result);
+            Refresh();
+        }
+
+        private void InsertNewMachine(object sender, MouseButtonEventArgs e)
+        {
+           new AddMachine(parentInstance).Show();
+            parentInstance.Hide();
+        }
+
+        public void loadData()
+        {
+            DataTable dt = appLayer.GetAllMachines();
+            allMachines.ItemsSource = dt.DefaultView;
+        }
+
+        public void Refresh()
+        {
+            allMachines.ItemsSource = null;
+            loadData();
         }
     }
 }

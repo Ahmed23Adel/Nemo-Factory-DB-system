@@ -9,7 +9,7 @@
         Width="1200"
         WindowStartupLocation="CenterScreen"
         >
-  
+
     <!-- This is to provide margin 14 in each side-->
     <Border Background="{StaticResource WordBlueBrush}" 
             Margin="14"
@@ -39,7 +39,7 @@
                     Width="20" 
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left">
-                    
+
                     <Image.Source>
                         <BitmapImage DecodePixelWidth="200" UriSource="../Images/left-arrow.ico"/>
                     </Image.Source>
@@ -54,7 +54,7 @@
                     Width="20"          
                     RenderTransformOrigin="0.667,0.5"
                     HorizontalAlignment="Right">
-                    
+
                     <Image.Source>
                         <BitmapImage DecodePixelWidth="200" UriSource="../Images/right-arrow.ico"/>
                     </Image.Source>
@@ -65,7 +65,7 @@
 
             <!--Left and right panel left contains a stack of some options manager can see, right panel has more info manager can see if he
             clicks on one of the options provided in the left panel-->
-            
+
             <!--Left and right panel -->
             <Grid x:Name="leftRightPanel" 
                   Height="Auto">
@@ -75,9 +75,9 @@
                                  ImageSource="/Images/Backgrounds/emoji-background.png"
                                  ViewportUnits="Absolute" 
                                  Viewport="0 0 500 500"  />
-                    
+
                 </Grid.Background>
-                
+
                 <Grid.ColumnDefinitions>
                     <!--For Left panel-->
                     <ColumnDefinition Width="2.1*"/>
@@ -88,21 +88,21 @@
                 </Grid.ColumnDefinitions>
 
 
-                    <!--Left panel. Here i put stack panel of some options manager can click on to more info about it in the right panel-->
-                    <!--But I provided first the scrollViewr to enable the user to scroll if user resize it to be so small.-->
-                    <ScrollViewer 
+                <!--Left panel. Here i put stack panel of some options manager can click on to more info about it in the right panel-->
+                <!--But I provided first the scrollViewr to enable the user to scroll if user resize it to be so small.-->
+                <ScrollViewer 
                         Grid.Column="0" Grid.ColumnSpan="2" 
                         Height="Auto" 
                         VerticalScrollBarVisibility="Auto"
                         HorizontalScrollBarVisibility="Auto" 
                         Margin="0,0,0,17">
-                        
-                     <!--Left panel -->
+
+                    <!--Left panel -->
                     <StackPanel x:Name="leftPanel" >
 
-                       <!--first thing is just a word that says "You can see..." and picture of dory as hint for helping-->
+                        <!--first thing is just a word that says "You can see..." and picture of dory as hint for helping-->
                         <Grid Height="Auto">
-                            
+
                             <Grid.ColumnDefinitions>
                                 <!--For the sentence  "You can see.."-->
                                 <ColumnDefinition Width="9*"/>
@@ -116,7 +116,7 @@
                                 FontWeight="DemiBold" 
                                 Foreground="White"
                                 Margin="14 7 14 0"/>
-                            
+
                             <!--The dory image-->
                             <Image Grid.Column="1"
                                Width="40" 
@@ -132,7 +132,7 @@
 
                         </Grid>
                         <!--End of You can see button-->
-                        
+
                         <!--Extra options, for profile and settings button -->
                         <Grid Height="Auto">
                             <Grid.ColumnDefinitions>
@@ -148,7 +148,9 @@
                                 Height="20"
                                 Margin="14 4 8 4"
                                 RenderTransformOrigin="0.5,0.57"
-                                HorizontalAlignment="Left" >
+                                HorizontalAlignment="Left" 
+                                UIElement.MouseDown="ViewProfile"
+                                     >
                                 <Image.Source>
                                     <BitmapImage DecodePixelWidth="200"
                                                  UriSource="../Images/profile.ico"/>
@@ -223,8 +225,8 @@
                         <!--End of statistics row
                         -->
                         <Separator Width="200" Margin="1 1 1 1"/>
-                        
-                        
+
+
                         <!--Production lines-->
                         <Grid Height="50" UIElement.PreviewMouseDown="ProdLineClickEvent">
                             <Grid.ColumnDefinitions>
@@ -266,13 +268,13 @@
 
                         </Grid>
                         <!--End of production line row-->
-                        
+
                         <Separator Width="200" Margin="1 1 1 1"/>
 
                         <!--Employees-->
                         <Grid UIElement.PreviewMouseDown="EmpsClickedEvent" 
                             Height="50">
-                            
+
                             <Grid.ColumnDefinitions>
                                 <!--For orange rectangle-->
                                 <ColumnDefinition Width="0.3*"/>
@@ -293,7 +295,7 @@
                                       Stroke="{StaticResource WordOrangeBrush}" 
                                       StrokeThickness="15" Margin="0,0,0,0"/>
                             </StackPanel>
-                            
+
                             <!--Icon for employees-->
                             <Image  Grid.Column="1"
                                     Margin="2 10 0 10">
@@ -301,7 +303,7 @@
                                     <BitmapImage DecodePixelWidth="200" UriSource="../Images/emps.ico"/>
                                 </Image.Source>
                             </Image>
-    
+
                             <!--Employees Word-->
                             <TextBlock Grid.Column="2"  
                                    Text="Employees" 
@@ -313,7 +315,7 @@
 
                         </Grid>
                         <!--End of employee row-->
-                        
+
                         <Separator Width="200" Margin="1 1 1 1"/>
 
                         <!--Machines-->
@@ -338,7 +340,7 @@
                                       Stroke="{StaticResource WordOrangeBrush}" 
                                       StrokeThickness="15" Margin="0,0,0,0"/>
                             </StackPanel>
-                            
+
                             <!--Icon for machines-->
                             <Image  Grid.Column="1" 
                                     Margin="2 10 0 10">
@@ -357,7 +359,7 @@
                                    />
                         </Grid>
                         <!--End of machine -->
-                        
+
                         <Separator Width="200" Margin="1 1 1 1"/>
 
                     </StackPanel>

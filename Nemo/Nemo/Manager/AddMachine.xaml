@@ -1,0 +1,97 @@
+﻿<Window x:Class="Nemo.Manager.AddMachine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nemo.Manager"
+        mc:Ignorable="d"
+        Title="AddMachine" Height="450" Width="800">
+    <Border Background="{StaticResource WordBlueBrush}"
+            Margin="14">
+        <Grid >
+            <!--To prove the emoji background, -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute"
+                            Viewport="0 0 500 500"
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+            <StackPanel>
+                <Grid>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Name: " 
+                               Grid.Column="0"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White" />
+
+                            <!--First name value-->
+                            <TextBox x:Name="name" 
+                             Grid.Column="1" 
+                             FontSize="20"
+                             Margin="8 8 8 8"
+                             Foreground="White"
+                             Background="Transparent"/>
+
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Start date: " 
+                               Grid.Column="0"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White" />
+
+                            <!--First name value-->
+                            <DatePicker x:Name="startDate" 
+                                 Grid.Column="3"
+                                FontSize="20" 
+                                Margin="8 8 8 8" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+
+
+
+                <!--row of buttons for update and remove and cancel-->
+                <Grid Margin="8 16 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--Cancel-->
+                        <ColumnDefinition Width="*"/>
+                        <!--Update-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Cancel-->
+                    <Button Click="Cancel" 
+                            Grid.Column="0" 
+                            Content="Cancel"
+                            HorizontalAlignment="Center" 
+                            FontWeight="Bold" 
+                            Style="{StaticResource cancel}"/>
+
+                    <!--Update-->
+                    <Button  Click="InsertMachineClicked" 
+                             Grid.Column="2" 
+                             Content="Add"
+                             HorizontalAlignment="Center" 
+                             FontWeight="Bold"
+                             Style="{StaticResource updateEmp}"/>
+
+                </Grid>
+                <!--End of grid having emoji backgournd -->
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\
 Nemo
 none
 false
 DEBUG;TRACE
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml
-192102913361
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\App.xaml
+22-1815302679
 
-23-2126856086
+27-639204791
 13-1505183044
-Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\AddMachine.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
 
-True
+False
 

@@ -23,7 +23,7 @@ namespace Nemo.Manager
         string pasword;
         Database.AppLayer appLayer;
 
-        public ManagerOptoins(string userName,string pasword)
+        public ManagerOptoins(string userName, string pasword)
         {
             InitializeComponent();
             //I couldn't hide them from xml, as when hiding them from xml; it then doestn't approve to set the visibily to visible again
@@ -37,7 +37,7 @@ namespace Nemo.Manager
             statsPage = new Statistics();
             prodLinePage = new production_lines();
             empPage = new Employees(this);
-            machinePage = new machines();
+            machinePage = new machines(this);
 
             this.userName = userName;
             this.pasword = pasword;
@@ -52,7 +52,7 @@ namespace Nemo.Manager
         private void loadBasicData()
         {
             DataTable dt = appLayer.GetBasicDataForUserNamePass(userName, pasword);
-            this.Title = "Welcome Nemo ("+dt.Rows[0]["Fname"].ToString()+")";
+            this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
         }
 
         /// <summary>
@@ -78,11 +78,8 @@ namespace Nemo.Manager
         private void ProdLineClickEvent(object sender, MouseButtonEventArgs e)
         {
             //Here I set prodLinedClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
-            visibleFirstHideRest(prodLinedClicked,statsClicked, empsClicked, machineClicked);
+            visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked);
             //I set the prodLinePage to stas page 
-
-            //refresh (retrieve again) data of the page then show it (pass it to the frame "moreinfo")
-            prodLinePage.getAllLines();
             moreInfo.Content = prodLinePage;
         }
         /// <summary>
@@ -106,10 +103,10 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MachinesClickEvent(object sender, MouseButtonEventArgs e)
         {
-            visibleFirstHideRest(machineClicked,empsClicked, prodLinedClicked, statsClicked);
+            visibleFirstHideRest(machineClicked, empsClicked, prodLinedClicked, statsClicked);
             moreInfo.Content = machinePage;
         }
-        
+
         /// <summary>
         /// Event when user clicks on Collapse button, to collapse left panel
         /// </summary>
@@ -128,6 +125,12 @@ namespace Nemo.Manager
         private void ExpandEvent(object sender, MouseButtonEventArgs e)
         {
             expandAll();
+        }
+
+        private void ViewProfile(object sender, MouseButtonEventArgs e)
+        {
+            new ViewMyProfile(userName, pasword, this).Show();
+            this.Hide();
         }
         /// <summary>
         /// It collapse the left panel that contains stackPanel of {Stats,empoloyes,machies, and procution lines}
@@ -155,7 +158,7 @@ namespace Nemo.Manager
             leftRightPanel.ColumnDefinitions.Add(d2);
             leftRightPanel.ColumnDefinitions.Add(d3);
         }
-        
+
         //it expands the the left panel, and then I set ratio to origianl one provided in xaml code.
         private void expandAll()
         {
@@ -196,7 +199,7 @@ namespace Nemo.Manager
             l4.Visibility = Visibility.Hidden;
         }
 
-       
+
         /// <summary>
         /// Modified Show
         /// This used for example
@@ -206,6 +209,16 @@ namespace Nemo.Manager
         public void ModShow()
         {
             empPage.Refresh();
+            machinePage.Refresh();
+            this.Show();
+        }
+
+        public void ModShow(string userName, string pasword)
+        {
+            this.userName = userName;
+            this.pasword = pasword;
+            empPage.Refresh();
+            machinePage.Refresh();
             this.Show();
         }
     }

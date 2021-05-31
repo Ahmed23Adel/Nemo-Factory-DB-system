@@ -78,27 +78,35 @@ namespace Nemo
         private void checkUserNamePass()
         {
 
-            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.NONE)
+           
+            try
             {
-                ifNum0PrintFOrS("User name or password is wrong", "But you swore! User name or password is still wrong");
-                
-            }
+                if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.NONE)
+                {
+                    ifNum0PrintFOrS("User name or password is wrong", "But you swore! User name or password is still wrong");
 
-            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
+                }
+                if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
+                {
+                    new Manager.ManagerOptoins(userName.Text, password.Password).Show();
+                    this.Close();
+                }
+                if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.SPRVSR)
+                {
+                    new supervisor.supervisor(userName.Text, password.Password).Show();
+                    this.Close();
+                }
+                if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.WRKR)
+                {
+                    new Worker.worker(userName.Text, password.Password).Show();
+                    this.Close();
+                }
+            }
+            catch (Exceptions.JopTitleNotFound e)
             {
-                new Manager.ManagerOptoins(userName.Text, password.Password).Show();
-                this.Close();
-            }    
-            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.SPRVSR)
-            {
-                new supervisor.supervisor(userName.Text, password.Password).Show();
-                this.Close();
-            }    
-            if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.WRKR)
-            {
-                new Worker.worker(userName.Text, password.Password).Show();
-                this.Close();
-            }    
+                MessageBox.Show("Actually user name and password exist in our database, but there is no jop title; we can't direct you to prober window. \n please contact you supervisor or manager","Fatal Error",MessageBoxButton.OKCancel,MessageBoxImage.Error);
+            }
+            
             
         }
 
