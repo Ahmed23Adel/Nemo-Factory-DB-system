@@ -14,8 +14,8 @@
 
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
         <Grid Background="#FFDAE6FF" >
-           
-            <DataGrid x:Name="prodLinesGrid" AutoGenerateColumns="True" FontSize="20">
+
+            <DataGrid x:Name="prodLinesGrid" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20">
                 <DataGrid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="#FF94EDD2" Offset="0"/>
@@ -24,10 +24,18 @@
                 </DataGrid.Background>
 
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Name" Width="*" />
-                    <DataGridTextColumn Header="ID" Width="*" />
-                    <DataGridTextColumn Header="Location" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
+                                        Header="Name" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
+                                        Header="ID" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Location}"
+                                        Header="Location" Width="*" />
                 </DataGrid.Columns>
+
+
+
+
+
             </DataGrid>
         </Grid>
 

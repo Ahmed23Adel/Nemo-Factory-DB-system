@@ -22,6 +22,7 @@ namespace Nemo.Worker
     {
         Database.AppLayer applayer;
         string username, password;
+        DataTable transcript;
         public worker(string username, string password)
         {
             InitializeComponent();
@@ -29,15 +30,25 @@ namespace Nemo.Worker
             this.username = username;
             this.password = password;
             loadBasicData();
-
+            getTranscript();
         }
 
         private void loadBasicData()
         {
             DataTable dt = applayer.GetBasicDataForUserNamePass(username, password);
             this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
-            
-        }
 
+        }
+        private void getTranscript()
+        {
+            transcript = applayer.loadWorkerTranscript(username);
+            DataRow row = transcript.Rows[0];
+            txtName.Text = (row["fname"].ToString() + " " + row["Lname"].ToString());
+            txtID.Text = row["id"].ToString();
+            txtBalance.Text = row["balance"].ToString();
+            txtSalary.Text = row["salary"].ToString();
+            //txtSupervisor.Text = row["id"].ToString();
+            //txtMachine.Text = row["id"].ToString();
+        }
     }
 }

@@ -35,6 +35,11 @@ namespace Nemo.supervisor
         {
             data = applayer.getAssignedLines(userName);
             assignedProdLinesGrid.ItemsSource = data.DefaultView;
+
         }
+
+
+
+
     }
 }

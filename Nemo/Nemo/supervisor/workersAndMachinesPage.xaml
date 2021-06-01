@@ -11,7 +11,7 @@
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
         <Grid Background="#FFDAE6FF" >
 
-            <DataGrid x:Name="workersAndMachinesGrid" AutoGenerateColumns="True"  FontSize="20">
+            <DataGrid x:Name="workersAndMachinesGrid" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20">
                 <DataGrid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="#FF94EDD2" Offset="0"/>
@@ -20,10 +20,12 @@
                 </DataGrid.Background>
 
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Employee name" Width="*" />
-                    <DataGridTextColumn Header="Employee ID" Width="*" />
-                    <DataGridTextColumn Header="Machine name" Width="*" />
-                    <DataGridTextColumn Header="Line name" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
+                                        Header="Name" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
+                                        Header="ID" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Location}"
+                                        Header="Location" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

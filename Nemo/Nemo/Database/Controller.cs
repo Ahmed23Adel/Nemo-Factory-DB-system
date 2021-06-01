@@ -146,36 +146,7 @@ namespace Nemo.Database
                 ", '" + nationalID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-        public DataTable viewAssignedMachines(string username)
-        {
-            string query = "SELECT ID, Start_date" +
-                "from machine,Line_has_machine, manage " +
-                "where machine.ID= machine_id and Line_id=prodLine_id and Supervisor_id=employee.ID and employee.username= '"+username+"' ";
-            return dbMan.ExcuteReader(query);
-
-        }
-        public DataTable getAllLines()
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-
-        public DataTable loadWorkerData(string userName)
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-        public DataTable getAssignedLines(string userName)
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-        public DataTable getWorkersAndMachines(string userName)
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-
+      
         public DataTable GetMachineAtId(string id)
         {
             string query = "SELECT * FROM Machine WHERE ID = '" + id + "';";
@@ -242,6 +213,39 @@ namespace Nemo.Database
                             " ORDER BY Start_date ASC";
             return dbMan.ExcuteReader(query);
         }
+        //hossam
+
+        public DataTable viewAssignedMachines(string username)
+        {
+            string query = "SELECT ID, Start_date" +
+                "from machine,Line_has_machine, manage " +
+                "where machine.ID= machine_id and Line_id=prodLine_id and Supervisor_id=employee.ID and employee.username= '" + username + "' ";
+            return dbMan.ExcuteReader(query);
+
+        }
+        public DataTable getAllLines()
+        {
+            string query = "select * from Production_line";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable loadWorkerTranscript(string userName)
+        {
+            string query = " select * from employee where username='" + userName + "'   ";
+            return dbMan.ExcuteReader(query);
+        }
+        public DataTable getAssignedLines(string userName)
+        {
+            string query = "";
+            return dbMan.ExcuteReader(query);
+        }
+        public DataTable getWorkersAndMachines(string userName)
+        {
+            string query = "";
+            return dbMan.ExcuteReader(query);
+        }
+        //hossam
+
 
     }
 }
