@@ -43,10 +43,13 @@ namespace Nemo.Worker
         {
             transcript = applayer.loadWorkerTranscript(username);
             DataRow row = transcript.Rows[0];
-            txtName.Text = (row["fname"].ToString() + " " + row["Lname"].ToString());
+            txtName.Text = row["name"].ToString();
             txtID.Text = row["id"].ToString();
             txtBalance.Text = row["balance"].ToString();
             txtSalary.Text = row["salary"].ToString();
+            txtMachine.Text = row["Machine"].ToString();
+            txtSupervisor.Text = row["supervisor"].ToString();
+
             //txtSupervisor.Text = row["id"].ToString();
             //txtMachine.Text = row["id"].ToString();
         }

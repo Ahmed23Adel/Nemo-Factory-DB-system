@@ -79,8 +79,11 @@ namespace Nemo.Manager
         {
             //Here I set prodLinedClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
             visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked);
-            //I set the prodLinePage to stas page 
+
             moreInfo.Content = prodLinePage;
+
+
+
         }
         /// <summary>
         /// This event is called when user clicks on employees line row to see more .

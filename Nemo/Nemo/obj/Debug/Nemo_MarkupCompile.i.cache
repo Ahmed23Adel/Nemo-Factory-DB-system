@@ -1,0 +1,20 @@
+﻿Nemo
+
+
+winexe
+C#
+.cs
+H:\New folder\hh\Nemo\Nemo\obj\Debug\
+Nemo
+none
+false
+DEBUG;TRACE
+H:\New folder\hh\Nemo\Nemo\App.xaml
+231200860976
+
+29-1424508901
+15595421106
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\addLinePage.xaml;Manager\AddMachine.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
+
+True
+

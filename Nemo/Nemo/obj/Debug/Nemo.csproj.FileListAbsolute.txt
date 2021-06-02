@@ -261,3 +261,5 @@ H:\New folder\hh\Nemo\Nemo\obj\Debug\Nemo.Properties.Resources.resources
 H:\New folder\hh\Nemo\Nemo\obj\Debug\Nemo.csproj.GenerateResource.cache
 H:\New folder\hh\Nemo\Nemo\obj\Debug\Nemo.csproj.CoreCompileInputs.cache
 H:\New folder\hh\Nemo\Nemo\obj\Debug\Nemo.csproj.CopyComplete
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\addLinePage.g.cs
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\addLinePage.baml

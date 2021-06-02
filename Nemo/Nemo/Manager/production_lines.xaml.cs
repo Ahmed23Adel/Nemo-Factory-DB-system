@@ -30,7 +30,7 @@ namespace Nemo.Manager
         }
         public void getAllLines()
         {
-            prodLinesGrid.ItemsSource = applayer.getAllLines().DefaultView;
+            //prodLinesGrid.ItemsSource = applayer.getAllLines().DefaultView;
         }
 
 

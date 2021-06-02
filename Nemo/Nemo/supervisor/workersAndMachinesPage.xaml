@@ -21,11 +21,11 @@
 
                 <DataGrid.Columns >
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
-                                        Header="Name" Width="*" />
+                                        Header="Worker name" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
-                                        Header="ID" Width="*" />
-                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Location}"
-                                        Header="Location" Width="*" />
+                                        Header="Worker ID" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Machine}"
+                                        Header="Machine" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

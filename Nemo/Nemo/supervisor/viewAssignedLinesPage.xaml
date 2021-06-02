@@ -9,12 +9,12 @@
       Title="viewAssignedLinesPage">
 
 
-    <!--End of context menu-->
 
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
         <Grid Background="#FFDAE6FF" >
 
-            <DataGrid x:Name="assignedProdLinesGrid" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20">
+            <DataGrid x:Name="assignedProdLinesGrid"
+                      CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20">
 
 
 
@@ -29,9 +29,9 @@
 
                 <DataGrid.Columns >
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
-                                        Header="Name" Width="*" />
+                                        Header="Line name" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
-                                        Header="ID" Width="*" />
+                                        Header="Line ID" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Location}"
                                         Header="Location" Width="*" />
                 </DataGrid.Columns>

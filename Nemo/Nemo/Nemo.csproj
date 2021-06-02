@@ -70,6 +70,9 @@
     <Compile Include="Manager\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\addLinePage.xaml.cs">
+      <DependentUpon>addLinePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager\AddMachine.xaml.cs">
       <DependentUpon>AddMachine.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Manager\AddEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\addLinePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -78,6 +78,7 @@ namespace Nemo.Database
             }
             catch (Exception e)
             {
+                MessageBox.Show("3" + query);
                 return new DataTable();
             }
         }
