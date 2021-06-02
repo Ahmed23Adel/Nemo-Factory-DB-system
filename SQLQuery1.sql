@@ -9,11 +9,12 @@ CREATE TABLE Employee(
 Fname nvarchar(50),
 Lname nvarchar(50),
 Balance float,
+salary float,
 ID int IDENTITY(1,1) ,
 userName nvarchar(50) UNIQUE,
 password nvarchar(50),
-Bdata DATE,
-Jop_title nvarchar(50),
+Bdata DATE, 
+Jop_title nvarchar(50) not null,
 NationalId char(14),
 Gender char(1),
 Address nvarchar(50),
@@ -24,9 +25,9 @@ PRIMARY KEY (ID)
 
 
 CREATE TABLE Machine(
+Name nvarchar(20),
 ID int  IDENTITY(1,1), /*Should it be string or number?*/
 Start_date DATE,
-Name nvarchar(20),
 PRIMARY KEY(ID)
 );
 
@@ -46,27 +47,16 @@ FOREIGN KEY (Emp_id) REFERENCES  Employee
 );
 
 CREATE TABLE Production_line(
-ID int,
+name nvarchar(20),
+ID int IDENTITY(1,1),
 Location nvarchar(50),
-PRIMARY KEY(ID)
-)
-
-
-CREATE TABLE Manage(
 Supervisor_id int,
-prodLine_id int,
-PRIMARY KEY(Supervisor_id, prodLine_id),
+PRIMARY KEY(ID),
 FOREIGN KEY (Supervisor_id) REFERENCES Employee
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION,
-
-FOREIGN KEY (prodLine_id) REFERENCES Production_line
-	ON DELETE CASCADE
-	ON UPDATE CASCADE,
-
-
-
 )
+
 
 
 CREATE TABLE Line_has_machine(
