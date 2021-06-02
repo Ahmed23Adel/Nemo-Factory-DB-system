@@ -12,27 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data;
+
 namespace Nemo.Manager
 {
     /// <summary>
-    /// Interaction logic for production_lines.xaml
+    /// Interaction logic for addLinePage.xaml
     /// </summary>
-    public partial class production_lines : Page
+    public partial class addLinePage : Page
     {
-
-        Database.AppLayer applayer;
-        public production_lines()
+        public addLinePage()
         {
             InitializeComponent();
-            applayer = Database.AppLayer.GetInstance();
-            getAllLines();
         }
-        public void getAllLines()
-        {
-            //prodLinesGrid.ItemsSource = applayer.getAllLines().DefaultView;
-        }
-
-
     }
 }

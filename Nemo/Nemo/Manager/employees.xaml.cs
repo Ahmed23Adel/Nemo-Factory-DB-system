@@ -118,7 +118,13 @@ namespace Nemo.Manager
             new AddEmployee(parentInstance).Show();
             parentInstance.Hide();
         }
-
+        /*
+         * private void AddLine(object sender, RoutedEventArgs e)
+        {
+            new AddEmployee(parentInstance).Show();
+            parentInstance.Hide();
+        }
+         */
         /// <summary>
         /// It loads again the dat in dataGrid by removing last values and select them again.
         /// </summary>

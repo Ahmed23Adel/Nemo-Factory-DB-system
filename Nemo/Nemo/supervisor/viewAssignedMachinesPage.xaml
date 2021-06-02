@@ -9,11 +9,14 @@
       Title="viewAssignedMachinesPage">
 
 
-
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
         <Grid Background="#FFDAE6FF" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="595*"/>
+                <ColumnDefinition Width="177*"/>
+            </Grid.ColumnDefinitions>
 
-            <DataGrid x:Name="machinesGrid" AutoGenerateColumns="True"  FontSize="20">
+            <DataGrid x:Name="machinesGrid" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20" Grid.ColumnSpan="2" Margin="0,0,0,-0.4">
                 <DataGrid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="#FF94EDD2" Offset="0"/>
@@ -22,9 +25,14 @@
                 </DataGrid.Background>
 
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Machine name" Width="*" />
-                    <DataGridTextColumn Header="Machine ID" Width="*" />
-                    <DataGridTextColumn Header="Line name" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
+                                        Header="Machine name" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
+                                        Header="ID" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Date}"
+                                        Header="Start Date" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Line}"
+                                        Header="Line" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

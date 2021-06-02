@@ -146,36 +146,7 @@ namespace Nemo.Database
                 ", '" + nationalID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-        public DataTable viewAssignedMachines(string username)
-        {
-            string query = "SELECT ID, Start_date" +
-                "from machine,Line_has_machine, manage " +
-                "where machine.ID= machine_id and Line_id=prodLine_id and Supervisor_id=employee.ID and employee.username= '"+username+"' ";
-            return dbMan.ExcuteReader(query);
-
-        }
-        public DataTable getAllLines()
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-
-        public DataTable loadWorkerData(string userName)
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-        public DataTable getAssignedLines(string userName)
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-        public DataTable getWorkersAndMachines(string userName)
-        {
-            string query = "";
-            return dbMan.ExcuteReader(query);
-        }
-
+      
         public DataTable GetMachineAtId(string id)
         {
             string query = "SELECT * FROM Machine WHERE ID = '" + id + "';";
@@ -243,6 +214,57 @@ namespace Nemo.Database
                             " ORDER BY Start_date ASC ";
             return dbMan.ExcuteReader(query);
         }
+
+////////hossam
+
+        public DataTable viewAssignedMachines(string username)
+        {
+            string query = 
+                    "select m.Name,m.ID,m.Start_date as Date,p.name as Line"+
+                    " from Machine as m join Line_has_machine as lm on m.ID = lm.machine_id"+
+                    " join Production_line as p on p.ID = lm.Line_id"+
+                    " join Employee as sup on sup.ID = p.Supervisor_id"+
+                    " where userName = 'supervisor1'";
+            return dbMan.ExcuteReader(query);
+        } 
+
+        public DataTable getAllLines()
+        {
+            string query = "select Name,p.ID as ID,Location,CONCAT(Fname,' ',Lname) as Supervisor from" +
+                " production_line as p join employee as e on Supervisor_id=e.ID ";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable loadWorkerTranscript(string userName)
+        {
+            string query = "select CONCAT(e.Fname,' ',e.Lname) as Name, e.ID as ID, e.salary, e.balance," +
+                            "m.Name as Machine, CONCAT(sup.Fname, ' ', sup.Lname) as Supervisor" +
+                            " from employee as e" +
+                            " join Works_on as w on e.ID = w.Emp_id" +
+                            " join Machine as m on m.ID = w.Machine_id" +
+                            " join Line_has_machine as l on l.machine_id = w.Machine_id" +
+                            " join Production_line as p on l.Line_id = p.ID" +
+                            " join Employee as sup on sup.ID = p.Supervisor_id" +
+                            " where e.userName = '"+userName+"'";
+
+            return dbMan.ExcuteReader(query);
+        }
+        
+        public DataTable getAssignedLines(string userName)
+        {
+            string query = "select Name,p.ID,Location"+
+                           " from Production_line as p , Employee as sup"+
+                           " where p.Supervisor_id = sup.ID and sup.userName ='"+userName+"'";
+            return dbMan.ExcuteReader(query);
+        }
+        public DataTable getWorkersAndMachines(string userName)
+        {
+            string query = "select CONCAT(e.Fname,' ',e.Lname)AS Name, e.ID as ID, m.Name as Machine"+
+" from(Employee as e join Works_on as w on w.Emp_id = e.ID) join Machine as m on m.ID = w.Machine_id";
+            return dbMan.ExcuteReader(query);
+        }
+////////hossam
+
 
     }
 }

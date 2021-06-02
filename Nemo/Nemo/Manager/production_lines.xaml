@@ -13,22 +13,61 @@
 
 
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
-        <Grid Background="#FFDAE6FF" >
-           
-            <DataGrid x:Name="prodLinesGrid" AutoGenerateColumns="True" FontSize="20">
-                <DataGrid.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FF94EDD2" Offset="0"/>
-                        <GradientStop Color="#FF3099C5" Offset="1"/>
-                    </LinearGradientBrush>
-                </DataGrid.Background>
+
+        <Grid >
+
+            <!--To prove the emoji background, -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute"
+                            Viewport="0 0 500 500"
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+            <StackPanel>
+
+
+                <!--Image for add button to add new Employee-->
+                <Image 
+                    Height="30"
+                    Margin="16  4 16 4"
+                    RenderTransformOrigin="0.5,0.57"
+                    Width="35" 
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right">
+
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="400" UriSource="../Images/plus.ico"/>
+                    </Image.Source>
+                </Image>
+                
+                <DataGrid x:Name="prodLinesGrid"
+                          
+                    Margin="14 14 14 14" 
+                    Background="Transparent" 
+                    Foreground="Black"  
+                    RowBackground="Transparent"
+                    Style="{StaticResource dGrid}" 
+                    CanUserAddRows="False" AutoGenerateColumns="False"
+                          FontSize="20">
+                
 
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Name" Width="*" />
-                    <DataGridTextColumn Header="ID" Width="*" />
-                    <DataGridTextColumn Header="Location" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
+                                        Header="Name" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
+                                        Header="ID" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Location}"
+                                        Header="Location" Width="*" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Supervisor}"
+                                        Header="Supervisor" Width="*" />
                 </DataGrid.Columns>
+
+
+
+
+
             </DataGrid>
+            </StackPanel>
         </Grid>
 
     </Border>

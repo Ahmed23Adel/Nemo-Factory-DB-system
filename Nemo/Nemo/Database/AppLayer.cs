@@ -128,14 +128,16 @@ namespace Nemo.Database
 
         //hossam
 
+        //hossam
+
         public DataTable loadAssignedMachines(string username)
         {
             return controller.viewAssignedMachines(username);
         }
 
-        public DataTable loadWorkerData(string userName)
+        public DataTable loadWorkerTranscript(string userName)
         {
-            return controller.loadWorkerData(userName);
+            return controller.loadWorkerTranscript(userName);
         }
         public DataTable getAssignedLines(string userName)
         {
@@ -150,6 +152,8 @@ namespace Nemo.Database
         {
             return controller.getAllLines();
         }
+
+        //hossam end
 
         public int RemoveMachineAtId(string id)
         {
@@ -218,7 +222,7 @@ namespace Nemo.Database
         {
             return controller.GetAllMachines();
         }
-        //hossam end
+        
 
         //Stats
         public DataTable GetMaleFemale()
