@@ -44,10 +44,13 @@ namespace Nemo.Manager
 
         private void MenuItemDelete(object sender, RoutedEventArgs e)
         {
-            DataRowView drv = (DataRowView)allMachines.SelectedItem;//get selected row
-            String result = (drv["ID"]).ToString();//get the id to search by it.
-            appLayer.RemoveMachineAtId(result);
-            Refresh();
+            if (MessageBox.Show("Are you sure you want to delete this this?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                DataRowView drv = (DataRowView)allMachines.SelectedItem;//get selected row
+                String result = (drv["ID"]).ToString();//get the id to search by it.
+                appLayer.RemoveMachineAtId(result);
+                Refresh();
+            }
         }
 
         private void InsertNewMachine(object sender, MouseButtonEventArgs e)

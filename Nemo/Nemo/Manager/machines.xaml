@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Nemo.Manager"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="800"
       Title="machines">
 
     <Page.Resources>
@@ -22,21 +22,22 @@
     <!--End of context menu-->
 
 
-    <!--This is give good looking 14 maring in evey way-->
-    <Border Background="{StaticResource WordBlueBrush}"
+    <ScrollViewer MaxHeight="700" VerticalScrollBarVisibility="Auto">
+        <!--This is give good looking 14 maring in evey way-->
+        <Border Background="{StaticResource WordBlueBrush}"
             Margin="14">
-        <Grid >
-            <!--To prove the emoji background, -->
-            <Grid.Background>
-                <ImageBrush TileMode="Tile"
+            <Grid >
+                <!--To prove the emoji background, -->
+                <Grid.Background>
+                    <ImageBrush TileMode="Tile"
                             ViewportUnits="Absolute"
                             Viewport="0 0 500 500"
                             ImageSource="/Images/Backgrounds/emoji-background.png" />
-            </Grid.Background>
-            <!--StackPanel that contains add button and Grid View-->
-            <StackPanel>
-                <!--Image for add button to add new Employee-->
-                <Image UIElement.MouseDown="InsertNewMachine"
+                </Grid.Background>
+                <!--StackPanel that contains add button and Grid View-->
+                <StackPanel>
+                    <!--Image for add button to add new Employee-->
+                    <Image UIElement.MouseDown="InsertNewMachine"
                     Height="30"
                     Margin="16  4 16 4"
                     RenderTransformOrigin="0.5,0.57"
@@ -44,12 +45,12 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Right">
 
-                    <Image.Source>
-                        <BitmapImage DecodePixelWidth="400" UriSource="../Images/plus.ico"/>
-                    </Image.Source>
-                </Image>
+                        <Image.Source>
+                            <BitmapImage DecodePixelWidth="400" UriSource="../Images/plus.ico"/>
+                        </Image.Source>
+                    </Image>
 
-                <DataGrid
+                    <DataGrid
                     x:Name="allMachines"
                     Margin="14 14 14 14" 
                     Background="Transparent" 
@@ -61,34 +62,35 @@
                     CanUserAddRows="False"
                      FontSize="20"
                     >
-                    <!--This is for, if user right clicked on any row in dataGrid it should show this contextMenu-->
-                    <DataGrid.CellStyle>
-                        <Style TargetType="DataGridCell">
-                            <Setter Property="ContextMenu" Value="{StaticResource rowsOptions}" />
-                        </Style>
-                    </DataGrid.CellStyle>
-                    <!--End of ContextMenu showing-->
+                        <!--This is for, if user right clicked on any row in dataGrid it should show this contextMenu-->
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource rowsOptions}" />
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <!--End of ContextMenu showing-->
 
-                    <!--Columns defintion, Here I say when data comes what columns From DataTable which is coming from DataTable to choose-->
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" 
+                        <!--Columns defintion, Here I say when data comes what columns From DataTable which is coming from DataTable to choose-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" 
                                             FontSize="20" Width="*"
                                             Foreground="White"
                                             Binding="{Binding Path=Name,  Mode=OneWay}"
                                             />
-                        <DataGridTextColumn  Header="Start Date"
+                            <DataGridTextColumn  Header="Start Date"
                                              FontSize="20" Width="*" 
                                              Foreground="White" 
                                              Binding="{Binding Path=Start_date ,  Mode=OneWay}"/>
 
 
 
-                    </DataGrid.Columns>
-                    <!--End of columns definition-->
-                </DataGrid>
-                <!--End of dataGrid-->
-            </StackPanel>
-        </Grid>
+                        </DataGrid.Columns>
+                        <!--End of columns definition-->
+                    </DataGrid>
+                    <!--End of dataGrid-->
+                </StackPanel>
+            </Grid>
 
-    </Border>
+        </Border>
+    </ScrollViewer>
 </Page>

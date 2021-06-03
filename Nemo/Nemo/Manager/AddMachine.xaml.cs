@@ -43,6 +43,9 @@ namespace Nemo.Manager
 
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             this.Close();
             parentInstance.Show();
         }
@@ -54,6 +57,9 @@ namespace Nemo.Manager
 
         public void InsertNewMahice()
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/sent.mp3", UriKind.Relative));
+            mplayer.Play();
             appLayer.InsertMachine(name.Text, startDate.Text);
 
         }

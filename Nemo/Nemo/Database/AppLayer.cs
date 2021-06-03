@@ -61,29 +61,68 @@ namespace Nemo.Database
         {
             return controller.selectAllEmps();
         }
+        
+        public DataTable selectAllEmpsForSending()
+        {
+            return controller.selectAllEmpsForSending();
+        }
         public DataTable SelectEmpAtId(string id)
         {
             return controller.selectEmpAtId(id);
         }
 
-        public int UpdateEmpAtId(string id, string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password)
+        public int UpdateEmpAtId(string id, string Fname, string Lname, string salary, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status)
         {
             if (string.IsNullOrEmpty(Fname))
                 Fname = "NULL";
+            else
+                Fname = "'" + Fname + "'";
             if (string.IsNullOrEmpty(Lname))
                 Lname = "NULL";
-            if (string.IsNullOrEmpty(Balance))
-                Balance = "NULL";
+            else
+                Lname = "'" + Lname + "'";
+            if (string.IsNullOrEmpty(salary))
+                salary = "NULL";
+            else
+                salary = "" + salary + "";
             if (string.IsNullOrEmpty(Bdata))
-                Bdata = null;
+                Bdata = "NULL";
+            else
+                Bdata = "'" + Bdata + "'";
             if (string.IsNullOrEmpty(Jop_title))
                 Jop_title = "NULL";
+            else
+                Jop_title = "'" + Jop_title + "'";
             if (string.IsNullOrEmpty(userName))
                 userName = "NULL";
+            else
+                userName = "'" + userName + "'";
             if (string.IsNullOrEmpty(password))
                 password = "NULL";
+            else
+                password = "'" + password + "'";
+            if (string.IsNullOrEmpty(nationalID))
+                nationalID = "NULL";
+            else
+                nationalID = "'" + nationalID + "'";
+            if (string.IsNullOrEmpty(Gender))
+                Gender = "NULL";
+            else
+                Gender = "'" + Gender + "'";
+            if (string.IsNullOrEmpty(Address))
+                Address = "NULL";
+            else
+                Address = "'" + Address + "'";
+            if (string.IsNullOrEmpty(Religion))
+                Religion = "NULL";
+            else
+                Religion = "'" + Religion + "'";
+            if (string.IsNullOrEmpty(Status))
+                Status = "NULL";
+            else
+                Status = "'" + Status + "'";
 
-            return controller.updateEmpAtId(id, Fname, Lname, Balance, Bdata, Jop_title, userName, password);
+            return controller.updateEmpAtId( id, Fname, Lname, salary, Bdata, Jop_title, userName, password, nationalID, Gender, Address, Religion, Status);
 
         }
         public int DeleteAtId(string id)
@@ -105,25 +144,57 @@ namespace Nemo.Database
             return controller.UpdateJopDesc(id, "S");
         }
 
-        public int InsertEmp(string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password, string nationalID)
+        public int InsertEmp(string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status)
         {
             if (string.IsNullOrEmpty(Fname))
                 Fname = "NULL";
+            else
+                Fname = "'"+ Fname + "'";
             if (string.IsNullOrEmpty(Lname))
                 Lname = "NULL";
+            else
+                Lname = "'" + Lname + "'";
             if (string.IsNullOrEmpty(Balance))
                 Balance = "NULL";
+            else
+                Balance = "" + Balance + "";
             if (string.IsNullOrEmpty(Bdata))
-                Bdata = null;
+                Bdata = "NULL";
+            else
+                Bdata = "'" + Bdata + "'";
             if (string.IsNullOrEmpty(Jop_title))
                 Jop_title = "NULL";
+            else
+                Jop_title = "'" + Jop_title + "'";
             if (string.IsNullOrEmpty(userName))
                 userName = "NULL";
+            else
+                userName = "'" + userName + "'";
             if (string.IsNullOrEmpty(password))
                 password = "NULL";
+            else
+                password = "'" + password + "'";
             if (string.IsNullOrEmpty(nationalID))
                 nationalID = "NULL";
-            return controller.InsertEmp(Fname, Lname, Balance, Bdata, Jop_title, userName, password, nationalID);
+            else
+                nationalID = "'" + nationalID + "'";
+            if (string.IsNullOrEmpty(Gender))
+                Gender = "NULL";
+            else
+                Gender = "'" + Gender + "'";
+            if (string.IsNullOrEmpty(Address))
+                Address = "NULL";
+            else
+                Address = "'" + Address + "'";
+            if (string.IsNullOrEmpty(Religion))
+                Religion = "NULL";
+            else
+                Religion = "'" + Religion + "'";
+            if (string.IsNullOrEmpty(Status))
+                Status = "NULL";
+            else
+                Status = "'" + Status + "'";
+            return controller.InsertEmp( Fname, Lname, Balance, Bdata, Jop_title, userName, password, nationalID, Gender, Address, Religion, Status);
         }
 
         //hossam
@@ -189,33 +260,57 @@ namespace Nemo.Database
             return controller.GetMachineAtId(id);
         }
 
-        public int UpdateaEmpAtUserNamePass(string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status, string oldUserName, string oldPass)
+        public int UpdateaEmpAtUserNamePass(string Fname, string Lname, string salary, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status, string oldUserName, string oldPass)
         {
             if (string.IsNullOrEmpty(Fname))
                 Fname = "NULL";
+            else
+                Fname = "'" + Fname + "'";
             if (string.IsNullOrEmpty(Lname))
                 Lname = "NULL";
-            if (string.IsNullOrEmpty(Balance))
-                Balance = "NULL";
+            else
+                Lname = "'" + Lname + "'";
+            if (string.IsNullOrEmpty(salary))
+                salary = "NULL";
+            else
+                salary = "" + salary + "";
             if (string.IsNullOrEmpty(Bdata))
-                Bdata = null;
+                Bdata = "NULL";
+            else
+                Bdata = "'" + Bdata + "'";
             if (string.IsNullOrEmpty(Jop_title))
                 Jop_title = "NULL";
+            else
+                Jop_title = "'" + Jop_title + "'";
             if (string.IsNullOrEmpty(userName))
                 userName = "NULL";
+            else
+                userName = "'" + userName + "'";
             if (string.IsNullOrEmpty(password))
                 password = "NULL";
-            if (string.IsNullOrEmpty(Gender))
-                Gender = "NULL";
-            if (string.IsNullOrEmpty(Address))
-                Address = "NULL";
+            else
+                password = "'" + password + "'";
             if (string.IsNullOrEmpty(nationalID))
                 nationalID = "NULL";
+            else
+                nationalID = "'" + nationalID + "'";
+            if (string.IsNullOrEmpty(Gender))
+                Gender = "NULL";
+            else
+                Gender = "'" + Gender + "'";
+            if (string.IsNullOrEmpty(Address))
+                Address = "NULL";
+            else
+                Address = "'" + Address + "'";
             if (string.IsNullOrEmpty(Religion))
                 Religion = "NULL";
+            else
+                Religion = "'" + Religion + "'";
             if (string.IsNullOrEmpty(Status))
                 Status = "NULL";
-            return controller.UpdateaEmpAtUserNamePass(Fname, Lname, Balance, Bdata, Jop_title, userName, password, nationalID, Gender, Address, Religion, Status, oldUserName, oldPass);
+            else
+                Status = "'" + Status + "'";
+            return controller.UpdateaEmpAtUserNamePass(Fname, Lname, salary, Bdata, Jop_title, userName, password, nationalID, Gender, Address, Religion, Status, oldUserName, oldPass);
 
 
         }
@@ -228,8 +323,12 @@ namespace Nemo.Database
         {
             if (string.IsNullOrEmpty(name))
                 name = "NULL";
+            else
+                name = "'" + name + "'";
             if (string.IsNullOrEmpty(startDate))
                 startDate = "NULL";
+            else
+                startDate = "'" + startDate + "'";
 
             return controller.InsertMachine(name, startDate);
         }
@@ -259,6 +358,37 @@ namespace Nemo.Database
         public DataTable GetOldestMachines()
         {
             return controller.GetOldestMachines();
+        }
+        public DataTable SelectHighestPeopleReside()
+        {
+            return controller.SelectHighestPeopleReside();
+        }
+        public DataTable GetNumEmps()
+        {
+            return controller.GetNumEmps();
+        }
+        public DataTable GetNumReligions()
+        {
+            return controller.GetNumReligions();
+        }
+        public int InsertMsgToEmps(string userName,string password, string subject, string msg, DataTable toEmps)
+        {
+            if (string.IsNullOrEmpty(subject))
+                subject = "NULL";
+            else
+                subject = "'" + subject + "'";
+            if (string.IsNullOrEmpty(msg))
+                msg = "NULL";
+            else
+                msg = "'" + msg + "'";
+
+            DataTable dt = selectEmpAtUserNamePass(userName, password);
+            string senderId =dt.Rows[0]["ID"].ToString();
+            return controller.InsertMsgToEmps(senderId, subject, msg, toEmps);
+        }
+        public DataTable SelectAllRecievedMsgs(string userName, string password)
+        {
+            return controller.SelectAllRecievedMsgs(userName, password);
         }
 
 
