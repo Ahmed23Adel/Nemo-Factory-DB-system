@@ -160,6 +160,14 @@ namespace Nemo.Database
         {
             return controller.insertLine(name,location,supervisor);
         }
+        public int deleteLine(string lineID)
+        {
+            return controller.deleteLine(int.Parse(lineID));
+        }
+        public int deleteMachine(string machineID)
+        {
+            return controller.deleteMachine(int.Parse(machineID));
+        }
         //hossam end
 
         public int RemoveMachineAtId(string id)

@@ -304,5 +304,8 @@
   <ItemGroup>
     <Resource Include="supervisor\back.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="supervisor\myBack.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

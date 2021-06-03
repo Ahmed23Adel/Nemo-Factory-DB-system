@@ -225,7 +225,7 @@ namespace Nemo.Database
                     " from Machine as m join Line_has_machine as lm on m.ID = lm.machine_id"+
                     " join Production_line as p on p.ID = lm.Line_id"+
                     " join Employee as sup on sup.ID = p.Supervisor_id"+
-                    " where userName = 'supervisor1'";
+                    " where userName = '"+username+"'";
             return dbMan.ExcuteReader(query);
         } 
 
@@ -260,8 +260,21 @@ namespace Nemo.Database
         }
         public DataTable getWorkersAndMachines(string userName)
         {
-            string query = "select CONCAT(e.Fname,' ',e.Lname)AS Name, e.ID as ID, m.Name as Machine"+
-" from(Employee as e join Works_on as w on w.Emp_id = e.ID) join Machine as m on m.ID = w.Machine_id";
+            string query =
+" select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name as Machine" +
+" from Employee as e" +
+" join Works_on as w on e.ID = w.Emp_id" +
+" join Machine as m on m.ID = w.Machine_id" +
+" join Line_has_machine as lm on m.ID = lm.Machine_id" +
+" join Production_line as p on p.ID = lm.Line_id" +
+" join Employee as sup on sup.ID=p.Supervisor_id"+
+" where sup.username='"+userName+"'" +
+" union" +
+" select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name" +
+" from Employee as e  left join(Works_on as w join Machine as m on m.ID = w.Machine_id) on e.id = w.emp_id" +
+" where e.ID not  in (select Emp_id from Works_on where Emp_id = e.id)" +
+" order by m.Name desc";
+
             return dbMan.ExcuteReader(query);
         }
         public DataTable getAllSupervisors()
@@ -272,6 +285,17 @@ namespace Nemo.Database
         public int insertLine(string name, string location, int supervisor)
         {
             string query="insert into production_line  values ('"+name+"','" + location + "'," + supervisor+")";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int deleteLine(int lineID)
+        {
+            string query ="delete from production_line where ID="+lineID+"";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int deleteMachine(int machineID)
+        {
+            string query = "delete from machine where ID=" + machineID + "";
             return dbMan.ExecuteNonQuery(query);
         }
 ////////hossam
