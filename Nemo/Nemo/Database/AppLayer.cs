@@ -152,7 +152,14 @@ namespace Nemo.Database
         {
             return controller.getAllLines();
         }
-
+        public DataTable getAllSupervisors()
+        {
+            return controller.getAllSupervisors();
+        }
+        public int insertLine(string name, string location, int supervisor)
+        {
+            return controller.insertLine(name,location,supervisor);
+        }
         //hossam end
 
         public int RemoveMachineAtId(string id)

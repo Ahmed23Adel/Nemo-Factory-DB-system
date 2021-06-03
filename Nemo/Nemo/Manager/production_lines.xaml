@@ -27,7 +27,7 @@
 
 
                 <!--Image for add button to add new Employee-->
-                <Image 
+                <Image UIElement.MouseDown="Image_MouseDown"
                     Height="30"
                     Margin="16  4 16 4"
                     RenderTransformOrigin="0.5,0.57"
@@ -46,6 +46,7 @@
                     Background="Transparent" 
                     Foreground="Black"  
                     RowBackground="Transparent"
+                          ItemsSource="{Binding Path=data}"
                     Style="{StaticResource dGrid}" 
                     CanUserAddRows="False" AutoGenerateColumns="False"
                           FontSize="20">
@@ -53,13 +54,13 @@
 
                 <DataGrid.Columns >
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
-                                        Header="Name" Width="*" />
+                                        Foreground="White" Header="Name" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
-                                        Header="ID" Width="*" />
+                                        Foreground="White" Header="ID" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Location}"
-                                        Header="Location" Width="*" />
+                                        Foreground="White" Header="Location" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Supervisor}"
-                                        Header="Supervisor" Width="*" />
+                                        Foreground="White" Header="Supervisor" Width="*" />
                 </DataGrid.Columns>
 
 

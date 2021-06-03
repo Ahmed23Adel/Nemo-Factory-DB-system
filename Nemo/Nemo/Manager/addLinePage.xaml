@@ -7,8 +7,51 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="addLinePage">
+    <Border Background="{StaticResource WordBlueBrush}">
+        <Grid>
+            <!--To prove the emoji background, -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute"
+                            Viewport="0 0 500 500"
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Insert a new Line" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
 
-    <Grid>
-        
-    </Grid>
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" Margin="60 0 0 20" Text="Enter Line name" FontSize="20"/>
+                    <TextBlock FontWeight="Bold" Margin="70 0 55 0" Text="Enter Line location" FontSize="20"/>
+                    <TextBlock FontWeight="Bold" Margin="35 0" Text="Choose a supervisor" FontSize="20"/>
+                    <TextBlock></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txt_line" Width="200" Height="50"
+                      Margin="30 0 20 0" Padding="10" FontSize="20"/>
+                    <TextBox x:Name="txt_location" Width="200" Height="50"
+                        Margin="20 0" Padding="10" FontSize="20" />
+                    <ComboBox Name="combo_supervisor" Width="280" Margin="20 0"  Height="50"
+                      Padding="10" FontSize="20"  />
+
+                </StackPanel>
+                <Grid Margin="0 150 ">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                        <Button x:Name="btn_cancel" Content="Cancel" Width="120" Height="60" Margin="20 0 50 0" FontSize="20" Padding="10" Background="White" Click="btn_cancel_Click"/>
+                        <Button x:Name="btn_ok" Content="Insert" Width="120" Height="60" Margin="20 0" FontSize="20" Padding="10" Background="White" Click="btn_ok_Click"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+            
+
+        </Grid>
+    </Border>
 </Page>
