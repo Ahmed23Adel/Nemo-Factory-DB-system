@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
-        Title="Update employee" Height="450" Width="800"
+        Title="Update employee" Height="550" Width="850"
         Closing="Window_Closing"
         >
     <!--To give better looing maring 14 in each way-->
@@ -42,10 +42,9 @@
                                FontSize="20" 
                                Margin="8 8 8 8" 
                                Foreground="White"/>
-                    
+
                     <!--Actual value of national id-->
-                    <TextBox x:Name="NationalId"
-                             Text="2050609456658" 
+                    <TextBox x:Name="nationalId"
                              Grid.Column="1" 
                              FontSize="20"
                              Margin="8 8 8 8" 
@@ -67,11 +66,11 @@
                         <ComboBoxItem Content="Worker"/>
                         <ComboBoxItem Content="Supervisor"/>
                     </ComboBox>
-                    
+
                 </Grid>
                 <!--End of first row-->
                 <Separator/>
-                
+
                 <!--Frist and last name-->
                 <Grid Margin="8 8 8 8">
                     <Grid.ColumnDefinitions>
@@ -90,11 +89,10 @@
                                FontSize="20" 
                                Margin="8 8 8 8" 
                                Foreground="White" />
-                    
+
                     <!--First name value-->
                     <TextBox x:Name="fName" 
                              Grid.Column="1" 
-                             Text="Ahmed" 
                              FontSize="20"
                              Margin="8 8 8 8"
                              Foreground="White"
@@ -108,7 +106,6 @@
                     <!--Last name value-->
                     <TextBox x:Name="lName" 
                              Grid.Column="3" 
-                             Text="Adel" 
                              FontSize="20"
                              Margin="8 8 8 8"
                              Foreground="White" 
@@ -130,15 +127,14 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Balance workd-->
-                    <TextBlock Text="Balance: "
+                    <TextBlock Text="Salary: "
                                Grid.Column="0"
                                FontSize="20"
                                Margin="8 8 8 8"
                                Foreground="White" />
                     <!--Balance value  Hoping to be high:)-->
-                    <TextBox x:Name="balance" 
+                    <TextBox x:Name="salary" 
                              Grid.Column="1" 
-                             Text="6900" 
                              FontSize="20" 
                              Margin="8 8 8 8" 
                              Foreground="White" 
@@ -154,11 +150,11 @@
                                  Grid.Column="3"
                                 FontSize="20" 
                                 Margin="8 8 8 8" />
-                    
+
                 </Grid>
                 <!--End of third row (balance and birthdate )-->
                 <Separator/>
-                
+
                 <!--User naem and password-->
                 <Grid Margin="8 8 8 8">
                     <Grid.ColumnDefinitions>
@@ -180,9 +176,8 @@
                                Foreground="White"
                                />
                     <!--userName value-->
-                    <TextBox x:Name="userName" 
+                    <TextBox x:Name="userNameField" 
                              Grid.Column="1" 
-                             Text="201901464" 
                              FontSize="20" 
                              Margin="8 8 8 8" 
                              Foreground="White" 
@@ -196,14 +191,104 @@
                     <!--Password value -->
                     <TextBox x:Name="pass"
                              Grid.Column="3" 
-                             Text="123" 
                              FontSize="20"
                              Margin="8 8 8 8" 
                              Foreground="White" 
                              Background="Transparent"/>
                 </Grid>
                 <!--End of forth row (usernaem, password)-->
-                <Separator/>
+
+
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For user name word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--for userName value-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For password word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For passwod value-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--User name word-->
+                    <TextBlock Grid.Column="0"
+                               Text="Gender: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"
+                               />
+                    <!--userName value-->
+                    <ComboBox x:Name="gender" 
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Margin="8 8 8 8" 
+                             Foreground="Black" 
+                             Background="Transparent">
+                        <ComboBoxItem Content="Not defined" Foreground="Black"/>
+                        <ComboBoxItem Content="Male" Foreground="Black"/>
+                        <ComboBoxItem Content="Female" Foreground="Black"/>
+                    </ComboBox>
+                    <!--Password word-->
+                    <TextBlock Grid.Column="2" 
+                               Text="Address: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+                    <!--Password value -->
+                    <TextBox x:Name="address"
+                             Grid.Column="3" 
+                             FontSize="20"
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                </Grid>
+                <!--End of forth row (usernaem, password)-->
+
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For user name word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--for userName value-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For password word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For passwod value-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--User name word-->
+                    <TextBlock Grid.Column="0"
+                               Text="Religion: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"
+                               />
+                    <!--userName value-->
+                    <TextBox x:Name="religion" 
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                    <!--Password word-->
+                    <TextBlock Grid.Column="2" 
+                               Text="Status: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+                    <!--Password value -->
+                    <ComboBox x:Name="status"
+                             Grid.Column="3" 
+                             FontSize="20"
+                             Margin="8 8 8 8" 
+                             Foreground="Black" 
+                             Background="Transparent">
+                        <ComboBoxItem Content="Undefined" Foreground="Black"/>
+                        <ComboBoxItem Content="Married" Foreground="Black"/>
+                        <ComboBoxItem Content="Not married  " Foreground="Black"/>
+                    </ComboBox>
+                </Grid>
                 <!--row of buttons for update and remove and cancel-->
                 <Grid Margin="8 8 8 8">
                     <Grid.ColumnDefinitions>

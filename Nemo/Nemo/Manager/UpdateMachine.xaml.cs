@@ -49,6 +49,9 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             parentInstance.Show();
             this.Close();
         }
@@ -110,6 +113,9 @@ namespace Nemo.Manager
         }
         private void UpdateMachineAtId()
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             appLayer.UpdateMachineAtId(id, name.Text, startDate.Text);
 
         }

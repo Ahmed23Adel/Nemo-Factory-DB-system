@@ -15,7 +15,7 @@
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png" />
             </Grid.Background>
 
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="600" CanContentScroll="True">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="650" CanContentScroll="True">
                 <StackPanel>
                 
                 <Grid Height="Auto">
@@ -24,39 +24,49 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid Grid.Column="0"
-                                  x:Name="avgSal"
-                                  Height="100" 
-                                  Width="300" 
-                                  Margin="8 8 8 8" 
-                                  HorizontalAlignment="Left" 
-                                  VerticalAlignment="Top" 
-                                  Background="Transparent" 
-                                 Foreground="Black"  
-                                 RowBackground="Transparent"
-                                 ItemsSource="{Binding Path=Collection}"
-                                  AutoGenerateColumns="False" 
-                                 Style="{StaticResource dGrid}"
-                                 CanUserAddRows="False"
+                        <StackPanel>
+                            <TextBox x:Name="numEmps" 
+                                Text="You have 20 Worker, 30 superVisor, and 60 manager "
+                                     Background="Transparent"
+                                     Foreground="White"
+                                    Margin="8 8 8 8"
+                                     FontSize="20"
+                                     BorderThickness="0 0 0 0"
+                                     />
+                            <DataGrid Grid.Column="0"
+                                          x:Name="avgSal"
+                                          Height="180" 
+                                          Width="300" 
+                                          Margin="8 8 8 8" 
+                                          HorizontalAlignment="Left" 
+                                          VerticalAlignment="Top" 
+                                          Background="Transparent" 
+                                         Foreground="Black"  
+                                         RowBackground="Transparent"
+                                         ItemsSource="{Binding Path=Collection}"
+                                          AutoGenerateColumns="False" 
+                                         Style="{StaticResource dGrid}"
+                                         CanUserAddRows="False"
                               
-                              >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Production line " 
-                                            FontSize="20" Width="*"
-                                            Foreground="White"
-                                            Binding="{Binding Path=Production_line,  Mode=OneWay}"
-                                            />
+                                      >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Production line " 
+                                                    FontSize="20" Width="*"
+                                                    Foreground="White"
+                                                    Binding="{Binding Path=Production_line,  Mode=OneWay}"
+                                                    />
                             
-                            <DataGridTextColumn Header="Average salaries" 
-                                            FontSize="20" Width="*"
-                                            Foreground="White"
-                                            Binding="{Binding Path=Average,  Mode=OneWay}"
-                                            />
-                        </DataGrid.Columns>
+                                    <DataGridTextColumn Header="Average salaries" 
+                                                    FontSize="20" Width="*"
+                                                    Foreground="White"
+                                                    Binding="{Binding Path=Average,  Mode=OneWay}"
+                                                    />
+                                </DataGrid.Columns>
 
 
-                    </DataGrid>
-                    <lvc:PieChart Grid.Column="1" 
+                            </DataGrid>
+                        </StackPanel>
+                        <lvc:PieChart Grid.Column="1" 
                                   Height="200" 
                                   LegendLocation="Bottom"
                                   Hoverable="False" 
@@ -186,13 +196,59 @@
                                             />
 
                             </DataGrid.Columns>
+                               
+
+                            </DataGrid>
+                            <Separator Margin="16 16 8 8"/>
+
+                            <Label Content="Histogram of addresses of employees"  Foreground="White" FontSize="20"  Margin="4 4 4 4"/>
+                            <lvc:CartesianChart Series="{Binding SeriesCollection3}"
+                                                Height="200"
+                                                LegendLocation="Left"
+                                                Foreground="{StaticResource WordOrangeBrush}"
+                                                Width="Auto"
+                                                >
+                                <lvc:CartesianChart.SeriesColors>
+                                    <lvc:ColorsCollection>
+                                        <Color>Orange</Color>
+                                    </lvc:ColorsCollection>
+                                </lvc:CartesianChart.SeriesColors>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis Title="Address" Labels="{Binding Address}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis Title="Count" LabelFormatter="{Binding count}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
+
+                            <Separator Margin="16 16 8 8"/>
+                            <Label Content="Histogram of religions of employees" Foreground="White" FontSize="20" Margin="4 4 4 4"/>
+
+                            <lvc:CartesianChart Series="{Binding SeriesCollection4}"
+                                                Height="120"
+                                                LegendLocation="Left"
+                                                Foreground="{StaticResource WordOrangeBrush}"
+                                                Width="Auto"
+                                                >
+                                <lvc:CartesianChart.SeriesColors>
+                                    <lvc:ColorsCollection>
+                                        <Color>Orange</Color>
+                                    </lvc:ColorsCollection>
+                                </lvc:CartesianChart.SeriesColors>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis Title="Religion" Labels="{Binding Religion}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis Title="Count" LabelFormatter="{Binding Countr}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
 
 
-                        </DataGrid>
-                    </StackPanel>
+                            <Separator Margin="16 16 8 8"/>
+                        </StackPanel>
                     
                 </Grid>
-                <Separator Margin="16 16 8 8"/>
+              
                     </StackPanel>
             </ScrollViewer>
         </Grid>

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Data;
+using System.Windows.Media;
 
 namespace Nemo.Manager
 {
@@ -43,6 +44,9 @@ namespace Nemo.Manager
        /// <param name="e"></param>
         private void MenuItemMouseDownUpdate(object sender, RoutedEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
             String result = (drv["ID"]).ToString();//get the id to search by it.
             new UpdateEmployee(result,parentInstance).Show();//showing updateEmployee to update Data
@@ -55,11 +59,18 @@ namespace Nemo.Manager
           /// <param name="e"></param>
         private void MenuItemMouseDownDelete(object sender, RoutedEventArgs e)
         {
-            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
-            String result = (drv["ID"]).ToString();//get the id to search by it.
-            appLayer.DeleteAtId(result);
-            Refresh();
+            //make sure that user is sure to update info
+            if (MessageBox.Show("Are you sure you want to delete this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                MediaPlayer mplayer = new MediaPlayer();
+                mplayer.Open(new Uri(@"../../SoundEffects/sent.mp3", UriKind.Relative));
+                mplayer.Play();
+                DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+                String result = (drv["ID"]).ToString();//get the id to search by it.
+                appLayer.DeleteAtId(result);
+                Refresh();
 
+            }
         }
 
         /// <summary>
@@ -69,10 +80,15 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MenuItemMouseDownMakeManger(object sender, RoutedEventArgs e)
         {
-            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
-            String result = (drv["ID"]).ToString();//get the id to search by it.
-            appLayer.MakeEmpManager(result);
-            Refresh();
+            DataRowView drv1 = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result1 = (drv1["Name"]).ToString();//get the id to search by it.
+            if (MessageBox.Show("Are you sure you want to Make "+result1+" Manager?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+                String result = (drv["ID"]).ToString();//get the id to search by it.
+                appLayer.MakeEmpManager(result);
+                Refresh();
+            }
         }
 
         /// <summary>
@@ -82,10 +98,15 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MenuItemMouseDownMakeWorker(object sender, RoutedEventArgs e)
         {
-            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
-            String result = (drv["ID"]).ToString();//get the id to search by it.
-            appLayer.MakeEmpWorker(result);
-            Refresh();
+            DataRowView drv1 = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result1 = (drv1["Name"]).ToString();//get the id to search by it.
+            if (MessageBox.Show("Are you sure you want to Make " + result1 + " Worker?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+                String result = (drv["ID"]).ToString();//get the id to search by it.
+                appLayer.MakeEmpWorker(result);
+                Refresh();
+            }
         }
         /// <summary>
         /// This event is triggerd if user right clicked on any row of employese and check make supervisor
@@ -94,10 +115,15 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MenuItemMouseDownMakeSupervisor(object sender, RoutedEventArgs e)
         {
-            DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
-            String result = (drv["ID"]).ToString();//get the id to search by it.
-            appLayer.MakeEmpSupervisor(result);
-            Refresh();
+            DataRowView drv1 = (DataRowView)allEmps.SelectedItem;//get selected row
+            String result1 = (drv1["Name"]).ToString();//get the id to search by it.
+            if (MessageBox.Show("Are you sure you want to Make " + result1 + " Supervisor?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                DataRowView drv = (DataRowView)allEmps.SelectedItem;//get selected row
+                String result = (drv["ID"]).ToString();//get the id to search by it.
+                appLayer.MakeEmpSupervisor(result);
+                Refresh();
+            }
         }
         /// <summary>
         /// This event is triggerd if user right clicked on any row of employese and check give bonus
