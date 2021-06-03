@@ -35,7 +35,7 @@ namespace Nemo.Manager
 
             //create instances of pages instead of creating new instance of them every time user click on on different tap.
             statsPage = new Statistics();
-            prodLinePage = new production_lines();
+            prodLinePage = new production_lines(this);
             empPage = new Employees(this);
             machinePage = new machines(this);
 

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows;
 
 namespace Nemo.Database
 {
     class Controller
     {
         DBManager dbMan;
-
+        
         static Controller instance;
         public static Controller getInstance()
         {
@@ -261,6 +262,16 @@ namespace Nemo.Database
             string query = "select CONCAT(e.Fname,' ',e.Lname)AS Name, e.ID as ID, m.Name as Machine"+
 " from(Employee as e join Works_on as w on w.Emp_id = e.ID) join Machine as m on m.ID = w.Machine_id";
             return dbMan.ExcuteReader(query);
+        }
+        public DataTable getAllSupervisors()
+        {
+            string query = "select concat(fname,' ',lname) as name,ID from employee where jop_title='S'";
+            return dbMan.ExcuteReader(query);
+        }
+        public int insertLine(string name, string location, int supervisor)
+        {
+            string query="insert into production_line  values ('"+name+"','" + location + "'," + supervisor+")";
+            return dbMan.ExecuteNonQuery(query);
         }
 ////////hossam
 

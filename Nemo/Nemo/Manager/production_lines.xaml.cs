@@ -22,17 +22,28 @@ namespace Nemo.Manager
     {
 
         Database.AppLayer applayer;
-        public production_lines()
+        addLinePage addLinePage;
+        ManagerOptoins parent;
+        DataTable data;
+        public production_lines(ManagerOptoins p)
         {
             InitializeComponent();
             applayer = Database.AppLayer.GetInstance();
+            parent = p;
             getAllLines();
+            addLinePage = new addLinePage();
         }
         public void getAllLines()
         {
-            //prodLinesGrid.ItemsSource = applayer.getAllLines().DefaultView;
+            data = applayer.getAllLines();
+            prodLinesGrid.ItemsSource = data.DefaultView;
+            //prodLinesGrid.ItemsSource = 
         }
 
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            parent.moreInfo.Content = addLinePage;
 
+        }
     }
 }
