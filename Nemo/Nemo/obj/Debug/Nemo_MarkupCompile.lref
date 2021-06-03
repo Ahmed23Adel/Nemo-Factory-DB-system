@@ -1,40 +1,16 @@
 ﻿
-<<<<<<< Updated upstream
-FH:\New folder\hh\Nemo\Nemo\App.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Login.xaml;;
-FH:\New folder\hh\Nemo\Nemo\MainWindow.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\AddEmployee.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\AddMachine.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\employees.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\machines.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\ManagerOptions.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\production_lines.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\Statistics.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\UpdateEmployee.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\UpdateMachine.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\ViewMyProfile.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Styles\Buttons.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Styles\Colors.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Styles\Fonts.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Styles\Texts.xaml;;
-FH:\New folder\hh\Nemo\Nemo\supervisor\supervisor.xaml;;
-FH:\New folder\hh\Nemo\Nemo\supervisor\viewAssignedLinesPage.xaml;;
-FH:\New folder\hh\Nemo\Nemo\supervisor\viewAssignedMachinesPage.xaml;;
-FH:\New folder\hh\Nemo\Nemo\supervisor\workersAndMachinesPage.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Utilities\CustomMessageBox.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Worker\worker.xaml;;
-FH:\New folder\hh\Nemo\Nemo\Manager\addLinePage.xaml;;
-=======
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\App.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Login.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\MainWindow.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\AddEmployee.xaml;;
+FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\addLinePage.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\AddMachine.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\AnnouceTo.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\employees.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\machines.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\ManagerOptions.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\production_lines.xaml;;
+FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\RecievedMsgs.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\SendAnnounc.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\Statistics.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\UpdateEmployee.xaml;;
@@ -50,6 +26,4 @@ FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\supervisor\viewAssignedMachines
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\supervisor\workersAndMachinesPage.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Utilities\CustomMessageBox.xaml;;
 FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Worker\worker.xaml;;
-FD:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\Manager\RecievedMsgs.xaml;;
->>>>>>> Stashed changes
 

@@ -92,14 +92,9 @@ namespace Nemo.Manager
             MediaPlayer mplayer = new MediaPlayer();
             mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
             mplayer.Play();
-            //Here I set prodLinedClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
-<<<<<<< Updated upstream
-            visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked);
 
-=======
             visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked, sendAnounClicked, recAnounClicked);
             //I set the prodLinePage to stas page 
->>>>>>> Stashed changes
             moreInfo.Content = prodLinePage;
 
 

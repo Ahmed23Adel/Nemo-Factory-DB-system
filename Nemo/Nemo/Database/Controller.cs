@@ -234,7 +234,6 @@ namespace Nemo.Database
             return dbMan.ExcuteReader(query);
         }
 
-<<<<<<< Updated upstream
 ////////hossam
 
         public DataTable viewAssignedMachines(string username)
@@ -293,10 +292,8 @@ namespace Nemo.Database
             string query="insert into production_line  values ('"+name+"','" + location + "'," + supervisor+")";
             return dbMan.ExecuteNonQuery(query);
         }
-////////hossam
 
 
-=======
         public DataTable SelectHighestPeopleReside()
         {
             string query = "SELECT e.Address, COUNT(Address) AS'Count' " +
@@ -358,6 +355,5 @@ namespace Nemo.Database
                             "WHERE e.userName = '"+userName+"' AND e.password = '"+password+"' ";
             return dbMan.ExcuteReader(query);
         }
->>>>>>> Stashed changes
     }
 }

@@ -57,27 +57,6 @@
                         </Image.Source>
                     </Image>
                 
-<<<<<<< Updated upstream
-                <DataGrid
-                    x:Name="allEmps"
-                    Margin="14 14 14 14" 
-                    Background="Transparent" 
-                    Foreground="Black"  
-                    RowBackground="Transparent"
-                    ItemsSource="{Binding Path=Collection}"
-                     AutoGenerateColumns="False" 
-                    Style="{StaticResource dGrid}" 
-                    CanUserAddRows="False"
-                     FontSize="20"
-                    >
-                    <!--This is for, if user right clicked on any row in dataGrid it should show this contextMenu-->
-                    <DataGrid.CellStyle>
-                        <Style TargetType="DataGridCell">
-                            <Setter Property="ContextMenu" Value="{StaticResource rowsOptions}" />
-                        </Style>
-                    </DataGrid.CellStyle>
-                    <!--End of ContextMenu showing-->
-=======
                     <DataGrid
                         x:Name="allEmps"
                         Margin="14 14 14 14" 
@@ -97,7 +76,6 @@
                             </Style>
                         </DataGrid.CellStyle>
                         <!--End of ContextMenu showing-->
->>>>>>> Stashed changes
                 
                         <!--Columns defintion, Here I say when data comes what columns From DataTable which is coming from DataTable to choose-->
                         <DataGrid.Columns>
