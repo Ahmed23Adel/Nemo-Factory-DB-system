@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< Updated upstream
 H:\New folder\hh\Nemo\Nemo\obj\Debug\
-=======
-D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\
->>>>>>> Stashed changes
 Nemo
 none
 false
 DEBUG;TRACE
-<<<<<<< Updated upstream
 H:\New folder\hh\Nemo\Nemo\App.xaml
-231200860976
+27-1168466361
 
-29-1424508901
+34700661720
 15595421106
-Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\addLinePage.xaml;Manager\AddMachine.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
-=======
-D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\App.xaml
-251479367641
-1832867545
-32-2128220177
-151411648459
-Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\AddMachine.xaml;Manager\AnnouceTo.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\RecievedMsgs.xaml;Manager\SendAnnounc.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
->>>>>>> Stashed changes
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\addLinePage.xaml;Manager\AddMachine.xaml;Manager\AnnouceTo.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\RecievedMsgs.xaml;Manager\SendAnnounc.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\anouncementsWindow.xaml;Worker\worker.xaml;
 
 True
 

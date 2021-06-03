@@ -17,6 +17,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="10*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Welcome to your transcript!"
                 HorizontalAlignment="Center" FontSize="24"
@@ -178,6 +179,13 @@
 
             </Grid>
             <!--End of main stack-->
+
+            <Button x:Name="btn_notification" Content="Show your notifications"
+                   FontSize="15" FontWeight="Bold" Width="200" Height="50" Margin="20" Grid.Row="2" Background="#FFB7D7DD" Click="btn_notification_Click">
+                <Button.Effect>
+                    <DropShadowEffect Color="#FFB5E1F3" BlurRadius="7" Direction="270"/>
+                </Button.Effect>
+            </Button>
         </Grid>
 
     </Border>

@@ -275,3 +275,13 @@ D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo_Content.g.cs
 >>>>>>> Stashed changes
 D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\addLinePage.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\addLinePage.baml
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Worker\workAnounce.g.cs
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\AnnouceTo.g.cs
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\RecievedMsgs.g.cs
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\SendAnnounc.g.cs
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Worker\workAnounce.baml
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\AnnouceTo.baml
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\RecievedMsgs.baml
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\SendAnnounc.baml
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Worker\anouncementsWindow.g.cs
+H:\New folder\hh\Nemo\Nemo\obj\Debug\Worker\anouncementsWindow.baml
