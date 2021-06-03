@@ -211,7 +211,8 @@ namespace Nemo.Database
         {
             string query = "SELECT Name, Start_date " +
                             "FROM Machine " +
-                            " ORDER BY Start_date ASC";
+                            "WHERE Start_date IS NOT NULL"+
+                            " ORDER BY Start_date ASC ";
             return dbMan.ExcuteReader(query);
         }
 
