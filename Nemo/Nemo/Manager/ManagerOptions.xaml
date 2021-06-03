@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
-        Title="Welcome Nemo (Ahmed)" Height="700"
+        Title="Welcome Nemo (Ahmed)" Height="800"
         Width="1200"
         WindowStartupLocation="CenterScreen"
         >
@@ -80,7 +80,7 @@
 
                 <Grid.ColumnDefinitions>
                     <!--For Left panel-->
-                    <ColumnDefinition Width="2.1*"/>
+                    <ColumnDefinition Width="2.7*"/>
                     <!--For line-->
                     <ColumnDefinition Width="0.2*"/>
                     <!--Fort right panel(More info)-->
@@ -359,6 +359,93 @@
                                    />
                         </Grid>
                         <!--End of machine -->
+                        <Separator Width="200" Margin="1 1 1 1"/>
+
+                        <!--Send Announment-->
+                        <Grid Height="50" UIElement.PreviewMouseDown="sendAnnounceEvent">
+                            <Grid.ColumnDefinitions>
+                                <!--For orange rectangle-->
+                                <ColumnDefinition Width="0.3*"/>
+                                <!--For icon-->
+                                <ColumnDefinition Width="2*"/>
+                                <!--For "Production line" word-->
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <StackPanel Orientation="Horizontal" >
+                                <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                                <Line x:Name="sendAnounClicked"
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0" 
+                                      Y2="50" 
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                            </StackPanel>
+
+                            <!--Icon for machines-->
+                            <Image  Grid.Column="1" 
+                                    Margin="2 10 0 10">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200"
+                                                 UriSource="../Images/anouncments.ico"/>
+                                </Image.Source>
+                            </Image>
+
+                            <TextBlock Grid.Column="2" 
+                                   Text="Send Announc" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White"
+                                  TextWrapping="Wrap"
+                                   />
+                        </Grid>
+                        <!--End of send annoucemts -->
+                        <Separator Width="200" Margin="1 1 1 1"/>
+
+                        <!--Send Announment-->
+                        <Grid Height="50" UIElement.PreviewMouseDown="recievedAnouncmentEvent">
+                            <Grid.ColumnDefinitions>
+                                <!--For orange rectangle-->
+                                <ColumnDefinition Width="0.3*"/>
+                                <!--For icon-->
+                                <ColumnDefinition Width="2*"/>
+                                <!--For "Production line" word-->
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <StackPanel Orientation="Horizontal" >
+                                <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                                <Line x:Name="recAnounClicked"
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0" 
+                                      Y2="50" 
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                            </StackPanel>
+
+                            <!--Icon for machines-->
+                            <Image  Grid.Column="1" 
+                                    Margin="2 10 0 10">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200"
+                                                 UriSource="../Images/anouncments.ico"/>
+                                </Image.Source>
+                            </Image>
+
+                            <TextBlock Grid.Column="2" 
+                                   Text="Recieved Announc" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White"
+                                   />
+                        </Grid>
+                        <!--End of send annoucemts -->
 
                         <Separator Width="200" Margin="1 1 1 1"/>
 

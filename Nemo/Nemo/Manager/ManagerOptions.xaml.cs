@@ -3,6 +3,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Data;
+using System.Windows.Media;
+using System;
 
 namespace Nemo.Manager
 {
@@ -18,6 +20,8 @@ namespace Nemo.Manager
         production_lines prodLinePage;
         Employees empPage;
         machines machinePage;
+        SendAnnounc sendAnnoundPage;
+        RecievedMsgs recievedMsgsPage;
         //Should be got from Login window, to get the rest of info such as name.
         string userName;
         string pasword;
@@ -32,12 +36,16 @@ namespace Nemo.Manager
             this.prodLinedClicked.Visibility = Visibility.Hidden;
             this.empsClicked.Visibility = Visibility.Hidden;
             this.machineClicked.Visibility = Visibility.Hidden;
+            this.recAnounClicked.Visibility = Visibility.Hidden;
+            this.sendAnounClicked.Visibility = Visibility.Hidden;
 
             //create instances of pages instead of creating new instance of them every time user click on on different tap.
             statsPage = new Statistics();
             prodLinePage = new production_lines(this);
             empPage = new Employees(this);
             machinePage = new machines(this);
+            sendAnnoundPage = new SendAnnounc(this,userName,pasword);
+            recievedMsgsPage = new RecievedMsgs(userName,pasword);
 
             this.userName = userName;
             this.pasword = pasword;
@@ -51,6 +59,7 @@ namespace Nemo.Manager
         /// </summary>
         private void loadBasicData()
         {
+
             DataTable dt = appLayer.GetBasicDataForUserNamePass(userName, pasword);
             this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
         }
@@ -63,8 +72,11 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void StatsEventClicked(object sender, MouseButtonEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             //Here I set statsClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
-            visibleFirstHideRest(statsClicked, prodLinedClicked, empsClicked, machineClicked);
+            visibleFirstHideRest(statsClicked, prodLinedClicked, empsClicked, machineClicked,sendAnounClicked,recAnounClicked);
             //I set the MoreInfo to stas page 
             moreInfo.Content = statsPage;
         }
@@ -77,9 +89,17 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void ProdLineClickEvent(object sender, MouseButtonEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             //Here I set prodLinedClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
+<<<<<<< Updated upstream
             visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked);
 
+=======
+            visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked, sendAnounClicked, recAnounClicked);
+            //I set the prodLinePage to stas page 
+>>>>>>> Stashed changes
             moreInfo.Content = prodLinePage;
 
 
@@ -93,8 +113,11 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void EmpsClickedEvent(object sender, MouseButtonEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             //Here I set empsClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
-            visibleFirstHideRest(empsClicked, prodLinedClicked, statsClicked, machineClicked);
+            visibleFirstHideRest(empsClicked, prodLinedClicked, statsClicked, machineClicked, sendAnounClicked, recAnounClicked);
             //I set the empPage to stas page 
             moreInfo.Content = empPage;
         }
@@ -106,8 +129,29 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void MachinesClickEvent(object sender, MouseButtonEventArgs e)
         {
-            visibleFirstHideRest(machineClicked, empsClicked, prodLinedClicked, statsClicked);
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
+            visibleFirstHideRest(machineClicked, empsClicked, prodLinedClicked, statsClicked, sendAnounClicked, recAnounClicked);
             moreInfo.Content = machinePage;
+        }
+        
+        private void sendAnnounceEvent(object sender, MouseButtonEventArgs e)
+        {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
+            visibleFirstHideRest(sendAnounClicked,machineClicked, empsClicked, prodLinedClicked, statsClicked, recAnounClicked);
+            moreInfo.Content = sendAnnoundPage;
+        }
+        
+        private void recievedAnouncmentEvent(object sender, MouseButtonEventArgs e)
+        {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
+            visibleFirstHideRest(recAnounClicked,machineClicked, empsClicked, prodLinedClicked, statsClicked, sendAnounClicked);
+            moreInfo.Content = recievedMsgsPage;
         }
 
         /// <summary>
@@ -132,6 +176,9 @@ namespace Nemo.Manager
 
         private void ViewProfile(object sender, MouseButtonEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             new ViewMyProfile(userName, pasword, this).Show();
             this.Hide();
         }
@@ -192,7 +239,7 @@ namespace Nemo.Manager
         /// <param name="l2"></param>
         /// <param name="l3"></param>
         /// <param name="l4"></param>
-        private void visibleFirstHideRest(Line l1, Line l2, Line l3, Line l4)
+        private void visibleFirstHideRest(Line l1, Line l2, Line l3, Line l4,Line l5, Line l6)
         {
             //only one to visible
             l1.Visibility = Visibility.Visible;
@@ -200,6 +247,8 @@ namespace Nemo.Manager
             l2.Visibility = Visibility.Hidden;
             l3.Visibility = Visibility.Hidden;
             l4.Visibility = Visibility.Hidden;
+            l5.Visibility = Visibility.Hidden;
+            l6.Visibility = Visibility.Hidden;
         }
 
 
@@ -213,6 +262,7 @@ namespace Nemo.Manager
         {
             empPage.Refresh();
             machinePage.Refresh();
+            recievedMsgsPage.Refresh();
             this.Show();
         }
         /// <summary>

@@ -1,0 +1,72 @@
+﻿<Page x:Class="Nemo.Manager.SendAnnounc"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Nemo.Manager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SendAnnounc"
+    
+      >
+
+    <Border Background="{StaticResource WordBlueBrush}"
+            Margin="14">
+        <!--To give emoji background printed over the blue background.-->
+        <Grid >
+            <Grid.Background>
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute" 
+                            Viewport="0 0 500 500"
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+
+            <StackPanel>
+                <TextBox x:Name="subject"
+                    Style="{StaticResource Subject}"
+                         Margin="16 16 16 16"
+                         Background="Transparent"
+                         FontSize="20"
+                         Foreground="White"
+                         FontWeight="DemiBold"
+                        />
+                
+                <TextBox x:Name="msg"
+                    Style="{StaticResource msg}"
+                         Margin="16 16 16 16"
+                         Background="White"
+                         FontSize="20"
+                         Foreground="Black"
+                         FontWeight="DemiBold"
+                         Height="250"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         AcceptsTab="True"
+                         SpellCheck.IsEnabled="True"
+                        />
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button  Click="Button_Click_to" 
+                        Grid.Column="0"
+                        Content="To" 
+                        HorizontalAlignment="Center" 
+                        FontWeight="Bold" 
+                        Style="{StaticResource updateEmp}"/>
+                    <Button  Click="sendMsg" 
+                        Grid.Column="1"
+                        Content="Send" 
+                        HorizontalAlignment="Center" 
+                        FontWeight="Bold" 
+                        Style="{StaticResource updateEmp}"/>
+                </Grid>
+                
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

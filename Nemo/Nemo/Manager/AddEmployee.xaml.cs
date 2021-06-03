@@ -63,6 +63,9 @@ namespace Nemo.Manager
         {
             if (IsDataValid())
             {
+                MediaPlayer mplayer = new MediaPlayer();
+                mplayer.Open(new Uri(@"../../SoundEffects/sent.mp3", UriKind.Relative));
+                mplayer.Play();
                 InsertEmployee();
                 this.Close();
                 //it calls ModShow to update data in employees table
@@ -93,6 +96,9 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             parentInstance.Show();
             this.Close();
         }
@@ -115,7 +121,7 @@ namespace Nemo.Manager
                 return false;
             }
             //Balance shouldn't have any letters
-            if (balance.Text.Any(char.IsLetter))
+            if (salary.Text.Any(char.IsLetter))
             {
                 IfNum0PrintFOrS("Balance contains letters; please change it and try again", "But you swore! Balance is still wrong");
                 return false;
@@ -127,7 +133,7 @@ namespace Nemo.Manager
                 return false;
             }
             //userName shouldn't be empty
-            if (string.IsNullOrEmpty(userName.Text))
+            if (string.IsNullOrEmpty(userNameField.Text))
             {
                 IfNum0PrintFOrS("user name is empty; I'm not gonne fill it for you! please change it and try again", "But you swore! user name is still empty");
                 return false;
@@ -162,20 +168,55 @@ namespace Nemo.Manager
         /// </summary>
         public void InsertEmployee()
         {
-                string nationalIdText = nationalId.Text.Trim();
-                string fNameText = fName.Text.Trim();
-                string lNameText = lName.Text.Trim();
-                string balanceText = balance.Text.Trim();
-                string userNameText = userName.Text.Trim();
-                string passText = pass.Text.Trim();
-                string index = jop_title.SelectedIndex.ToString();
-                string jopTitleText = GetJopTitleAtIndex(index);
-                string bDateText = bdate.Text.Trim();
-                appLayer.InsertEmp(fNameText, lNameText, balanceText, bDateText, jopTitleText, userNameText, passText, nationalIdText);
-            
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
+
+            string index = jop_title.SelectedIndex.ToString();
+            string indexGender = gender.SelectedIndex.ToString();
+            string indexStatus = status.SelectedIndex.ToString();
+
+            appLayer.InsertEmp(fName.Text.Trim()
+                , lName.Text.Trim(),
+                salary.Text.Trim(),
+                bdate.Text.Trim(),
+                GetJopTitleAtIndex(index).Trim(),
+                userNameField.Text.Trim(),
+                pass.Text.Trim(),
+                nationalId.Text.Trim(),
+                GetGenderAtIndex(indexGender).Trim(),
+                address.Text.Trim(),
+                religion.Text.Trim(), 
+                GetStatusAtIndex(indexStatus).Trim());
+
+        }
+
+        private string GetGenderAtIndex(string index)
+        {
+            if (index == "0")
+                return "N";//Not defined
+            if (index == "1")
+                return "M";//Manager
+            if (index == "2")
+                return "F";//Worker
+            return "";
+
+        }
+        private string GetStatusAtIndex(string index)
+        {
+            if (index == "0")
+                return "N";//Not defined
+            if (index == "1")
+                return "M";//Manager
+            if (index == "2")
+                return "S";//Worker
+            return "";
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            MediaPlayer mplayer = new MediaPlayer();
+            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
+            mplayer.Play();
             parentInstance.Show();
         }
     }

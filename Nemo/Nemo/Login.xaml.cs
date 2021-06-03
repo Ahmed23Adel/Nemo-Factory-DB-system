@@ -92,20 +92,32 @@ namespace Nemo
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.NONE)
                 {
                     ifNum0PrintFOrS("User name or password is wrong", "But you swore! User name or password is still wrong");
+                    MediaPlayer mplayer = new MediaPlayer();
+                    mplayer.Open(new Uri(@"../../SoundEffects/sad.mp3", UriKind.Relative));
+                    mplayer.Play();
 
                 }
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
                 {
+                    MediaPlayer mplayer = new MediaPlayer();
+                    mplayer.Open(new Uri(@"../../SoundEffects/done.mp3", UriKind.Relative));
+                    mplayer.Play();
                     new Manager.ManagerOptoins(userName.Text, password.Password).Show();
                     this.Close();
                 }
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.SPRVSR)
                 {
+                    MediaPlayer mplayer = new MediaPlayer();
+                    mplayer.Open(new Uri(@"../../SoundEffects/done.mp3", UriKind.Relative));
+                    mplayer.Play();
                     new supervisor.supervisor(userName.Text, password.Password).Show();
                     this.Close();
                 }
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.WRKR)
                 {
+                    MediaPlayer mplayer = new MediaPlayer();
+                    mplayer.Open(new Uri(@"../../SoundEffects/done.mp3", UriKind.Relative));
+                    mplayer.Play();
                     new Worker.worker(userName.Text, password.Password).Show();
                     this.Close();
                 }
