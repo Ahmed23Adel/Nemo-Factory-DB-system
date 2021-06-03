@@ -76,6 +76,10 @@
     <Compile Include="Manager\AddMachine.xaml.cs">
       <DependentUpon>AddMachine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\AnnouceTo.xaml.cs">
+      <DependentUpon>AnnouceTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DataGridViewRow.cs" />
     <Compile Include="Manager\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
     </Compile>
@@ -87,6 +91,12 @@
     </Compile>
     <Compile Include="Manager\production_lines.xaml.cs">
       <DependentUpon>production_lines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\RecievedMsgs.xaml.cs">
+      <DependentUpon>RecievedMsgs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\SendAnnounc.xaml.cs">
+      <DependentUpon>SendAnnounc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
@@ -114,6 +124,9 @@
     </Compile>
     <Compile Include="Utilities\CustomMessageBox.xaml.cs">
       <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\anouncementsWindow.xaml.cs">
+      <DependentUpon>anouncementsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Worker\worker.xaml.cs">
       <DependentUpon>worker.xaml</DependentUpon>
@@ -151,6 +164,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manager\AnnouceTo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Manager\employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +183,14 @@
     <Page Include="Manager\production_lines.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\RecievedMsgs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manager\SendAnnounc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Manager\Statistics.xaml">
       <SubType>Designer</SubType>
@@ -216,6 +241,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Utilities\CustomMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Worker\anouncementsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

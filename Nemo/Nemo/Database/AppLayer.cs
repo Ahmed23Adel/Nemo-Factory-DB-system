@@ -239,6 +239,10 @@ namespace Nemo.Database
         {
             return controller.deleteMachine(int.Parse(machineID));
         }
+        public DataTable getMessages(string username)
+        {
+            return controller.getMessages(username);
+        }
         //hossam end
 
         public int RemoveMachineAtId(string id)

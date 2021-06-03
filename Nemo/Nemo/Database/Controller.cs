@@ -316,6 +316,17 @@ namespace Nemo.Database
             string query = "delete from machine where ID=" + machineID + "";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable getMessages(string username)
+        {
+            string query=
+" select CONCAT(e.Fname, ' ', e.Lname) as Name,Subject,Msg"+
+" from MsgTo join msg on msgto.MsgID = Msg.MsgID join Employee as e on e.ID = Msg.SenderId , Employee as r"+
+" where r.userName = '"+username+"'";
+            return dbMan.ExcuteReader(query);
+        }
+
+
 ////////hossam
 
 

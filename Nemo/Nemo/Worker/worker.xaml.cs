@@ -23,6 +23,7 @@ namespace Nemo.Worker
         Database.AppLayer applayer;
         string username, password;
         DataTable transcript;
+        anouncementsWindow anounce;
         public worker(string username, string password)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Nemo.Worker
             this.password = password;
             loadBasicData();
             getTranscript();
+            anounce = new anouncementsWindow(this,username);
         }
 
         private void loadBasicData()
@@ -39,6 +41,14 @@ namespace Nemo.Worker
             this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
 
         }
+
+        private void btn_notification_Click(object sender, RoutedEventArgs e)
+        {
+            anounce.Show();
+            this.Hide();
+            //this.Close();
+        }
+
         private void getTranscript()
         {
             transcript = applayer.loadWorkerTranscript(username);
