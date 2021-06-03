@@ -76,10 +76,6 @@
     <Compile Include="Manager\AddMachine.xaml.cs">
       <DependentUpon>AddMachine.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Manager\AnnouceTo.xaml.cs">
-      <DependentUpon>AnnouceTo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Manager\DataGridViewRow.cs" />
     <Compile Include="Manager\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
     </Compile>
@@ -91,12 +87,6 @@
     </Compile>
     <Compile Include="Manager\production_lines.xaml.cs">
       <DependentUpon>production_lines.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Manager\RecievedMsgs.xaml.cs">
-      <DependentUpon>RecievedMsgs.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Manager\SendAnnounc.xaml.cs">
-      <DependentUpon>SendAnnounc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
@@ -161,10 +151,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Manager\AnnouceTo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Manager\employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,14 +164,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manager\production_lines.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Manager\RecievedMsgs.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Manager\SendAnnounc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,10 +305,7 @@
     <Resource Include="supervisor\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\anouncments.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SoundEffects\sent.mp3" />
+    <Resource Include="supervisor\myBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

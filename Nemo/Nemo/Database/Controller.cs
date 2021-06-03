@@ -11,7 +11,7 @@ namespace Nemo.Database
     class Controller
     {
         DBManager dbMan;
-        
+
         static Controller instance;
         public static Controller getInstance()
         {
@@ -33,14 +33,14 @@ namespace Nemo.Database
 
 
         ////////////////////////////////Employees////////////////////////////////
-        public DataTable selectAllEmps() 
+        public DataTable selectAllEmps()
         {
             string query = " SELECT ID,CONCAT(Fname,' ',Lname)AS 'Name',CASE  WHEN Jop_title = 'M'  THEN 'Manager' WHEN Jop_title = 'W' THEN 'Worker' WHEN Jop_title = 'S'  THEN 'Supervisor' END as 'Jop_description', Salary FROM Employee;";
             return dbMan.ExcuteReader(query);
 
         }
-        
-        public DataTable selectAllEmpsForSending() 
+
+        public DataTable selectAllEmpsForSending()
         {
             string query = " SELECT ID, CONCAT(Fname,' ',Lname)AS 'Name',userName FROM Employee;";
             return dbMan.ExcuteReader(query);
@@ -123,7 +123,7 @@ namespace Nemo.Database
                 "Religion = " + Religion + ", " +
                 "Status = " + Status + " " +
                 "WHERE ID = '"+id+"';";
-                
+
             return dbMan.ExecuteNonQuery(query);
 
         }
@@ -163,7 +163,7 @@ namespace Nemo.Database
                 ", " + nationalID + ");";
             return dbMan.ExecuteNonQuery(query);
         }
-      
+
         public DataTable GetMachineAtId(string id)
         {
             string query = "SELECT * FROM Machine WHERE ID = '" + id + "';";
@@ -213,7 +213,7 @@ namespace Nemo.Database
                             "ORDER BY COUNT(Religion) DESC; ";
             return dbMan.ExcuteReader(query);
         }
-        
+
         public DataTable GetTopProductionLines()
         {
             string query = "SELECT  p.Name as 'prodLine', Product.Name as 'Product',pr.Daily_amount,CONCAT(Employee.Fname,' ',Employee.Lname)AS 'supervisor' " +
@@ -238,14 +238,14 @@ namespace Nemo.Database
 
         public DataTable viewAssignedMachines(string username)
         {
-            string query = 
+            string query =
                     "select m.Name,m.ID,m.Start_date as Date,p.name as Line"+
                     " from Machine as m join Line_has_machine as lm on m.ID = lm.machine_id"+
                     " join Production_line as p on p.ID = lm.Line_id"+
                     " join Employee as sup on sup.ID = p.Supervisor_id"+
-                    " where userName = 'supervisor1'";
+                    " where userName = '"+username+"'";
             return dbMan.ExcuteReader(query);
-        } 
+        }
 
         public DataTable getAllLines()
         {
@@ -268,7 +268,7 @@ namespace Nemo.Database
 
             return dbMan.ExcuteReader(query);
         }
-        
+
         public DataTable getAssignedLines(string userName)
         {
             string query = "select Name,p.ID,Location"+
@@ -278,8 +278,21 @@ namespace Nemo.Database
         }
         public DataTable getWorkersAndMachines(string userName)
         {
-            string query = "select CONCAT(e.Fname,' ',e.Lname)AS Name, e.ID as ID, m.Name as Machine"+
-" from(Employee as e join Works_on as w on w.Emp_id = e.ID) join Machine as m on m.ID = w.Machine_id";
+            string query =
+" select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name as Machine" +
+" from Employee as e" +
+" join Works_on as w on e.ID = w.Emp_id" +
+" join Machine as m on m.ID = w.Machine_id" +
+" join Line_has_machine as lm on m.ID = lm.Machine_id" +
+" join Production_line as p on p.ID = lm.Line_id" +
+" join Employee as sup on sup.ID=p.Supervisor_id"+
+" where sup.username='"+userName+"'" +
+" union" +
+" select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name" +
+" from Employee as e  left join(Works_on as w join Machine as m on m.ID = w.Machine_id) on e.id = w.emp_id" +
+" where e.ID not  in (select Emp_id from Works_on where Emp_id = e.id)" +
+" order by m.Name desc";
+
             return dbMan.ExcuteReader(query);
         }
         public DataTable getAllSupervisors()
@@ -292,6 +305,18 @@ namespace Nemo.Database
             string query="insert into production_line  values ('"+name+"','" + location + "'," + supervisor+")";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int deleteLine(int lineID)
+        {
+            string query ="delete from production_line where ID="+lineID+"";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int deleteMachine(int machineID)
+        {
+            string query = "delete from machine where ID=" + machineID + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+////////hossam
 
 
         public DataTable SelectHighestPeopleReside()
@@ -324,7 +349,7 @@ namespace Nemo.Database
 
         public int InsertMsgToEmps(string  senderId,string subject, string msg, DataTable toEmps)
         {
-           
+
 
             string queryInsert = "INSERT INTO Msg(SenderId,Subject,Msg)" +
                 " VALUES (" + senderId + "," + subject + "," + msg + ");";
@@ -342,7 +367,7 @@ namespace Nemo.Database
                     string quryInsertTo = "INSERT INTO MsgTo (MsgID,ReceiverId) VALUES ('"+id+"','"+toId+"');";
                     dbMan.ExecuteNonQuery(quryInsertTo);
                 }
-               
+
             }
             return 0;
         }
@@ -351,7 +376,7 @@ namespace Nemo.Database
         public DataTable SelectAllRecievedMsgs(string userName, string password)
         {
             string query = "SELECT CONCAT(e.Fname,' ',e.Lname)AS 'Name',m.Subject,m.Msg "+
-                            "FROM((MsgTo as mt JOIN Employee as e ON mt.ReceiverId = e.ID) JOIN Msg as m ON m.MsgID = mt.MsgID) "+   
+                            "FROM((MsgTo as mt JOIN Employee as e ON mt.ReceiverId = e.ID) JOIN Msg as m ON m.MsgID = mt.MsgID) "+
                             "WHERE e.userName = '"+userName+"' AND e.password = '"+password+"' ";
             return dbMan.ExcuteReader(query);
         }

@@ -36,14 +36,19 @@ namespace Nemo.Manager
         public void getAllLines()
         {
             data = applayer.getAllLines();
-            prodLinesGrid.ItemsSource = data.DefaultView;
-            //prodLinesGrid.ItemsSource = 
-        }
+            prodLinesGrid.ItemsSource = data.DefaultView;        }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             parent.moreInfo.Content = addLinePage;
 
+        }
+
+        private void itm_delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (applayer.deleteLine(((DataRowView)prodLinesGrid.SelectedItem)["ID"].ToString()) >0)
+                MessageBox.Show("Line deleted succesfully!");
+            getAllLines();
         }
     }
 }

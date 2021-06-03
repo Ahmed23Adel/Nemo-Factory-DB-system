@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("soundeffects/sent.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("supervisor/myback.png")]
 
 
