@@ -51,6 +51,8 @@ namespace Nemo.supervisor
         {
             products=applayer.getAllProducts();
         }
+
+        int lineID, prodID, amount;
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(txt_amount.Text))
@@ -69,6 +71,8 @@ namespace Nemo.supervisor
                 MessageBox.Show("Amount is empty, please fill it");
             }
 
+
+            }
         }
     }
 
