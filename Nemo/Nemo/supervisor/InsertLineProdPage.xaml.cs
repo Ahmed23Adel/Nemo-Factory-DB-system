@@ -37,7 +37,7 @@ namespace Nemo.supervisor
             {
                 combo_line.Items.Add(lines.Rows[i]["name"] + "  ID:" + lines.Rows[i]["id"]);
             }
-            for (int i = 0; i < products.Rows.Count; i++)
+            for (int i = 0; i < lines.Rows.Count; i++)
             {
                 combo_product.Items.Add(lines.Rows[i]["name"] + "  ID:" + lines.Rows[i]["id"]);
             }
@@ -54,25 +54,26 @@ namespace Nemo.supervisor
         int lineID, prodID, amount;
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
-            if (combo_line.SelectedIndex == -1) MessageBox.Show("Please Choose a line!");
-            else if (combo_product.SelectedIndex==-1) MessageBox.Show("Please Choose a product!");
-            else if (string.IsNullOrEmpty(txt_amount.Text) || txt_amount.Text.Any(char.IsDigit)) MessageBox.Show("Please Enter valid amount!");
+            if (!string.IsNullOrEmpty(txt_amount.Text))
+            {
+                int linesIndex = combo_line.SelectedIndex;
+                int prodIndex = combo_product.SelectedIndex;
+                int linesId = int.Parse(lines.Rows[linesIndex]["id"].ToString());
+                int prodId = int.Parse(products.Rows[prodIndex]["id"].ToString());
+                if (applayer.insertProduction(linesId, prodId, int.Parse(txt_amount.Text.ToString())) ==0)
+                {
+                    applayer.updateProdcution(linesId, prodId, int.Parse(txt_amount.Text.ToString()));
+                }
+            }
             else
             {
-                if (applayer.doesLineProduces(lineID))
-                {
-                    if (applayer.updateProdcution(lineID, prodID, amount) > 0)
-                        MessageBox.Show("Amount updated succesfully");
-                }
-                else
-                {
-                    if (applayer.insertProduction(lineID, prodID, amount) > 0)
-                        MessageBox.Show("Amount added succesfully");
-                }
+                MessageBox.Show("Amount is empty, please fill it");
+            }
+
 
             }
         }
     }
 
-}
+
 

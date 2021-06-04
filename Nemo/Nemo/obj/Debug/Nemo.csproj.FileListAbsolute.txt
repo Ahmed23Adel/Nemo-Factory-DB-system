@@ -1,123 +1,79 @@
-H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\addLinePage.g.cs
-H:\New folder\hh\Nemo\Nemo\obj\Debug\Manager\addLinePage.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\addLinePage.g.cs
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddMachine.g.cs
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateMachine.g.cs
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ViewMyProfile.g.cs
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\Nemo.exe.config
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\Nemo.exe
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\Nemo.pdb
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.dll
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.pdb
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.xml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.pdb
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.xml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\App.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Login.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\MainWindow.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\addLinePage.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddMachine.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\employees.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\machines.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\production_lines.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Statistics.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateMachine.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ViewMyProfile.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Buttons.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Colors.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Fonts.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Texts.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\supervisor.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedLinesPage.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedMachinesPage.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\workersAndMachinesPage.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Utilities\CustomMessageBox.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Worker\worker.baml
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.g.resources
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.Properties.Resources.resources
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.GenerateResource.cache
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.CoreCompileInputs.cache
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.CopyComplete
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\MachinesPage.g.cs
-C:\Users\Shady\Documents\GitHub\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\MachinesPage.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csprojAssemblyReference.cache
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Login.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\MainWindow.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\addLinePage.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddMachine.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AnnouceTo.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\employees.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\machines.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\production_lines.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\RecievedMsgs.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\SendAnnounc.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Settings.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Statistics.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateMachine.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ViewMyProfile.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\supervisor.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedLinesPage.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedMachinesPage.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\workersAndMachinesPage.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Utilities\CustomMessageBox.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Worker\worker.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\App.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.cache
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.lref
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.exe
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.pdb
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\Nemo.exe.config
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\Nemo.exe
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\Nemo.pdb
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.dll
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.dll
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.pdb
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.xml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.pdb
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.xml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Worker\anouncementsWindow.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\App.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Login.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\MainWindow.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddEmployee.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\addLinePage.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AddMachine.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\AnnouceTo.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\employees.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\machines.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\production_lines.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\RecievedMsgs.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\SendAnnounc.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Settings.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\Statistics.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\UpdateMachine.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Manager\ViewMyProfile.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Buttons.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Colors.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Fonts.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Styles\Texts.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\supervisor.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedLinesPage.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\viewAssignedMachinesPage.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\workersAndMachinesPage.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Utilities\CustomMessageBox.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Worker\worker.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Worker\anouncementsWindow.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.g.resources
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.Properties.Resources.resources
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.GenerateResource.cache
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.CoreCompileInputs.cache
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\Nemo.csproj.CopyComplete
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\InsertLineProdPage.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\showLineProdPage.g.cs
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\InsertLineProdPage.baml
-H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\supervisor\showLineProdPage.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.csprojAssemblyReference.cache
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Login.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\MainWindow.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\AddEmployee.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\addLinePage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\AddMachine.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\AnnouceTo.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\employees.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\machines.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\production_lines.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\RecievedMsgs.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\SendAnnounc.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\Settings.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\Statistics.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\UpdateMachine.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\ViewMyProfile.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\supervisor.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\viewAssignedLinesPage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\viewAssignedMachinesPage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\workersAndMachinesPage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Utilities\CustomMessageBox.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Worker\worker.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\App.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.cache
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.lref
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.exe
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.pdb
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\Nemo.exe.config
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\Nemo.exe
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\Nemo.pdb
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\LiveCharts.dll
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.dll
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\LiveCharts.pdb
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\LiveCharts.xml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.pdb
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\bin\Debug\LiveCharts.Wpf.xml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\App.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Login.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\MainWindow.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\AddEmployee.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\addLinePage.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\AddMachine.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\AnnouceTo.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\employees.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\machines.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\ManagerOptions.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\production_lines.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\RecievedMsgs.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\SendAnnounc.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\Statistics.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\UpdateEmployee.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\UpdateMachine.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\ViewMyProfile.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Styles\Buttons.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Styles\Colors.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Styles\Fonts.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Styles\Texts.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\supervisor.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\viewAssignedLinesPage.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\viewAssignedMachinesPage.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\workersAndMachinesPage.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Utilities\CustomMessageBox.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Worker\worker.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Manager\Settings.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.g.resources
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.Properties.Resources.resources
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.csproj.GenerateResource.cache
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.csproj.CoreCompileInputs.cache
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Nemo.csproj.CopyComplete
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Worker\anouncementsWindow.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Worker\anouncementsWindow.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\MyProfile.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\MyProfile.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\InsertLineProdPage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\showLineProdPage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\InsertLineProdPage.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\showLineProdPage.baml

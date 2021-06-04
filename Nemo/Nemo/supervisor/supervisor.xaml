@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.supervisor"
         mc:Ignorable="d"
-        Title="supervisor" Height="450" Width="800">
+        Title="supervisor" Height="600" Width="1000">
     <Window.Background>
         <ImageBrush ImageSource="back.png" TileMode="Tile"/>
     </Window.Background>
@@ -189,6 +189,83 @@
                                    FontSize="20"
                                    Foreground="Black" FontFamily="Impact"
                                    Text="Workers"
+                                   Margin="45.6,13,0,12" Grid.ColumnSpan="3"
+                                   />
+                    </Grid>
+                    <Grid Height="50" UIElement.PreviewMouseDown="insertAmount">
+                        <Grid.ColumnDefinitions>
+                            <!--For orange rectangle-->
+                            <ColumnDefinition Width="10*"/>
+                            <!--For icon-->
+                            <ColumnDefinition Width="70*"/>
+                            <!--For "Production line" word-->
+                            <ColumnDefinition Width="21*"/>
+                            <ColumnDefinition Width="154*"/>
+                            <!--For "Production line" word-->
+
+                        </Grid.ColumnDefinitions>
+
+                        <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0.4,0" >
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <Line x:Name="ShowtProduction" 
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0"
+                                      Y2="50"
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                        </StackPanel>
+                        <!--Image for production line -->
+                        <Image  Grid.Column="1" 
+                                    Margin="3.6,0,33.8,0" Width="33" Source="../Images/Workers.png">
+                        </Image>
+                        <!--"Production line word-->
+                        <TextBlock Grid.Column="1" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   FontSize="20"
+                                   Foreground="Black" FontFamily="Impact"
+                                   Text="Insert line daily amount"
+                                   Margin="45.6,13,0,12" Grid.ColumnSpan="3"
+                                   />
+                    </Grid>
+                    
+                    <Grid Height="50" UIElement.PreviewMouseDown="showDailyAmount">
+                        <Grid.ColumnDefinitions>
+                            <!--For orange rectangle-->
+                            <ColumnDefinition Width="10*"/>
+                            <!--For icon-->
+                            <ColumnDefinition Width="70*"/>
+                            <!--For "Production line" word-->
+                            <ColumnDefinition Width="21*"/>
+                            <ColumnDefinition Width="154*"/>
+                            <!--For "Production line" word-->
+
+                        </Grid.ColumnDefinitions>
+
+                        <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0.4,0" >
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <Line x:Name="ViewInsertProduction" 
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0"
+                                      Y2="50"
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                        </StackPanel>
+                        <!--Image for production line -->
+                        <Image  Grid.Column="1" 
+                                    Margin="3.6,0,33.8,0" Width="33" Source="../Images/Workers.png">
+                        </Image>
+                        <!--"Production line word-->
+                        <TextBlock Grid.Column="1" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   FontSize="20"
+                                   Foreground="Black" FontFamily="Impact"
+                                   Text="Show daily amount"
                                    Margin="45.6,13,0,12" Grid.ColumnSpan="3"
                                    />
                     </Grid>

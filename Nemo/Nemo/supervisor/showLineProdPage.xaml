@@ -28,7 +28,7 @@
                                         Header="Line name" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
                                         Header="Line ID" Width="*" />
-                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Product}"
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Prodcut}"
                                         Header="Product name" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Amount}"
                                         Header="Amount" Width="*" />

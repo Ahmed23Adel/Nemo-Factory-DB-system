@@ -1,0 +1,321 @@
+﻿<Page x:Class="Nemo.supervisor.MyProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Nemo.supervisor"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="900"
+      Title="My Profile">
+
+    <Page.Background>
+        <ImageBrush ImageSource="myBack.png" TileMode="Tile"/>
+    </Page.Background>
+
+    <Border
+            Margin="14">
+
+        <!--To give emoji background printed over the blue background.-->
+        <Grid >
+            <Grid.Background>
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute" 
+                            Viewport="0 0 500 500"
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+
+            <!--this stack panel contains all of the data-->
+            <StackPanel>
+
+                <!--divided it to 4 quarters to be spaced evenly.-->
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For National ID word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For actual value of National ID-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For jop title word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For actual value of jop ttile-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Notional ID word-->
+                    <TextBlock Text="National ID: " 
+                               Grid.Column="0"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+
+                    <!--Actual value of national id-->
+                    <TextBox x:Name="nationalId"
+                             Grid.Column="1" 
+                             FontSize="20"
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                    <!--For jop title word-->
+                    <TextBlock Text="Job title: "
+                               Grid.Column="2"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+                    <!--Combo bos that contains all possiple positions in company-->
+                    <ComboBox x:Name="jop_title"  
+                              Grid.Column="3"
+                              FontSize="20" 
+                              Margin="8 8 8 8">
+                        <ComboBoxItem Content="Not defined"/>
+                        <ComboBoxItem Content="Manager"/>
+                        <ComboBoxItem Content="Worker"/>
+                        <ComboBoxItem Content="Supervisor"/>
+                    </ComboBox>
+
+                </Grid>
+                <!--End of first row-->
+                <Separator/>
+
+                <!--Frist and last name-->
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For first name word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For actual value of first name-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For last name word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For last name value-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="First Name: " 
+                               Grid.Column="0"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White" />
+
+                    <!--First name value-->
+                    <TextBox x:Name="fName" 
+                             Grid.Column="1" 
+                             FontSize="20"
+                             Margin="8 8 8 8"
+                             Foreground="White"
+                             Background="Transparent"/>
+                    <!--last naem workd-->
+                    <TextBlock Text="Last Name: " 
+                               Grid.Column="2"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+                    <!--Last name value-->
+                    <TextBox x:Name="lName" 
+                             Grid.Column="3" 
+                             FontSize="20"
+                             Margin="8 8 8 8"
+                             Foreground="White" 
+                             Background="Transparent"/>
+                </Grid>
+                <!--End of second row-->
+                <Separator/>
+                <!--Balance and Brith data-->
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For balance word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--for balace atual value-->
+                        <ColumnDefinition Width="*"/>
+                        <!--for birth data word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--birth data value-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Balance workd-->
+                    <TextBlock Text="Salary: "
+                               Grid.Column="0"
+                               FontSize="20"
+                               Margin="8 8 8 8"
+                               Foreground="White" />
+                    <!--Balance value  Hoping to be high:)-->
+                    <TextBox x:Name="salary" 
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                    <!--Birth dat word-->
+                    <TextBlock Text="Birth date: "
+                               Grid.Column="2"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White" />
+                    <!--Birth data value-->
+                    <DatePicker x:Name="bdate" 
+                                 Grid.Column="3"
+                                FontSize="20" 
+                                Margin="8 8 8 8" />
+
+                </Grid>
+                <!--End of third row (balance and birthdate )-->
+                <Separator/>
+
+                <!--User naem and password-->
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For user name word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--for userName value-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For password word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For passwod value-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--User name word-->
+                    <TextBlock Grid.Column="0"
+                               Text="User name: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"
+                               />
+                    <!--userName value-->
+                    <TextBox x:Name="userNameField" 
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                    <!--Password word-->
+                    <TextBlock Grid.Column="2" 
+                               Text="Password: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+                    <!--Password value -->
+                    <TextBox x:Name="pass"
+                             Grid.Column="3" 
+                             FontSize="20"
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                </Grid>
+                <!--End of forth row (usernaem, password)-->
+
+
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For user name word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--for userName value-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For password word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For passwod value-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--User name word-->
+                    <TextBlock Grid.Column="0"
+                               Text="Gender: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"
+                               />
+                    <!--userName value-->
+                    <ComboBox x:Name="gender" 
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Margin="8 8 8 8" 
+                             Foreground="Black" 
+                             Background="Transparent">
+                        <ComboBoxItem Content="Not defined" Foreground="Black"/>
+                        <ComboBoxItem Content="Male" Foreground="Black"/>
+                        <ComboBoxItem Content="Female" Foreground="Black"/>
+                    </ComboBox>
+                    <!--Password word-->
+                    <TextBlock Grid.Column="2" 
+                               Text="Address: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+                    <!--Password value -->
+                    <TextBox x:Name="address"
+                             Grid.Column="3" 
+                             FontSize="20"
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                </Grid>
+                <!--End of forth row (usernaem, password)-->
+
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+                        <!--For user name word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--for userName value-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For password word-->
+                        <ColumnDefinition Width="*"/>
+                        <!--For passwod value-->
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--User name word-->
+                    <TextBlock Grid.Column="0"
+                               Text="Religion: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"
+                               />
+                    <!--userName value-->
+                    <TextBox x:Name="religion" 
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Margin="8 8 8 8" 
+                             Foreground="White" 
+                             Background="Transparent"/>
+                    <!--Password word-->
+                    <TextBlock Grid.Column="2" 
+                               Text="Status: " 
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White"/>
+                    <!--Password value -->
+                    <ComboBox x:Name="status"
+                             Grid.Column="3" 
+                             FontSize="20"
+                             Margin="8 8 8 8" 
+                             Foreground="Black" 
+                             Background="Transparent">
+                        <ComboBoxItem Content="Undefined" Foreground="Black"/>
+                        <ComboBoxItem Content="Married" Foreground="Black"/>
+                        <ComboBoxItem Content="Not married  " Foreground="Black"/>
+                    </ComboBox>
+                </Grid>
+                <!--End of forth row (usernaem, password)-->
+                <Grid Margin="8 8 8 8">
+                    <Grid.ColumnDefinitions>
+
+                        <!--Update-->
+                        <ColumnDefinition Width="*"/>
+                        <!--ColumnDefinition Width="*"/>-->
+                    </Grid.ColumnDefinitions>
+
+                    <!--Update-->
+                    <Button  Click="Update" 
+                             Grid.Column="2" 
+                             Content="Update"
+                             HorizontalAlignment="Center" 
+                             FontWeight="Bold"
+                             Style="{StaticResource updateEmp}"/>
+
+                </Grid>
+                <!--End of grid having emoji backgournd -->
+                <Separator/>
+
+            </StackPanel>
+            <!--end of stackpanel having all items-->
+        </Grid>
+    </Border>
+</Page>

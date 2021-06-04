@@ -424,6 +424,10 @@ namespace Nemo.Database
         {
             return controller.AssignedWorkerId(id, machine);
         }
+        public int updateProduction(int lineID, int productID, int amount)
+        {
+            return controller.updateProdcution(lineID, productID, amount);
+        }
 
 
     }

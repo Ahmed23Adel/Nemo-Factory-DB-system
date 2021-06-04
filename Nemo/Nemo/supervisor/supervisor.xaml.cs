@@ -25,9 +25,11 @@ namespace Nemo.supervisor
         viewAssignedMachinesPage machinesPage;
         viewAssignedLinesPage linesPage;
         workersAndMachinesPage workersPage;
+        MyProfile myProfilePage;
+
         showLineProdPage productionPage;
         InsertLineProdPage insertProductionPage;
-        // MachinesPage loadMachines;
+
 
 
         private void ViewAssignedMachines(object sender, MouseButtonEventArgs e)
@@ -42,7 +44,7 @@ namespace Nemo.supervisor
 
         private void MyProfile(object sender, MouseButtonEventArgs e)
         {
-            SupervisorFrame.Content = null;
+            SupervisorFrame.Content = myProfilePage;
         }
 
         public void ViewWorkers(object sender, MouseButtonEventArgs e)
@@ -100,6 +102,16 @@ namespace Nemo.supervisor
             SupervisorFrame.Content = machinesPage;
         }
 
+        private void insertAmount(object sender, MouseButtonEventArgs e)
+        {
+            SupervisorFrame.Content = insertProductionPage;
+        }
+        
+        private void showDailyAmount(object sender, MouseButtonEventArgs e)
+        {
+            SupervisorFrame.Content = productionPage;
+        }
+
         public supervisor(string username, string password)
         {
             InitializeComponent();
@@ -110,6 +122,8 @@ namespace Nemo.supervisor
             machinesPage = new viewAssignedMachinesPage(username);
             linesPage = new viewAssignedLinesPage(username);
             workersPage = new workersAndMachinesPage(username);
+            myProfilePage = new MyProfile(username, password);
+         
             productionPage = new showLineProdPage(username);
             insertProductionPage = new InsertLineProdPage(username);
         }

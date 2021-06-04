@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
-        Title="View my profile
-" Height="550" Width="850">
+        Title="View my profile" 
+        Height="550" Width="850">
     <Border Background="{StaticResource WordBlueBrush}"
             Margin="14">
         <!--To give emoji background printed over the blue background.-->
