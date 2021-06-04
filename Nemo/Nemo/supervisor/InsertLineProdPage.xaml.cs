@@ -49,9 +49,27 @@ namespace Nemo.supervisor
         {
             products=applayer.getAllProducts();
         }
+
+        int lineID, prodID, amount;
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
+            if (combo_line.SelectedIndex == -1) MessageBox.Show("Please Choose a line!");
+            else if (combo_product.SelectedIndex==-1) MessageBox.Show("Please Choose a product!");
+            else if (string.IsNullOrEmpty(txt_amount.Text) || txt_amount.Text.Any(char.IsDigit)) MessageBox.Show("Please Enter valid amount!");
+            else
+            {
+                if (applayer.doesLineProduces(lineID))
+                {
+                    if (applayer.updateProdcution(lineID, prodID, amount) > 0)
+                        MessageBox.Show("Amount updated succesfully");
+                }
+                else
+                {
+                    if (applayer.insertProduction(lineID, prodID, amount) > 0)
+                        MessageBox.Show("Amount added succesfully");
+                }
 
+            }
         }
     }
 
