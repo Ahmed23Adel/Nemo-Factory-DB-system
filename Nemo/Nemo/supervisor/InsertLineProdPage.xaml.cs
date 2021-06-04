@@ -27,8 +27,7 @@ namespace Nemo.supervisor
         {
             InitializeComponent();
             applayer = Database.AppLayer.GetInstance();
-
-            loadData(username);
+            loadData(username); 
         }
         private void loadData(string username)
         {
