@@ -21,6 +21,7 @@ namespace Nemo.Manager
     {
         Database.AppLayer appLayer;
         ManagerOptoins parentInstance;
+        
         public AddMachine(ManagerOptoins parentInstance)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Nemo.Manager
         {
             if (isDataValid())
             {
+                MakeSound.MakeSent();
                 InsertNewMahice();
                 this.Close();
                 parentInstance.ModShow();
@@ -43,9 +45,8 @@ namespace Nemo.Manager
 
         private void Cancel(object sender, RoutedEventArgs e)
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+
+            MakeSound.MakeClick();
             this.Close();
             parentInstance.Show();
         }
@@ -57,10 +58,7 @@ namespace Nemo.Manager
 
         public void InsertNewMahice()
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/sent.mp3", UriKind.Relative));
-            mplayer.Play();
-            appLayer.InsertMachine(name.Text, startDate.Text);
+            appLayer.InsertMachine(name.Text.Trim(), startDate.Text.Trim()) ;
 
         }
     }

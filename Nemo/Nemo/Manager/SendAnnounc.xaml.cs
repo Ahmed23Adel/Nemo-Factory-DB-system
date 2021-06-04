@@ -40,11 +40,10 @@ namespace Nemo.Manager
 
         private void sendMsg(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             if (MessageBox.Show("Are you sure you want to send this messege?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                MediaPlayer mplayer = new MediaPlayer();
-                mplayer.Open(new Uri(@"../../SoundEffects/sent.mp3", UriKind.Relative));
-                mplayer.Play();
+                MakeSound.MakeSent();
 
                 appLayer.InsertMsgToEmps(userName, password, subject.Text.Trim().ToString(), msg.Text.Trim().ToString(), listEmps);
                 subject.Text = "";
@@ -58,6 +57,7 @@ namespace Nemo.Manager
 
         private void Button_Click_to(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             new AnnouceTo(this).Show();
         }
 
