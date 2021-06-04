@@ -28,7 +28,7 @@ namespace Nemo.supervisor
             applayer = Database.AppLayer.GetInstance();
             loadData(username);
         }
-        private void loadData(string username)
+        public void loadData(string username)
         {
             data = applayer.getProduction(username);
             showLineProdGrid.ItemsSource = data.DefaultView;
