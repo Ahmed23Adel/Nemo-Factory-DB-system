@@ -6,28 +6,28 @@ use Factory;
 
 
 CREATE TABLE Employee(
-Fname nvarchar(50),
-Lname nvarchar(50),
+ID int IDENTITY(1,1) ,
+Fname nvarchar(14),
+Lname nvarchar(14),
+userName nvarchar(50) UNIQUE NOT NULL,
+password nvarchar(50) NOT NULL,
 Balance float,
 salary float,
-ID int IDENTITY(1,1) ,
-userName nvarchar(50) UNIQUE,
-password nvarchar(50),
 Bdata DATE, 
-Jop_title nvarchar(50) not null,
+Jop_title nvarchar(50),
 NationalId char(14),
 Gender char(1),
 Address nvarchar(50),
-Religion nvarchar(50),
-Status char(1),
+Religion nvarchar(50) DEFAULT 'N',
+Status char(1) DEFAULT 'N',
 PRIMARY KEY (ID)
 );
 
 
 CREATE TABLE Machine(
+ID int  IDENTITY(1,1), 
 Name nvarchar(20),
-ID int  IDENTITY(1,1), /*Should it be string or number?*/
-Start_date DATE,
+Start_date DATE DEFAULT GETDATE() ,
 PRIMARY KEY(ID)
 );
 
@@ -47,8 +47,8 @@ FOREIGN KEY (Emp_id) REFERENCES  Employee
 );
 
 CREATE TABLE Production_line(
-name nvarchar(20),
 ID int IDENTITY(1,1),
+Name nvarchar(20),
 Location nvarchar(50),
 Supervisor_id int,
 PRIMARY KEY(ID),
@@ -61,7 +61,7 @@ FOREIGN KEY (Supervisor_id) REFERENCES Employee
 
 CREATE TABLE Line_has_machine(
 Line_id int,
-machine_id int
+Machine_id int
 PRIMARY KEY(Line_id, machine_id),
 FOREIGN KEY (Line_id) REFERENCES Production_line
 	ON DELETE CASCADE
@@ -75,10 +75,9 @@ FOREIGN KEY (machine_id) REFERENCES Machine
 
 
 CREATE TABLE Product(
-ID int,
+ID int IDENTITY(1,1),
 Name nvarchar(50),
 cost real,
-
 PRIMARY KEY(ID)
 )
 
@@ -99,18 +98,22 @@ FOREIGN KEY (product_id) REFERENCES Product
 )
 
 
-CREATE TABLE msg (
-msgID int IDENTITY(1,1),
-senderId int,
-msg nvarchar(MAX),
+CREATE TABLE Msg (
+MsgID int IDENTITY(1,1),
+SenderId int,
+Subject nvarchar(50),
+Msg nvarchar(MAX),
 primary key(msgID),
 )
 
-create table msg_to
+create table MsgTo
 (
-msgID int,
-receiverId int,
+MsgID int,
+ReceiverId int,
 primary key(msgID,receiverID),
+FOREIGN KEY (MsgID) REFERENCES Msg
+	ON DELETE CASCADE
+	ON UPDATE CASCADE,
 )
 
 
