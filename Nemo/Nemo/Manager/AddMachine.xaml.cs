@@ -21,6 +21,7 @@ namespace Nemo.Manager
     {
         Database.AppLayer appLayer;
         ManagerOptoins parentInstance;
+        
         public AddMachine(ManagerOptoins parentInstance)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Nemo.Manager
         {
             if (isDataValid())
             {
+                MakeSound.MakeSent();
                 InsertNewMahice();
                 this.Close();
                 parentInstance.ModShow();
@@ -43,6 +45,8 @@ namespace Nemo.Manager
 
         private void Cancel(object sender, RoutedEventArgs e)
         {
+
+            MakeSound.MakeClick();
             this.Close();
             parentInstance.Show();
         }
@@ -54,7 +58,7 @@ namespace Nemo.Manager
 
         public void InsertNewMahice()
         {
-            appLayer.InsertMachine(name.Text, startDate.Text);
+            appLayer.InsertMachine(name.Text.Trim(), startDate.Text.Trim()) ;
 
         }
     }

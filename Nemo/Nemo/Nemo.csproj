@@ -67,6 +67,7 @@
     <Compile Include="Database\AppLayer.cs" />
     <Compile Include="DEFs.cs" />
     <Compile Include="Exceptions\JopTitleNotFound.cs" />
+    <Compile Include="MakeSound.cs" />
     <Compile Include="Manager\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
     </Compile>
@@ -76,6 +77,10 @@
     <Compile Include="Manager\AddMachine.xaml.cs">
       <DependentUpon>AddMachine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\AnnouceTo.xaml.cs">
+      <DependentUpon>AnnouceTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DataGridViewRow.cs" />
     <Compile Include="Manager\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
     </Compile>
@@ -88,6 +93,15 @@
     <Compile Include="Manager\production_lines.xaml.cs">
       <DependentUpon>production_lines.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\RecievedMsgs.xaml.cs">
+      <DependentUpon>RecievedMsgs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\SendAnnounc.xaml.cs">
+      <DependentUpon>SendAnnounc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
     </Compile>
@@ -99,9 +113,6 @@
     </Compile>
     <Compile Include="Manager\ViewMyProfile.xaml.cs">
       <DependentUpon>ViewMyProfile.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="supervisor\MachinesPage.xaml.cs">
-      <DependentUpon>MachinesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="supervisor\supervisor.xaml.cs">
       <DependentUpon>supervisor.xaml</DependentUpon>
@@ -154,6 +165,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manager\AnnouceTo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Manager\employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +182,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manager\production_lines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\RecievedMsgs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manager\SendAnnounc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manager\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,10 +226,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Texts.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="supervisor\MachinesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -312,7 +335,10 @@
     <Resource Include="supervisor\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Workers.png" />
+    <Resource Include="supervisor\myBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\anouncments.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

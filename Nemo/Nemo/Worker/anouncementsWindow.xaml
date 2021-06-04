@@ -1,0 +1,35 @@
+﻿<Window x:Class="Nemo.Worker.anouncementsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nemo.Worker"
+        mc:Ignorable="d"
+        Title="anouncementsWindow" Height="450" Width="800">
+    <Border Background="{StaticResource WordBlueBrush}" Margin="14">
+        <Grid Background="#FFDAE6FF" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Go Back" Width="100" HorizontalAlignment="Left" FontSize="18" Height="36" VerticalAlignment="Bottom" Click="Button_Click">
+
+            </Button>
+
+            <DataGrid Grid.Row="1" x:Name="grid_msgs" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20">
+
+
+                <DataGrid.Columns >
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
+                                        Header="Sender" Width="auto" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Subject}"
+                                        Header="Subject" Width="auto" />
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Msg}"
+                                        Header="Message" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+    </Border>
+
+</Window>

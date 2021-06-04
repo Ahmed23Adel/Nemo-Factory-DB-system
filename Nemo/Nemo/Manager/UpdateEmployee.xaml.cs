@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using System.Windows;
 using System.Data;
-
+using System.Windows.Media;
+using System;
 
 namespace Nemo.Manager
 {
@@ -33,7 +34,6 @@ namespace Nemo.Manager
         {
             DataTable dt = appLayer.SelectEmpAtId(id);
 
-            //First check for jop title if could be either M: Manager W:Worker S:Supervisor or null:Not defined
             string jptle = dt.Rows[0]["Jop_title"].ToString();
             if (jptle == "M") //Manager
                 jop_title.SelectedIndex = 1;
@@ -44,14 +44,32 @@ namespace Nemo.Manager
             else //not defined
                 jop_title.SelectedIndex = 0;
 
+            string genderChosen = dt.Rows[0]["Gender"].ToString();
+            if (genderChosen == "M") //Male
+                gender.SelectedIndex = 1;
+            else if (genderChosen == "F")//Female
+                gender.SelectedIndex = 2;
+            else //not defined
+                gender.SelectedIndex = 0;
+
             fName.Text = dt.Rows[0]["Fname"].ToString();
             lName.Text = dt.Rows[0]["Lname"].ToString();
-            balance.Text = dt.Rows[0]["Balance"].ToString();
+            salary.Text = dt.Rows[0]["Salary"].ToString();
             bdate.Text = dt.Rows[0]["Bdata"].ToString();
-            userName.Text = dt.Rows[0]["userName"].ToString();
+            userNameField.Text = dt.Rows[0]["userName"].ToString();
             pass.Text = dt.Rows[0]["password"].ToString();
-            NationalId.Text = dt.Rows[0]["NationalId"].ToString();
-            
+            nationalId.Text = dt.Rows[0]["NationalId"].ToString();
+            address.Text = dt.Rows[0]["Address"].ToString();
+            religion.Text = dt.Rows[0]["Religion"].ToString();
+
+            string statChosen = dt.Rows[0]["Status"].ToString(); ;
+            if (statChosen == "M")
+                status.SelectedIndex = 1;
+            else if (statChosen == "S")
+                status.SelectedIndex = 2;
+            else
+                status.SelectedIndex = 0;
+
         }
 
         /// <summary>
@@ -64,8 +82,10 @@ namespace Nemo.Manager
             if (IsDataValid())
             {
                 //make sure that user is sure to update info
+                MakeSound.MakeClick();
                 if (MessageBox.Show("Are you sure you want to update this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
+                    MakeSound.MakeSent();
                     UpdateEmp();
                     this.Close();
                     //it calls ModShow to update data in employees table
@@ -94,13 +114,13 @@ namespace Nemo.Manager
                 return false;
             }
             //Balance shouldn't have any letters
-            if(balance.Text.Any(char.IsLetter))
+            if(salary.Text.Any(char.IsLetter))
             {
                 IfNum0PrintFOrS("Balance contains letters; please change it and try again", "But you swore! Balance is still wrong");
                 return false;
             }
             //userName shouldn't be empty
-            if(string.IsNullOrEmpty(userName.Text))
+            if(string.IsNullOrEmpty(userNameField.Text))
             {
                 IfNum0PrintFOrS("user name is empty; I'm not gonne fill it for you! please change it and try again", "But you swore! user name is still empty");
                 return false;
@@ -135,8 +155,23 @@ namespace Nemo.Manager
         /// </summary>
         private void UpdateEmp()
         {
+            
             string index = jop_title.SelectedIndex.ToString();
-            appLayer.UpdateEmpAtId(id, fName.Text, lName.Text,balance.Text,bdate.Text,GetJopTitleAtIndex(index),userName.Text,pass.Text);
+            string indexGender = gender.SelectedIndex.ToString();
+            string indexStatus = status.SelectedIndex.ToString();
+            appLayer.UpdateEmpAtId(id,fName.Text.ToString().Trim(),
+                lName.Text.ToString().Trim(),
+                salary.Text.ToString().Trim(), 
+                bdate.Text.ToString().Trim(),
+                GetJopTitleAtIndex(index).ToString().Trim(),
+                userNameField.Text.ToString().Trim(), 
+                pass.Text.ToString().Trim(), 
+                nationalId.Text.ToString().Trim(),
+                GetGenderAtIndex(indexGender), 
+                address.Text.ToString().Trim(),
+                religion.Text.ToString().Trim(), 
+                GetStatusAtIndex(indexStatus).ToString().Trim());
+
         }
         /// <summary>
         /// from index got from combo box of jop title {not defined, worker,supervisor,Manager} it returns the prober letter
@@ -162,6 +197,7 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             parentInstance.Show();
             this.Close();
         }
@@ -182,6 +218,29 @@ namespace Nemo.Manager
             }
         }
 
+
+
+        private string GetGenderAtIndex(string index)
+        {
+            if (index == "0")
+                return "N";//Not defined
+            if (index == "1")
+                return "M";//Manager
+            if (index == "2")
+                return "F";//Worker
+            return "";
+
+        }
+        private string GetStatusAtIndex(string index)
+        {
+            if (index == "0")
+                return "N";//Not defined
+            if (index == "1")
+                return "M";//Manager
+            if (index == "2")
+                return "S";//Worker
+            return "";
+        }
         /// <summary>
         /// Event is triggerd if user click on X button in that window
         /// </summary>
@@ -189,6 +248,7 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            MakeSound.MakeClick();
             parentInstance.Show();
         }
     }

@@ -62,7 +62,7 @@ namespace Nemo.Manager
 
             fName.Text = dt.Rows[0]["Fname"].ToString();
             lName.Text = dt.Rows[0]["Lname"].ToString();
-            balance.Text = dt.Rows[0]["Balance"].ToString();
+            salary.Text = dt.Rows[0]["Salary"].ToString();
             bdate.Text = dt.Rows[0]["Bdata"].ToString();
             userNameField.Text = dt.Rows[0]["userName"].ToString();
             pass.Text = dt.Rows[0]["password"].ToString();
@@ -85,6 +85,7 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             parentInstance.Show();
             this.Close();
         }
@@ -94,13 +95,27 @@ namespace Nemo.Manager
             if (IsDataValid())
 
             {
+                MakeSound.MakeClick();
                 if (MessageBox.Show("Are you sure you want to update your data ?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
+                    MakeSound.MakeSent();
 
                     string index = jop_title.SelectedIndex.ToString();
                     string indexGender = gender.SelectedIndex.ToString();
                     string indexStatus = status.SelectedIndex.ToString();
-                    appLayer.UpdateaEmpAtUserNamePass(fName.Text, lName.Text, balance.Text, bdate.Text, GetJopTitleAtIndex(index), userNameField.Text, pass.Text, nationalId.Text, GetGenderAtIndex(indexGender), address.Text, religion.Text, GetStatusAtIndex(indexStatus), userName, password);
+                    appLayer.UpdateaEmpAtUserNamePass(fName.Text.Trim()
+                        , lName.Text.Trim(),
+                        salary.Text.Trim(),
+                        bdate.Text.Trim(),
+                        GetJopTitleAtIndex(index).Trim(),
+                        userNameField.Text.Trim(), 
+                        pass.Text.Trim(),
+                        nationalId.Text.Trim(),
+                        GetGenderAtIndex(indexGender).Trim(), 
+                        address.Text.Trim(), 
+                        religion.Text.Trim().Trim(), 
+                        GetStatusAtIndex(indexStatus).Trim(),
+                        userName, password);
                     this.Close();
                     parentInstance.ModShow(userNameField.Text, pass.Text);
                 }
@@ -122,7 +137,7 @@ namespace Nemo.Manager
                 return false;
             }
             //Balance shouldn't have any letters
-            if (balance.Text.Any(char.IsLetter))
+            if (salary.Text.Any(char.IsLetter))
             {
                 IfNum0PrintFOrS("Balance contains letters; please change it and try again", "But you swore! Balance is still wrong");
                 return false;

@@ -49,14 +49,17 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             parentInstance.Show();
             this.Close();
         }
         private void RemoveMac(object sender, RoutedEventArgs e)
         {
             //Make sure that user is sure to delete this employee
+            MakeSound.MakeClick();
             if (MessageBox.Show("Are you sure you want to delete this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
+                MakeSound.MakeSent();
                 appLayer.RemoveMachineAtId(id);
                 this.Close();
                 parentInstance.ModShow();
@@ -72,10 +75,12 @@ namespace Nemo.Manager
         {
             if (true)
             {
+                MakeSound.MakeClick();
                 //make sure that user is sure to update info
                 if (MessageBox.Show("Are you sure you want to update this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                   UpdateMachineAtId();
+                    MakeSound.MakeSent();
+                    UpdateMachineAtId();
                     this.Close();
                     //it calls ModShow to update data in employees table
                     parentInstance.ModShow();

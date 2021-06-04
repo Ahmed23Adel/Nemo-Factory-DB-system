@@ -125,13 +125,13 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Balance workd-->
-                    <TextBlock Text="Balance: "
+                    <TextBlock Text="Salary: "
                                Grid.Column="0"
                                FontSize="20"
                                Margin="8 8 8 8"
                                Foreground="White" />
                     <!--Balance value  Hoping to be high:)-->
-                    <TextBox x:Name="balance" 
+                    <TextBox x:Name="salary" 
                              Grid.Column="1" 
                              FontSize="20" 
                              Margin="8 8 8 8" 

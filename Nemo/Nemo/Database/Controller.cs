@@ -11,7 +11,7 @@ namespace Nemo.Database
     class Controller
     {
         DBManager dbMan;
-        
+
         static Controller instance;
         public static Controller getInstance()
         {
@@ -33,9 +33,16 @@ namespace Nemo.Database
 
 
         ////////////////////////////////Employees////////////////////////////////
-        public DataTable selectAllEmps() 
+        public DataTable selectAllEmps()
         {
-            string query = " SELECT ID,CONCAT(Fname,' ',Lname)AS 'Name',CASE  WHEN Jop_title = 'M'  THEN 'Manager' WHEN Jop_title = 'W' THEN 'Worker' WHEN Jop_title = 'S'  THEN 'Supervisor' END as 'Jop_description', Balance FROM Employee;";
+            string query = " SELECT ID,CONCAT(Fname,' ',Lname)AS 'Name',CASE  WHEN Jop_title = 'M'  THEN 'Manager' WHEN Jop_title = 'W' THEN 'Worker' WHEN Jop_title = 'S'  THEN 'Supervisor' END as 'Jop_description', Salary FROM Employee;";
+            return dbMan.ExcuteReader(query);
+
+        }
+
+        public DataTable selectAllEmpsForSending()
+        {
+            string query = " SELECT ID, CONCAT(Fname,' ',Lname)AS 'Name',userName FROM Employee;";
             return dbMan.ExcuteReader(query);
 
         }
@@ -66,22 +73,22 @@ namespace Nemo.Database
         /// <param name="password"></param>
         /// <param name="nationalID"></param>
         /// <returns></returns>
-        public int UpdateaEmpAtUserNamePass(string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status, string oldUsername, string oldPass)
+        public int UpdateaEmpAtUserNamePass(string Fname, string Lname, string salary, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status, string oldUsername, string oldPass)
         {
             string query = "UPDATE Employee " +
                "SET " +
-               "Fname = '" + Fname + "', " +
-               "Lname = '" + Lname + "', " +
-               "Balance = " + Balance + ", " +
-               "Bdata = '" + Bdata + "', " +
-               "Jop_title = '" + Jop_title + "', " +
-               "userName = '" + userName + "', " +
-               "password = '" + password + "', " +
-               "nationalID = '" + nationalID + "', " +
-               "Gender = '" + Gender + "', " +
-               "Address = '" + Address + "', " +
-               "Religion = '" + Religion + "', " +
-               "Status = '" + Status + "' " +
+               "Fname = " + Fname + ", " +
+               "Lname = " + Lname + ", " +
+               "Salary = " + salary + ", " +
+               "Bdata = " + Bdata + ", " +
+               "Jop_title = " + Jop_title + ", " +
+               "userName = " + userName + ", " +
+               "password = " + password + ", " +
+               "nationalID = " + nationalID + ", " +
+               "Gender = " + Gender + ", " +
+               "Address = " + Address + ", " +
+               "Religion = " + Religion + ", " +
+               "Status = " + Status + " " +
                "WHERE userName = '" + oldUsername + "' AND " +
                "password = '" + oldPass + "'; ";
 
@@ -99,19 +106,24 @@ namespace Nemo.Database
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int updateEmpAtId(string id, string Fname,string Lname, string Balance, string Bdata, string Jop_title,string userName,string password)
+        public int updateEmpAtId(string id,string Fname, string Lname, string salary, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status)
         {
             string query = "UPDATE Employee " +
                 "SET " +
-                "Fname = '" + Fname + "', " +
-                "Lname = '" + Lname + "', " +
-                "Balance = " + Balance + ", " +
-                "Bdata = '" + Bdata + "', " +
-                "Jop_title = '" + Jop_title + "', " +
-                "userName = '" + userName + "', " +
-                "password = '" + password + "' " +
+                "Fname = " + Fname + ", " +
+                "Lname = " + Lname + ", " +
+                "Salary = " + salary + ", " +
+                "Bdata = " + Bdata + ", " +
+                "Jop_title = " + Jop_title + ", " +
+                "userName = " + userName + ", " +
+                "password = " + password + ", " +
+                "nationalID = " + nationalID + ", " +
+                "Gender = " + Gender + ", " +
+                "Address = " + Address + ", " +
+                "Religion = " + Religion + ", " +
+                "Status = " + Status + " " +
                 "WHERE ID = '"+id+"';";
-                
+
             return dbMan.ExecuteNonQuery(query);
 
         }
@@ -133,21 +145,25 @@ namespace Nemo.Database
         }
 
         ////////////////////////////////insert Employees////////////////////////////////
-        public int InsertEmp(string Fname, string Lname, string Balance, string Bdata, string Jop_title, string userName, string password, string nationalID)
+        public int InsertEmp(string Fname, string Lname, string salary, string Bdata, string Jop_title, string userName, string password, string nationalID, string Gender, string Address, string Religion, string Status)
         {
             string query = "INSERT INTO Employee" +
-                "(Fname,Lname,Balance,Bdata,Jop_title,userName,password,nationalID)" +
-                " VALUES('" + Fname + "'" +
-                ", '" + Lname + "'" +
-                ", '" + Balance + "'" +
-                ", '" + Bdata + "'" +
-                ", '" + Jop_title + "'" +
-                ", '" + userName + "'" +
-                ", '" + password + "'" +
-                ", '" + nationalID + "');";
+                "(Fname,Lname,Salary,Bdata,Jop_title,userName,password,Gender,Address,Religion,Status,nationalID)" +
+                " VALUES(" + Fname + "" +
+                ", " + Lname + "" +
+                ", " + salary + "" +
+                ", " + Bdata + "" +
+                ", " + Jop_title + "" +
+                ", " + userName + "" +
+                ", " + password + "" +
+                ", " + Gender + "" +
+                ", " + Address + "" +
+                ", " + Religion + "" +
+                ", " + Status + "" +
+                ", " + nationalID + ");";
             return dbMan.ExecuteNonQuery(query);
         }
-      
+
         public DataTable GetMachineAtId(string id)
         {
             string query = "SELECT * FROM Machine WHERE ID = '" + id + "';";
@@ -160,7 +176,7 @@ namespace Nemo.Database
         }
         public int InsertMachine(string name, string startDate)
         {
-            string query = "INSERT INTO Machine (Name,  Start_date) VALUES('" + name + "', '" + startDate + "'); ";
+            string query = "INSERT INTO Machine (Name,  Start_date) VALUES(" + name + ", " + startDate + "); ";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable GetAllMachines()
@@ -181,7 +197,7 @@ namespace Nemo.Database
 
         public DataTable GetAvgSalaries()
         {
-            string query = "SELECT p.Name as 'Production_line',AVG(Balance) as 'Average' " +
+            string query = "SELECT p.Name as 'Production_line',AVG(Salary) as 'Average' " +
                             "FROM(((Employee as e JOIN Works_on AS w ON e.ID = w.Emp_id)JOIN Line_has_machine AS l ON w.Machine_id = l.machine_id) JOIN Production_line  as p ON p.ID = l.Line_id ) " +
                             "GROUP BY p.Name,l.Line_id";
 
@@ -190,12 +206,14 @@ namespace Nemo.Database
 
         public DataTable GetReligions()
         {
-            string query = "SELECT Religion, COUNT(Religion) AS 'Count_religion' " +
+            string query = "SELECT Religion, COUNT(Religion) AS 'Countr' " +
                             "FROM Employee " +
-                            "GROUP BY Religion ;";
+                            "GROUP BY Religion " +
+                            " HAVING Count(Religion) >0 AND Religion is not NULL AND Religion !='NULL' " +
+                            "ORDER BY COUNT(Religion) DESC; ";
             return dbMan.ExcuteReader(query);
         }
-        
+
         public DataTable GetTopProductionLines()
         {
             string query = "SELECT  p.Name as 'prodLine', Product.Name as 'Product',pr.Daily_amount,CONCAT(Employee.Fname,' ',Employee.Lname)AS 'supervisor' " +
@@ -221,14 +239,13 @@ namespace Nemo.Database
         public DataTable viewAssignedMachines(string username)
         {
             string query =
-                     "select m.Name,m.ID,m.Start_date as Date,p.name as Line" +
-                     " from Machine as m join Line_has_machine as lm on m.ID = lm.machine_id" +
-                     " join Production_line as p on p.ID = lm.Line_id" +
-                     " join Employee as sup on sup.ID = p.Supervisor_id" +
-                     " where userName = '" + username + "'";
-           // string query = "select * from Machine";
+                    "select m.Name,m.ID,m.Start_date as Date,p.name as Line"+
+                    " from Machine as m join Line_has_machine as lm on m.ID = lm.machine_id"+
+                    " join Production_line as p on p.ID = lm.Line_id"+
+                    " join Employee as sup on sup.ID = p.Supervisor_id"+
+                    " where userName = '"+username+"'";
             return dbMan.ExcuteReader(query);
-        } 
+        }
 
         public DataTable getAllLines()
         {
@@ -251,7 +268,7 @@ namespace Nemo.Database
 
             return dbMan.ExcuteReader(query);
         }
-        
+
         public DataTable getAssignedLines(string userName)
         {
             string query = "select Name,p.ID,Location"+
@@ -268,13 +285,14 @@ namespace Nemo.Database
 " join Machine as m on m.ID = w.Machine_id" +
 " join Line_has_machine as lm on m.ID = lm.Machine_id" +
 " join Production_line as p on p.ID = lm.Line_id" +
-" join Employee as sup on sup.ID=p.Supervisor_id" +
-" where sup.username='" + userName + "'" +
+" join Employee as sup on sup.ID=p.Supervisor_id"+
+" where sup.username='"+userName+"'" +
 " union" +
 " select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name" +
 " from Employee as e  left join(Works_on as w join Machine as m on m.ID = w.Machine_id) on e.id = w.emp_id" +
-" where e.ID not  in (select Emp_id from Works_on where Emp_id = e.id)" +
+" where jop_title='W' and e.ID not  in (select Emp_id from Works_on where Emp_id = e.id)" +
 " order by m.Name desc";
+
             return dbMan.ExcuteReader(query);
         }
         public DataTable getAllSupervisors()
@@ -287,6 +305,7 @@ namespace Nemo.Database
             string query="insert into production_line  values ('"+name+"','" + location + "'," + supervisor+")";
             return dbMan.ExecuteNonQuery(query);
         }
+
 
         public int AssignedWorkerId(string id, string machine)
         {
@@ -304,8 +323,92 @@ namespace Nemo.Database
             }
             return dbMan.ExecuteNonQuery(query1);
         }
+
+        public int deleteLine(int lineID)
+        {
+            string query ="delete from production_line where ID="+lineID+"";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int deleteMachine(int machineID)
+        {
+            string query = "delete from machine where ID=" + machineID + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable getMessages(string username)
+        {
+            string query=
+" select CONCAT(e.Fname, ' ', e.Lname) as Name,Subject,Msg"+
+" from MsgTo join msg on msgto.MsgID = Msg.MsgID join Employee as e on e.ID = Msg.SenderId , Employee as r"+
+" where r.userName = '"+username+"'";
+            return dbMan.ExcuteReader(query);
+        }
+
+
 ////////hossam
 
 
+        public DataTable SelectHighestPeopleReside()
+        {
+            string query = "SELECT e.Address, COUNT(Address) AS'Count' " +
+                " FROM Employee AS e " +
+                "GROUP BY e.Address " +
+                "ORDER BY COUNT(Address) DESC";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable GetNumEmps()
+        {
+            string query = "select count(case when Jop_title = 'M' then 1 end) as mangerCount, count(case when Jop_title = 'S' then 1 end) as superVisorsCount, count(case when Jop_title = 'W' then 1 end) as workersCount From Employee; ";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable GetNumReligions()
+        {
+            string query = "SELECT e.Religion, COUNT(e.Religion)  AS'count' FROM Employee AS e Group by e.Religion HAVING COUNT(e.Religion) > 0 ORDER BY COUNT(e.Religion) DESC;";
+            return dbMan.ExcuteReader(query);
+        }
+        public int SendAnnounc(string subject, string msg)
+        {
+            string query = "INSERT INTO Msg (SenderId,Msg,Subject) VALUES " +
+                " '" + subject + "'," +
+                " '" + msg + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertMsgToEmps(string  senderId,string subject, string msg, DataTable toEmps)
+        {
+
+
+            string queryInsert = "INSERT INTO Msg(SenderId,Subject,Msg)" +
+                " VALUES (" + senderId + "," + subject + "," + msg + ");";
+            dbMan.ExecuteNonQuery(queryInsert);
+
+            string queryId = "SELECT MsgID FROM Msg ORDER BY MsgID DESC";
+            DataTable dt = dbMan.ExcuteReader(queryId);
+            string id = dt.Rows[0]["MsgID"].ToString();
+
+            for (int i = 0; i < toEmps.Rows.Count; i++)
+            {
+                if (((bool)toEmps.Rows[i]["Checked"]) == true)
+                {
+                    string toId = toEmps.Rows[i]["ID"].ToString();
+                    string quryInsertTo = "INSERT INTO MsgTo (MsgID,ReceiverId) VALUES ('"+id+"','"+toId+"');";
+                    dbMan.ExecuteNonQuery(quryInsertTo);
+                }
+
+            }
+            return 0;
+        }
+
+
+        public DataTable SelectAllRecievedMsgs(string userName, string password)
+        {
+            string query = "SELECT CONCAT(e.Fname,' ',e.Lname)AS 'Name',m.Subject,m.Msg "+
+                            "FROM((MsgTo as mt JOIN Employee as e ON mt.ReceiverId = e.ID) JOIN Msg as m ON m.MsgID = mt.MsgID) "+
+                            "WHERE e.userName = '"+userName+"' AND e.password = '"+password+"' ";
+            return dbMan.ExcuteReader(query);
+        }
     }
 }

@@ -1,0 +1,77 @@
+﻿<Window x:Class="Nemo.Manager.AnnouceTo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nemo.Manager"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="AnnouceTo" Height="450" Width="800">
+    <Border Background="{StaticResource WordBlueBrush}" 
+            Margin="14"
+            CornerRadius="30"
+            >
+
+        <Grid >
+            <!--For the emoji background-->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile"
+                            ViewportUnits="Absolute"
+                            Viewport="0 0 500 500" 
+                            ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+
+            <StackPanel>
+                <Button  Click="selectAll" 
+                        Content="Select all" 
+                        HorizontalAlignment="Right" 
+                        FontWeight="Bold"
+                        Margin="16 8 16 0"
+                         Height="30"
+                        Style="{StaticResource Login}"/>
+                <DataGrid
+                    x:Name="allEmps"
+                    Margin="14 14 14 14" 
+                    Background="Transparent" 
+                    Foreground="Black"  
+                    RowBackground="Transparent"
+                    ItemsSource="{Binding Path=Collection}"
+                    AutoGenerateColumns="False" 
+                    Style="{StaticResource dGrid}"
+                    CanUserAddRows="False"
+                    UIElement.MouseDown="allEmps_MouseDown"
+                    UIElement.MouseLeave="allEmps_MouseLeave"
+                    >
+                   
+                    <!--End of ContextMenu showing-->
+
+                    <!--Columns defintion, Here I say when data comes what columns From DataTable which is coming from DataTable to choose-->
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            Binding="{Binding Path=Name,  Mode=OneWay}"
+                                            />
+                        <DataGridTextColumn  Header="User name"
+                                             FontSize="20" Width="*" 
+                                             Foreground="White" 
+                                             Binding="{Binding Path=userName ,  Mode=OneWay}"/>
+                        
+                        <DataGridCheckBoxColumn Header="Checked"
+                                             Width="*"
+                                             Binding="{Binding Path=Checked , IsAsync=True, Mode=TwoWay }"
+                                                
+                            />
+                        
+
+                       
+                    </DataGrid.Columns>
+                    <!--End of columns definition-->
+                </DataGrid>
+            </StackPanel>
+        </Grid>
+            
+    </Border>
+</Window>
+
+
