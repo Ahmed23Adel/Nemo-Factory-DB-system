@@ -73,3 +73,7 @@ D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Worker\anouncementsWin
 D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\Worker\anouncementsWindow.baml
 D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\MyProfile.g.cs
 D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\MyProfile.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\InsertLineProdPage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\showLineProdPage.g.cs
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\InsertLineProdPage.baml
+D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\supervisor\showLineProdPage.baml

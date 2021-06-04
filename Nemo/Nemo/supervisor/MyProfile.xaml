@@ -8,6 +8,9 @@
       d:DesignHeight="500" d:DesignWidth="900"
       Title="My Profile">
 
+    <Page.Background>
+        <ImageBrush ImageSource="myBack.png" TileMode="Tile"/>
+    </Page.Background>
 
     <Border
             Margin="14">

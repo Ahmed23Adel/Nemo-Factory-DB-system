@@ -26,7 +26,9 @@ namespace Nemo.supervisor
         public InsertLineProdPage(string username)
         {
             InitializeComponent();
-            loadData(username); 
+            applayer = Database.AppLayer.GetInstance();
+
+            loadData(username);
         }
         private void loadData(string username)
         {
@@ -36,7 +38,7 @@ namespace Nemo.supervisor
             {
                 combo_line.Items.Add(lines.Rows[i]["name"] + "  ID:" + lines.Rows[i]["id"]);
             }
-            for (int i = 0; i < products.Rows.Count; i++)
+            for (int i = 0; i < lines.Rows.Count; i++)
             {
                 combo_product.Items.Add(lines.Rows[i]["name"] + "  ID:" + lines.Rows[i]["id"]);
             }
@@ -51,6 +53,21 @@ namespace Nemo.supervisor
         }
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
+            if (!string.IsNullOrEmpty(txt_amount.Text))
+            {
+                int linesIndex = combo_line.SelectedIndex;
+                int prodIndex = combo_product.SelectedIndex;
+                int linesId = int.Parse(lines.Rows[linesIndex]["id"].ToString());
+                int prodId = int.Parse(products.Rows[prodIndex]["id"].ToString());
+                if (applayer.insertProduction(linesId, prodId, int.Parse(txt_amount.Text.ToString())) ==0)
+                {
+                    applayer.updateProdcution(linesId, prodId, int.Parse(txt_amount.Text.ToString()));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Amount is empty, please fill it");
+            }
 
         }
     }

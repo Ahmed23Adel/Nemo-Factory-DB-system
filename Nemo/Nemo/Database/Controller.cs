@@ -367,6 +367,16 @@ namespace Nemo.Database
             string query = "insert into Produces values ("+lineID+","+productID+","+amount+") ";
             return dbMan.ExecuteNonQuery(query);
         }
+        
+        public int updateProduction(int lineID,int productID,int amount)
+        {
+            string query = "update Produces " +
+                "SET " +
+                "Line_id = " + lineID +
+                "product_id = " + productID +
+                "Daily_amount = " + amount + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public int updateProdcution(int lineID, int productID, int amount)
         {
             string query = "update produces set Daily_amount="+amount+" "+

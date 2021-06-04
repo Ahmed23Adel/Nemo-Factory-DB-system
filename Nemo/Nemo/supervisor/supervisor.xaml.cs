@@ -102,6 +102,16 @@ namespace Nemo.supervisor
             SupervisorFrame.Content = machinesPage;
         }
 
+        private void insertAmount(object sender, MouseButtonEventArgs e)
+        {
+            SupervisorFrame.Content = insertProductionPage;
+        }
+        
+        private void showDailyAmount(object sender, MouseButtonEventArgs e)
+        {
+            SupervisorFrame.Content = productionPage;
+        }
+
         public supervisor(string username, string password)
         {
             InitializeComponent();
