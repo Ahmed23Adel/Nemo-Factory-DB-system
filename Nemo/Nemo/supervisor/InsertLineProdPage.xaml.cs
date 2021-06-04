@@ -26,6 +26,7 @@ namespace Nemo.supervisor
         public InsertLineProdPage(string username)
         {
             InitializeComponent();
+            applayer = Database.AppLayer.GetInstance();
             loadData(username); 
         }
         private void loadData(string username)
