@@ -14,6 +14,7 @@ namespace Nemo.Database
     {
 
         string DB_connection_String = @"Data Source=DESKTOP-UL6OEPH\SQLEXPRESS;Initial Catalog=Factory;Integrated Security=True";
+
         SqlConnection myConnection;
         static DBManager instatce;
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\obj\Debug\
+H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\obj\Debug\
 Nemo
 none
 false
 DEBUG;TRACE
-D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\App.xaml
-291653554732
+H:\New folder\Nemo-Factory-DB-system\Nemo\Nemo\App.xaml
+301418930489
 
-37-1681959061
-151411648459
-Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\addLinePage.xaml;Manager\AddMachine.xaml;Manager\AnnouceTo.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\RecievedMsgs.xaml;Manager\SendAnnounc.xaml;Manager\Settings.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\MyProfile.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\anouncementsWindow.xaml;Worker\worker.xaml;
+38-1666473647
+151218792520
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\addLinePage.xaml;Manager\AddMachine.xaml;Manager\AnnouceTo.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\RecievedMsgs.xaml;Manager\SendAnnounc.xaml;Manager\Settings.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\InsertLineProdPage.xaml;supervisor\showLineProdPage.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\anouncementsWindow.xaml;Worker\worker.xaml;
 
 True
 

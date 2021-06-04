@@ -114,8 +114,11 @@
     <Compile Include="Manager\ViewMyProfile.xaml.cs">
       <DependentUpon>ViewMyProfile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="supervisor\MyProfile.xaml.cs">
-      <DependentUpon>MyProfile.xaml</DependentUpon>
+    <Compile Include="supervisor\InsertLineProdPage.xaml.cs">
+      <DependentUpon>InsertLineProdPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="supervisor\showLineProdPage.xaml.cs">
+      <DependentUpon>showLineProdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="supervisor\supervisor.xaml.cs">
       <DependentUpon>supervisor.xaml</DependentUpon>
@@ -235,7 +238,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="supervisor\MyProfile.xaml">
+    <Page Include="supervisor\InsertLineProdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="supervisor\showLineProdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

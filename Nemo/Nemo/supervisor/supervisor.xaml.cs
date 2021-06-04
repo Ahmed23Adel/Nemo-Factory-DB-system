@@ -26,7 +26,10 @@ namespace Nemo.supervisor
         viewAssignedLinesPage linesPage;
         workersAndMachinesPage workersPage;
         MyProfile myProfilePage;
-       // MachinesPage loadMachines;
+
+        showLineProdPage productionPage;
+        InsertLineProdPage insertProductionPage;
+
 
 
         private void ViewAssignedMachines(object sender, MouseButtonEventArgs e)
@@ -110,7 +113,10 @@ namespace Nemo.supervisor
             linesPage = new viewAssignedLinesPage(username);
             workersPage = new workersAndMachinesPage(username);
             myProfilePage = new MyProfile(username, password);
-         }
+         
+            productionPage = new showLineProdPage(username);
+            insertProductionPage = new InsertLineProdPage(username);
+        }
 
 
 

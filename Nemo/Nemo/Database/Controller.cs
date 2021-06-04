@@ -345,7 +345,44 @@ namespace Nemo.Database
             return dbMan.ExcuteReader(query);
         }
 
+        public DataTable getProduction(string username)
+        {
+            string query=
+" select l.Name, l.ID, prdct.Name as Prodcut, prds.Daily_amount as Amount"+
+" from Production_line as l"+
+" left join(Produces as prds join Product prdct on prdct.ID = prds.product_id) on l.ID = prds.Line_id"+
+" where Supervisor_id in ( select e.ID from Employee as e where e.userName='"+username+"' )";
+            return dbMan.ExcuteReader(query);
+        }
+        public bool doesLineProduces(int lineID)
+        {
+            string query = "select count(*) as count from Produces where Line_id="+lineID+" ";
+            int flag = int.Parse(dbMan.ExcuteReader(query).Rows[0]["Count"].ToString());
 
+            if (flag == 0) return false;
+            else return true;
+        }
+        public int insertProduction(int lineID,int productID,int amount)
+        {
+            string query = "insert into Produces values ("+lineID+","+productID+","+amount+") ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int updateProdcution(int lineID, int productID, int amount)
+        {
+            string query = "update produces set Daily_amount="+amount+" "+
+ " where Line_id = "+lineID+" and product_id = "+productID+"";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable getLineNameAndID(string username)
+        {
+            string query = "select p.Name, p.ID from Production_line as p join Employee as e on p.Supervisor_id = e.ID where e.userName = '"+username+"'";
+            return dbMan.ExcuteReader(query);
+        }
+        public DataTable getAllProducts()
+        {
+            string query = "select p.Name, p.ID from Product as p";
+            return dbMan.ExcuteReader(query);
+        }
 ////////hossam
 
 

@@ -242,6 +242,31 @@ namespace Nemo.Database
         public DataTable getMessages(string username)
         {
             return controller.getMessages(username);
+
+        }
+        public DataTable getProduction(string username)
+        {
+            return controller.getProduction(username);
+        }
+        public bool doesLineProduces(int lineID)
+        {
+            return controller.doesLineProduces(lineID);
+        }
+        public int insertProduction(int lineID, int productID, int amount)
+        {
+            return controller.insertProduction(lineID, productID, amount);
+        }
+        public int updateProdcution(int lineID, int productID, int amount)
+        {
+            return controller.updateProdcution(lineID, productID, amount);
+        }
+        public DataTable getLineNameAndID(string username)
+        {
+            return controller.getLineNameAndID(username);
+        }
+        public DataTable getAllProducts()
+        {
+            return controller.getAllProducts();
         }
         //hossam end
 
