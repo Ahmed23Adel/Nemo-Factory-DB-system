@@ -44,8 +44,8 @@ namespace Nemo.Worker
 
         private void btn_notification_Click(object sender, RoutedEventArgs e)
         {
-            anounce.Show();
             this.Hide();
+            anounce.Show();
             //this.Close();
         }
 

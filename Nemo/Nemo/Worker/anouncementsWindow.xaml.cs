@@ -38,8 +38,9 @@ namespace Nemo.Worker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            parent.Show();
+
             this.Hide();
+            parent.Show();
             //this.Close();
         }
     }
