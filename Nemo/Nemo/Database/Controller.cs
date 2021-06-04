@@ -290,7 +290,7 @@ namespace Nemo.Database
 " union" +
 " select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name" +
 " from Employee as e  left join(Works_on as w join Machine as m on m.ID = w.Machine_id) on e.id = w.emp_id" +
-" where e.ID not  in (select Emp_id from Works_on where Emp_id = e.id)" +
+" where jop_title='W' and e.ID not  in (select Emp_id from Works_on where Emp_id = e.id)" +
 " order by m.Name desc";
 
             return dbMan.ExcuteReader(query);

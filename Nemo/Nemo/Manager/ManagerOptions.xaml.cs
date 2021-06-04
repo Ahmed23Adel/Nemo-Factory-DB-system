@@ -103,9 +103,10 @@ namespace Nemo.Manager
             MakeSound.MakeClick();
 
             visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked, sendAnounClicked, recAnounClicked);
-            //I set the prodLinePage to stas page 
-            moreInfo.Content = prodLinePage;
 
+            //
+            moreInfo.Content = prodLinePage;
+                
 
 
         }
