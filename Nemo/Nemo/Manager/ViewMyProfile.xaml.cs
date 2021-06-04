@@ -85,9 +85,7 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+            MakeSound.MakeClick();
             parentInstance.Show();
             this.Close();
         }
@@ -97,11 +95,10 @@ namespace Nemo.Manager
             if (IsDataValid())
 
             {
+                MakeSound.MakeClick();
                 if (MessageBox.Show("Are you sure you want to update your data ?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    MediaPlayer mplayer = new MediaPlayer();
-                    mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-                    mplayer.Play();
+                    MakeSound.MakeSent();
 
                     string index = jop_title.SelectedIndex.ToString();
                     string indexGender = gender.SelectedIndex.ToString();

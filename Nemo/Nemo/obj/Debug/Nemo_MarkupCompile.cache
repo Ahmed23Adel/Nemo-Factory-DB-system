@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Zewail\Year 2\Spring\Database\Nemo\Nemo\Nemo\App.xaml
-26200564000
-1832867545
-32-1228805553
+27985202133
+
+34169743175
 151411648459
-Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\addLinePage.xaml;Manager\AddMachine.xaml;Manager\AnnouceTo.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\RecievedMsgs.xaml;Manager\SendAnnounc.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
+Login.xaml;MainWindow.xaml;Manager\AddEmployee.xaml;Manager\addLinePage.xaml;Manager\AddMachine.xaml;Manager\AnnouceTo.xaml;Manager\employees.xaml;Manager\machines.xaml;Manager\ManagerOptions.xaml;Manager\production_lines.xaml;Manager\RecievedMsgs.xaml;Manager\SendAnnounc.xaml;Manager\Settings.xaml;Manager\Statistics.xaml;Manager\UpdateEmployee.xaml;Manager\UpdateMachine.xaml;Manager\ViewMyProfile.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;supervisor\supervisor.xaml;supervisor\viewAssignedLinesPage.xaml;supervisor\viewAssignedMachinesPage.xaml;supervisor\workersAndMachinesPage.xaml;Utilities\CustomMessageBox.xaml;Worker\worker.xaml;
 
 False
 

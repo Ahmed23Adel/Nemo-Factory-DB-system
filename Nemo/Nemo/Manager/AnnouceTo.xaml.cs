@@ -38,7 +38,7 @@ namespace Nemo.Manager
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-     
+            MakeSound.MakeClick();
             allEmps.CommitEdit();
             allEmps.CancelEdit();
         }
@@ -51,6 +51,7 @@ namespace Nemo.Manager
 
         private void allEmps_MouseDown(object sender, MouseButtonEventArgs e)
         {
+           // MakeSound.MakeClick();
             allEmps.CommitEdit();
             allEmps.CancelEdit();
         }
@@ -63,6 +64,7 @@ namespace Nemo.Manager
 
         private void selectAll(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             DataTable dt = sendAnnounc.GetAllEmps();
             for (int i = 0; i <dt.Rows.Count; i++)
             {

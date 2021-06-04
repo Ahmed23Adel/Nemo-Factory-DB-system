@@ -22,7 +22,6 @@ namespace Nemo
         //num Error is only used in for funny part when shoing error
         int numError;
         Database.AppLayer appLayer;
-
         public Login()
         {
             
@@ -32,6 +31,9 @@ namespace Nemo
             //I added an event when user click enter(return) this event should be triggerd instead of clicking on Login button
             password.PreviewKeyDown += EnterClicked;
             userName.PreviewKeyDown += EnterClicked;
+
+           
+
         }
 
         //User clicked on Login button
@@ -92,38 +94,32 @@ namespace Nemo
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.NONE)
                 {
                     ifNum0PrintFOrS("User name or password is wrong", "But you swore! User name or password is still wrong");
-                    MediaPlayer mplayer = new MediaPlayer();
-                    mplayer.Open(new Uri(@"../../SoundEffects/sad.mp3", UriKind.Relative));
-                    mplayer.Play();
+
+                    MakeSound.MakeWrongUserPass();
 
                 }
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.MNGR)
                 {
-                    MediaPlayer mplayer = new MediaPlayer();
-                    mplayer.Open(new Uri(@"../../SoundEffects/done.mp3", UriKind.Relative));
-                    mplayer.Play();
+                    MakeSound.MakeLoged();
                     new Manager.ManagerOptoins(userName.Text, password.Password).Show();
                     this.Close();
                 }
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.SPRVSR)
                 {
-                    MediaPlayer mplayer = new MediaPlayer();
-                    mplayer.Open(new Uri(@"../../SoundEffects/done.mp3", UriKind.Relative));
-                    mplayer.Play();
+                    MakeSound.MakeLoged();
                     new supervisor.supervisor(userName.Text, password.Password).Show();
                     this.Close();
                 }
                 if (appLayer.IsUserNamePassExist(userName.Text, password.Password) == DEFs.JOP_TITLES.WRKR)
                 {
-                    MediaPlayer mplayer = new MediaPlayer();
-                    mplayer.Open(new Uri(@"../../SoundEffects/done.mp3", UriKind.Relative));
-                    mplayer.Play();
+                    MakeSound.MakeLoged();
                     new Worker.worker(userName.Text, password.Password).Show();
                     this.Close();
                 }
             }
             catch (Exceptions.JopTitleNotFound e)
             {
+                MakeSound.MakeWrongUserPass();
                 MessageBox.Show("Actually user name and password exist in our database, but there is no jop title; we can't direct you to prober window. \n please contact you supervisor or manager","Fatal Error",MessageBoxButton.OKCancel,MessageBoxImage.Error);
             }
             

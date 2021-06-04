@@ -24,6 +24,7 @@ namespace Nemo
         {
             InitializeComponent();
             new Login().Show();
+            MakeSound.GetInstance();
             this.Close();
         }
     }

@@ -36,6 +36,7 @@ namespace Nemo.Manager
 
         private void MenuItemUpdate(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             DataRowView drv = (DataRowView)allMachines.SelectedItem;//get selected row
             String result = (drv["ID"]).ToString();//get the id to search by it.
             new UpdateMachine(result, parentInstance).Show();//showing updateEmployee to update Data
@@ -44,8 +45,10 @@ namespace Nemo.Manager
 
         private void MenuItemDelete(object sender, RoutedEventArgs e)
         {
+            MakeSound.MakeClick();
             if (MessageBox.Show("Are you sure you want to delete this this?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
+                MakeSound.MakeSent();
                 DataRowView drv = (DataRowView)allMachines.SelectedItem;//get selected row
                 String result = (drv["ID"]).ToString();//get the id to search by it.
                 appLayer.RemoveMachineAtId(result);
@@ -55,7 +58,8 @@ namespace Nemo.Manager
 
         private void InsertNewMachine(object sender, MouseButtonEventArgs e)
         {
-           new AddMachine(parentInstance).Show();
+            MakeSound.MakeClick();
+            new AddMachine(parentInstance).Show();
             parentInstance.Hide();
         }
 

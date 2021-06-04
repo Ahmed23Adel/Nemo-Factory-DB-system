@@ -29,7 +29,6 @@ namespace Nemo.Manager
         ManagerOptoins parentInstance;
         //This is just for funny word that will be shown to user it he types wrong data twice
         int numError;
-
         public AddEmployee(ManagerOptoins parentInstance)
         {
             InitializeComponent();
@@ -37,7 +36,7 @@ namespace Nemo.Manager
             this.parentInstance = parentInstance;
             numError = 0;
 
-           
+
             /*string server = "https://images2.boardingschoolreview.com";
 
             Uri serverUri = new Uri(server);
@@ -63,9 +62,7 @@ namespace Nemo.Manager
         {
             if (IsDataValid())
             {
-                MediaPlayer mplayer = new MediaPlayer();
-                mplayer.Open(new Uri(@"../../SoundEffects/sent.mp3", UriKind.Relative));
-                mplayer.Play();
+                MakeSound.MakeSent();
                 InsertEmployee();
                 this.Close();
                 //it calls ModShow to update data in employees table
@@ -96,9 +93,7 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+            MakeSound.MakeClick();
             parentInstance.Show();
             this.Close();
         }
@@ -168,9 +163,7 @@ namespace Nemo.Manager
         /// </summary>
         public void InsertEmployee()
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+            MakeSound.MakeSent();
 
             string index = jop_title.SelectedIndex.ToString();
             string indexGender = gender.SelectedIndex.ToString();
@@ -214,9 +207,7 @@ namespace Nemo.Manager
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+            MakeSound.MakeClick();
             parentInstance.Show();
         }
     }
