@@ -248,9 +248,9 @@ namespace Nemo.Database
         {
             return controller.getProduction(username);
         }
-        public bool doesLineProduces(int lineID)
+        public bool doesLineProduces(int lineID, int productID)
         {
-            return controller.doesLineProduces(lineID);
+            return controller.doesLineProduces(lineID,productID);
         }
         public int insertProduction(int lineID, int productID, int amount)
         {
