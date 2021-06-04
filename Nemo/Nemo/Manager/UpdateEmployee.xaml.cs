@@ -82,8 +82,10 @@ namespace Nemo.Manager
             if (IsDataValid())
             {
                 //make sure that user is sure to update info
+                MakeSound.MakeClick();
                 if (MessageBox.Show("Are you sure you want to update this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
+                    MakeSound.MakeSent();
                     UpdateEmp();
                     this.Close();
                     //it calls ModShow to update data in employees table
@@ -153,9 +155,7 @@ namespace Nemo.Manager
         /// </summary>
         private void UpdateEmp()
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+            
             string index = jop_title.SelectedIndex.ToString();
             string indexGender = gender.SelectedIndex.ToString();
             string indexStatus = status.SelectedIndex.ToString();
@@ -197,9 +197,7 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Cancel(object sender, RoutedEventArgs e)
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+            MakeSound.MakeClick();
             parentInstance.Show();
             this.Close();
         }
@@ -250,9 +248,7 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MediaPlayer mplayer = new MediaPlayer();
-            mplayer.Open(new Uri(@"../../SoundEffects/click.mp3", UriKind.Relative));
-            mplayer.Play();
+            MakeSound.MakeClick();
             parentInstance.Show();
         }
     }

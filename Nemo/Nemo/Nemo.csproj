@@ -67,6 +67,7 @@
     <Compile Include="Database\AppLayer.cs" />
     <Compile Include="DEFs.cs" />
     <Compile Include="Exceptions\JopTitleNotFound.cs" />
+    <Compile Include="MakeSound.cs" />
     <Compile Include="Manager\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
     </Compile>
@@ -98,6 +99,9 @@
     <Compile Include="Manager\SendAnnounc.xaml.cs">
       <DependentUpon>SendAnnounc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
     </Compile>
@@ -124,9 +128,6 @@
     </Compile>
     <Compile Include="Utilities\CustomMessageBox.xaml.cs">
       <DependentUpon>CustomMessageBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Worker\anouncementsWindow.xaml.cs">
-      <DependentUpon>anouncementsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Worker\worker.xaml.cs">
       <DependentUpon>worker.xaml</DependentUpon>
@@ -192,6 +193,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Manager\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Manager\Statistics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -241,10 +246,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Utilities\CustomMessageBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Worker\anouncementsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -335,6 +336,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="supervisor\myBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\anouncments.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
