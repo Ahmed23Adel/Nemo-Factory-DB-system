@@ -24,6 +24,8 @@ namespace Nemo.supervisor
 
         Database.AppLayer applayer;
         DataTable data;
+        public string machine = "N";
+        workersAndMachinesPage workersPage;
         public viewAssignedMachinesPage(string userName)
         {
             InitializeComponent();
@@ -36,6 +38,38 @@ namespace Nemo.supervisor
         {
             data = applayer.loadAssignedMachines(userName);
             machinesGrid.ItemsSource = data.DefaultView;
+            
+        }
+
+        private void chooseMachine(object sender, MouseButtonEventArgs e)
+        {
+            /*
+                var grid = sender as DataGrid;
+
+                var cellValue = grid.SelectedValue;
+                machine = cellValue.ToString();
+            */
+            if (machinesGrid.SelectedCells.Count > 0)
+            {
+                var CellValue = GetSelectedValue(machinesGrid);
+                machine = CellValue;
+                //CellValue is a variable of type string.
+
+            }
+
+        }
+        private string GetSelectedValue(DataGrid grid)
+        {
+            DataGridCellInfo cellInfo = grid.SelectedCells[0];
+            if (cellInfo == null) return null;
+
+            DataGridBoundColumn column = cellInfo.Column as DataGridBoundColumn;
+            if (column == null) return null;
+
+            FrameworkElement element = new FrameworkElement() { DataContext = cellInfo.Item };
+            BindingOperations.SetBinding(element, TagProperty, column.Binding);
+
+            return element.Tag.ToString();
         }
 
     }

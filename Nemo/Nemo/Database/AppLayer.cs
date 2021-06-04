@@ -253,6 +253,10 @@ namespace Nemo.Database
             return controller.GetOldestMachines();
         }
 
+        public int sendAssignedWorkerId(string id, string machine)
+        {
+            return controller.AssignedWorkerId(id, machine);
+        }
 
 
     }

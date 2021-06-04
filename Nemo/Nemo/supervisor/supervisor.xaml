@@ -12,7 +12,196 @@
     <Border Margin="20">
 
 
-        
+        <Grid>
+            <!--Big left menu grid-->
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="103.8"/>
+                <ColumnDefinition Width="96.2"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="217*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- <StackPanel Grid.Column="0"> -->
+
+            <!--The left panel -->
+            <ScrollViewer 
+                        Grid.Column="0"
+ 
+                        Height="Auto"
+                        VerticalScrollBarVisibility="Auto"
+                        HorizontalScrollBarVisibility="Auto" 
+                
+                        Margin="0,0,64,17" Grid.ColumnSpan="3">
+
+                <StackPanel x:Name="LeftPanel" Grid.Column="0" Orientation="Vertical">
+                    <!--          View assigned lines            -->
+                    <Grid Height="50" UIElement.PreviewMouseDown="ViewAssignedLines">
+                        <Grid.ColumnDefinitions>
+                            <!--For orange rectangle-->
+                            <ColumnDefinition Width="0.3*"/>
+                            <!--For icon-->
+                            <ColumnDefinition Width="2*"/>
+                            <!--For "Production line" word-->
+                            <ColumnDefinition Width="5*"/>
+                            <!--For "Production line" word-->
+
+                        </Grid.ColumnDefinitions>
+
+                        <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                        <StackPanel Orientation="Horizontal" >
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <Line x:Name="LinesChecked" 
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0"
+                                      Y2="50"
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                        </StackPanel>
+                        <!--Image for production line -->
+                        <Image  Grid.Column="1" 
+                                    Margin="0 0 0 0 " Width="33" Source="../Images/screw.ico"/>
+                        <!--"Production line word-->
+                        <TextBlock Grid.Column="2" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   FontSize="20"
+                                   Foreground="Black" FontFamily="Impact"
+                                   ><Run Foreground="#FFD6E964" Text="View "/><Run Text="Assigned Lines         "/></TextBlock>
+
+                    </Grid>
+
+                    <Separator Width="250" Margin="1 1 1 1" />
+
+                    <!--          View assigned Machines           -->
+
+                    <Grid Height="50" UIElement.PreviewMouseDown="ViewAssignedMachines">
+                        <Grid.ColumnDefinitions>
+                            <!--For orange rectangle-->
+                            <ColumnDefinition Width="0.3*"/>
+                            <!--For icon-->
+                            <ColumnDefinition Width="2*"/>
+                            <!--For "Production line" word-->
+                            <ColumnDefinition Width="5*"/>
+                            <!--For "Production line" word-->
+
+                        </Grid.ColumnDefinitions>
+
+                        <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                        <StackPanel Orientation="Horizontal" >
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <Line x:Name="MachinesChecked" 
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0"
+                                      Y2="50"
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                        </StackPanel>
+                        <!--Image for production line -->
+                        <Image  Grid.Column="1" 
+                                    Margin="0 0 0 0 " Width="33" Source="../Images/screw.ico"/>
+                        <!--"Production line word-->
+                        <TextBlock Grid.Column="2" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   FontSize="20"
+                                   Foreground="Black" FontFamily="Impact"
+                                   ><Run Foreground="#FFD6E964" Text="View "/><Run Text="Assigned Machines"/></TextBlock>
+
+                    </Grid>
+
+
+                    <Separator Width="200" Margin="1 1 1 1"/>
+
+                    <!--          View assigned Machines           -->
+
+                    <Grid Height="50" UIElement.PreviewMouseDown="MyProfile">
+                        <Grid.ColumnDefinitions>
+                            <!--For orange rectangle-->
+                            <ColumnDefinition Width="0.3*"/>
+                            <!--For icon-->
+                            <ColumnDefinition Width="2*"/>
+                            <!--For "Production line" word-->
+                            <ColumnDefinition Width="5*"/>
+                            <!--For "Production line" word-->
+
+                        </Grid.ColumnDefinitions>
+
+                        <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                        <StackPanel Orientation="Horizontal" >
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <Line x:Name="ProfileChecked" 
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0"
+                                      Y2="50"
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                        </StackPanel>
+                        <!--Image for production line -->
+                        <Image  Grid.Column="1" 
+                                    Margin="-30 0 0 0 " Width="33" Source="../Images/MyProfile.png">
+                        </Image>
+                        <!--"Production line word-->
+                        <TextBlock Grid.Column="2" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   FontSize="20"
+                                   Foreground="Black" FontFamily="Impact"
+                                   Text="My Profile"
+                                   Margin="-25 0 0 0"
+                                   />
+                    </Grid>
+                    <Grid Height="50" UIElement.PreviewMouseDown="ViewWorkers">
+                        <Grid.ColumnDefinitions>
+                            <!--For orange rectangle-->
+                            <ColumnDefinition Width="10*"/>
+                            <!--For icon-->
+                            <ColumnDefinition Width="70*"/>
+                            <!--For "Production line" word-->
+                            <ColumnDefinition Width="21*"/>
+                            <ColumnDefinition Width="154*"/>
+                            <!--For "Production line" word-->
+
+                        </Grid.ColumnDefinitions>
+
+                        <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0.4,0" >
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <Line x:Name="ViewWorkerChecked" 
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0"
+                                      Y2="50"
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                        </StackPanel>
+                        <!--Image for production line -->
+                        <Image  Grid.Column="1" 
+                                    Margin="3.6,0,33.8,0" Width="33" Source="../Images/Workers.png">
+                        </Image>
+                        <!--"Production line word-->
+                        <TextBlock Grid.Column="1" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   FontSize="20"
+                                   Foreground="Black" FontFamily="Impact"
+                                   Text="Workers"
+                                   Margin="45.6,13,0,12" Grid.ColumnSpan="3"
+                                   />
+                    </Grid>
+                </StackPanel>
+
+
+            </ScrollViewer>
+            <Frame Grid.Column="2" x:Name="SupervisorFrame"  Margin="56,0,-0.4,0" MouseDoubleClick="chooseMachineSup" Grid.ColumnSpan="2" MouseMove="showButtonMove">
+
+            </Frame>
+            <Button x:Name="ChooseMachine" Visibility="Hidden"  Grid.Column="3" HorizontalAlignment="Left" Margin="277,321,0,29" Width="126"  Background="#FFDBDADD" FontFamily="Impact" FontSize="16" Foreground="#FF8C0000" Content="Choose Machine" Click="chooseMachineClick"/>
+
+        </Grid>
 
 
     </Border>

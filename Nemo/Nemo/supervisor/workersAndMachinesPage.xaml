@@ -9,9 +9,9 @@
       Title="workersAndMachinesPage">
 
     <Border Background="{StaticResource WordBlueBrush}" Margin="14">
-        <Grid Background="#FFDAE6FF" >
+        <Grid Background="#FFDAE6FF">
 
-            <DataGrid x:Name="workersAndMachinesGrid" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20">
+            <DataGrid x:Name="workersAndMachinesGrid" CanUserAddRows="False" AutoGenerateColumns="False" FontSize="20" Margin="0,0,0,43.6">
                 <DataGrid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                         <GradientStop Color="#FF94EDD2" Offset="0"/>
@@ -19,15 +19,35 @@
                     </LinearGradientBrush>
                 </DataGrid.Background>
 
+                <!--check box-->
+
+
                 <DataGrid.Columns >
+                   
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Name}"
                                         Header="Worker name" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=ID}"
                                         Header="Worker ID" Width="*" />
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Machine}"
                                         Header="Machine" Width="*" />
+                    <DataGridTemplateColumn x:Name="IsChecked" Header="Select">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- <CheckBox Checked="CheckBox_Checked" IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" />-->
+                                <CheckBox Checked="CheckBox_Checked" IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" />
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
+
             </DataGrid>
+            <Button x:Name="MachineButton" x:FieldModifier="public"  Content="Verify Selection" HorizontalAlignment="Left" Margin="309,301,0,0" VerticalAlignment="Top" Width="142" Height="33" Background="#FF4AAFC8" FontFamily="Impact" FontSize="20" Click="verifySelectionClicked" IsDefault="True"  Visibility="Hidden">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                
+            </Button>
         </Grid>
 
     </Border>

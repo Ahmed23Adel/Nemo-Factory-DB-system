@@ -25,42 +25,119 @@ namespace Nemo.supervisor
         viewAssignedMachinesPage machinesPage;
         viewAssignedLinesPage linesPage;
         workersAndMachinesPage workersPage;
-        public supervisor(string username, string password)
+       // MachinesPage loadMachines;
+
+
+        private void ViewAssignedMachines(object sender, MouseButtonEventArgs e)
         {
-            InitializeComponent();
-            applayer = Database.AppLayer.GetInstance();
-            this.username = username;
-            this.password = password;
-            //loadBasicData();
-            machinesPage = new viewAssignedMachinesPage(username);
-            linesPage = new viewAssignedLinesPage(username);
-            workersPage = new workersAndMachinesPage(username);
-        }
-      
-        /*private void loadBasicData()
-        {
-            DataTable dt = applayer.GetBasicDataForUserNamePass(username, password);
-            this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
-        }
-        private void loadAssignedMachines()
-        {
-            machinesPage.loadData(this.username);
             SupervisorFrame.Content = machinesPage;
-        }private void loadAssignedLines()
+        }
+
+        private void ViewAssignedLines(object sender, MouseButtonEventArgs e)
         {
-            linesPage.loadData(this.username);
             SupervisorFrame.Content = linesPage;
         }
 
-        private void SupervisorFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        private void MyProfile(object sender, MouseButtonEventArgs e)
         {
-
+            SupervisorFrame.Content = null;
         }
 
-        private void loadWorkers()
+        public void ViewWorkers(object sender, MouseButtonEventArgs e)
         {
+            machinesPage.loadData(this.username);
             workersPage.loadData(this.username);
             SupervisorFrame.Content = workersPage;
-        }*/
+            
+
+                /*
+                for (int i = 0; i < workersPage.assignedWorkers.Count; i++)
+                {
+
+
+                    /*
+                    if ((bool)data.Rows[i]["IsChecked"])
+                    {
+                        applayer.sendAssignedWorkerId(data.Rows[i]["ID"].ToString());     //func() is just an example not implemented yet
+                    }
+                    
+                }
+                */
+        }
+      
+
+    
+
+        private void chooseMachineSup(object sender, MouseButtonEventArgs e)
+        {
+            if (machinesPage.machine != "N")
+            {
+                foreach (var id in workersPage.assignedWorkers)
+                {
+                    applayer.sendAssignedWorkerId(id, machinesPage.machine);
+                }
+                workersPage.loadData(this.username);
+                SupervisorFrame.Content = workersPage;
+            }
+        }
+
+
+        private void showButtonMove(object sender, MouseEventArgs e)
+        {
+            if (workersPage.verifyClickedIsClicked)
+            {
+                ChooseMachine.Visibility = Visibility.Visible;
+                workersPage.verifyClickedIsClicked = false;
+            }
+        }
+
+        private void chooseMachineClick(object sender, RoutedEventArgs e)
+        {
+            ChooseMachine.Visibility = Visibility.Collapsed;
+            machinesPage.loadData(this.username);
+            SupervisorFrame.Content = machinesPage;
+        }
+
+        public supervisor(string username, string password)
+            {
+                InitializeComponent();
+                applayer = Database.AppLayer.GetInstance();
+                this.username = username;
+                this.password = password;
+                //loadBasicData();
+                machinesPage = new viewAssignedMachinesPage(username);
+                linesPage = new viewAssignedLinesPage(username);
+                workersPage = new workersAndMachinesPage(username);
+            }
+
+
+
+            /*private void loadBasicData()
+            {
+                DataTable dt = applayer.GetBasicDataForUserNamePass(username, password);
+                this.Title = "Welcome Nemo (" + dt.Rows[0]["Fname"].ToString() + ")";
+            }
+            private void loadAssignedMachines()
+            {
+                machinesPage.loadData(this.username);
+                SupervisorFrame.Content = machinesPage;
+            }private void loadAssignedLines()
+            {
+                linesPage.loadData(this.username);
+                SupervisorFrame.Content = linesPage;
+            }
+
+            private void SupervisorFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+            {
+
+            }
+
+            private void loadWorkers()
+            {
+                workersPage.loadData(this.username);
+                SupervisorFrame.Content = workersPage;
+            }*/
+
+
+        }
     }
-}

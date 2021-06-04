@@ -100,6 +100,9 @@
     <Compile Include="Manager\ViewMyProfile.xaml.cs">
       <DependentUpon>ViewMyProfile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="supervisor\MachinesPage.xaml.cs">
+      <DependentUpon>MachinesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="supervisor\supervisor.xaml.cs">
       <DependentUpon>supervisor.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Texts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="supervisor\MachinesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -303,6 +310,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="supervisor\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Workers.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
