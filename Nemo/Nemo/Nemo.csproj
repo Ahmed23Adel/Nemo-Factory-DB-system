@@ -114,6 +114,9 @@
     <Compile Include="Manager\ViewMyProfile.xaml.cs">
       <DependentUpon>ViewMyProfile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="supervisor\MyProfile.xaml.cs">
+      <DependentUpon>MyProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="supervisor\supervisor.xaml.cs">
       <DependentUpon>supervisor.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,9 @@
     </Compile>
     <Compile Include="Utilities\CustomMessageBox.xaml.cs">
       <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\anouncementsWindow.xaml.cs">
+      <DependentUpon>anouncementsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Worker\worker.xaml.cs">
       <DependentUpon>worker.xaml</DependentUpon>
@@ -229,6 +235,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="supervisor\MyProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="supervisor\supervisor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -248,6 +258,10 @@
     <Page Include="Utilities\CustomMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Worker\anouncementsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Worker\worker.xaml">
       <SubType>Designer</SubType>

@@ -25,6 +25,7 @@ namespace Nemo.supervisor
         viewAssignedMachinesPage machinesPage;
         viewAssignedLinesPage linesPage;
         workersAndMachinesPage workersPage;
+        MyProfile myProfilePage;
        // MachinesPage loadMachines;
 
 
@@ -40,7 +41,7 @@ namespace Nemo.supervisor
 
         private void MyProfile(object sender, MouseButtonEventArgs e)
         {
-            SupervisorFrame.Content = null;
+            SupervisorFrame.Content = myProfilePage;
         }
 
         public void ViewWorkers(object sender, MouseButtonEventArgs e)
@@ -99,16 +100,17 @@ namespace Nemo.supervisor
         }
 
         public supervisor(string username, string password)
-            {
-                InitializeComponent();
-                applayer = Database.AppLayer.GetInstance();
-                this.username = username;
-                this.password = password;
-                //loadBasicData();
-                machinesPage = new viewAssignedMachinesPage(username);
-                linesPage = new viewAssignedLinesPage(username);
-                workersPage = new workersAndMachinesPage(username);
-            }
+        {
+            InitializeComponent();
+            applayer = Database.AppLayer.GetInstance();
+            this.username = username;
+            this.password = password;
+            //loadBasicData();
+            machinesPage = new viewAssignedMachinesPage(username);
+            linesPage = new viewAssignedLinesPage(username);
+            workersPage = new workersAndMachinesPage(username);
+            myProfilePage = new MyProfile(username, password);
+         }
 
 
 
