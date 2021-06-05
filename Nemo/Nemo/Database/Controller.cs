@@ -354,9 +354,9 @@ namespace Nemo.Database
 " where Supervisor_id in ( select e.ID from Employee as e where e.userName='"+username+"' )";
             return dbMan.ExcuteReader(query);
         }
-        public bool doesLineProduces(int lineID)
+        public bool doesLineProduces(int lineID,int productID)
         {
-            string query = "select count(*) as count from Produces where Line_id="+lineID+" ";
+            string query = "select count(*) as count from Produces where Line_id="+lineID+" and product_id="+productID+" ";
             int flag = int.Parse(dbMan.ExcuteReader(query).Rows[0]["Count"].ToString());
 
             if (flag == 0) return false;
@@ -371,10 +371,8 @@ namespace Nemo.Database
         public int updateProduction(int lineID,int productID,int amount)
         {
             string query = "update Produces " +
-                "SET " +
-                "Line_id = " + lineID +
-                "product_id = " + productID +
-                "Daily_amount = " + amount + ";";
+                " SET  Daily_amount = " + amount + " " +
+                " where line_id=" + lineID + " and  product_id = " + productID + " ";
             return dbMan.ExecuteNonQuery(query);
         }
         public int updateProdcution(int lineID, int productID, int amount)

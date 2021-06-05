@@ -27,10 +27,9 @@ namespace Nemo.supervisor
         {
             InitializeComponent();
             applayer = Database.AppLayer.GetInstance();
-
             loadData(username);
         }
-        private void loadData(string username)
+        public void loadData(string username)
         {
             loadLines(username);
             loadProducts();
@@ -38,43 +37,52 @@ namespace Nemo.supervisor
             {
                 combo_line.Items.Add(lines.Rows[i]["name"] + "  ID:" + lines.Rows[i]["id"]);
             }
-            for (int i = 0; i < lines.Rows.Count; i++)
+            for (int i = 0; i < products.Rows.Count; i++)
             {
-                combo_product.Items.Add(lines.Rows[i]["name"] + "  ID:" + lines.Rows[i]["id"]);
+                combo_product.Items.Add(products.Rows[i]["name"] + "  ID:" + products.Rows[i]["id"]);
             }
         }
         private void loadLines(string username)
         {
-            lines=applayer.getLineNameAndID(username);
+            lines = applayer.getLineNameAndID(username);
         }
         private void loadProducts()
         {
-            products=applayer.getAllProducts();
+            products = applayer.getAllProducts();
         }
 
-        int lineID, prodID, amount;
+
+        int lineID, prodID, amount, linesIndex, prodIndex;
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_amount.Text))
-            {
-                int linesIndex = combo_line.SelectedIndex;
-                int prodIndex = combo_product.SelectedIndex;
-                int linesId = int.Parse(lines.Rows[linesIndex]["id"].ToString());
-                int prodId = int.Parse(products.Rows[prodIndex]["id"].ToString());
-                if (applayer.insertProduction(linesId, prodId, int.Parse(txt_amount.Text.ToString())) ==0)
-                {
-                    applayer.updateProdcution(linesId, prodId, int.Parse(txt_amount.Text.ToString()));
-                }
-            }
+
+            if (combo_line.SelectedIndex == -1) MessageBox.Show("Please Choose a line!");
+            else if (combo_product.SelectedIndex == -1) MessageBox.Show("Please Choose a product!");
+            else if (string.IsNullOrEmpty(txt_amount.Text) || !(txt_amount.Text.All(char.IsDigit))) MessageBox.Show("Please Enter valid amount!");
             else
             {
-                MessageBox.Show("Amount is empty, please fill it");
-            }
-
+                linesIndex = combo_line.SelectedIndex;
+                prodIndex = combo_product.SelectedIndex;
+                lineID = int.Parse(lines.Rows[linesIndex]["id"].ToString());
+                prodID = int.Parse(products.Rows[prodIndex]["id"].ToString());
+                amount = int.Parse(txt_amount.Text.ToString());
+                if (applayer.doesLineProduces(lineID,prodID)) //check if the line already prodces this product
+                {
+                    if (applayer.updateProdcution(lineID, prodID, amount) > 0)
+                        MessageBox.Show("Amount updated succesfully");
+                    else MessageBox.Show("Failed to update");
+                }
+                else 
+                {
+                    if (applayer.insertProduction(lineID, prodID, amount) > 0)
+                        MessageBox.Show("Amount added succesfully");
+                    else MessageBox.Show("Failed to add");
+                }
 
             }
         }
     }
+}
 
 
 

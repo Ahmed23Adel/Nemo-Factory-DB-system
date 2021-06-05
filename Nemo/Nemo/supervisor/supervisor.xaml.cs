@@ -109,6 +109,7 @@ namespace Nemo.supervisor
         
         private void showDailyAmount(object sender, MouseButtonEventArgs e)
         {
+            productionPage.loadData(username);
             SupervisorFrame.Content = productionPage;
         }
 
