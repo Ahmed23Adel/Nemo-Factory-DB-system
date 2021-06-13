@@ -103,12 +103,9 @@ namespace Nemo.Manager
             MakeSound.MakeClick();
 
             visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked, sendAnounClicked, recAnounClicked);
-
             //
+            prodLinePage.getAllLines();
             moreInfo.Content = prodLinePage;
-                
-
-
         }
         /// <summary>
         /// This event is called when user clicks on employees line row to see more .

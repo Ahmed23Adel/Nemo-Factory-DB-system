@@ -23,7 +23,7 @@
                 HorizontalAlignment="Center" FontSize="24"
                        FontFamily="Comic Sans MS" Padding="0 0 0 10"></TextBlock>
 
-            <!--Main grid-->
+            <!--data grid-->
             <Grid Grid.Row="1">
 
                 <Grid.RowDefinitions>
@@ -178,14 +178,44 @@
 
 
             </Grid>
-            <!--End of main stack-->
+            <!--End of data grid-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button x:Name="btn_notification" Content="Notifications"
+                   FontSize="15" FontWeight="SemiBold" Width="150"
+                      Grid.Column="1"  Height="50" Click="btn_notification_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="4" />
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="SkyBlue" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn_logout" Content="Log out"
+                   FontSize="15" FontWeight="SemiBold" Width="150"
+                      Grid.Column="3"  Height="50" Click="btn_logout_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="4" />
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="SkyBlue" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
 
-            <Button x:Name="btn_notification" Content="Show your notifications"
-                   FontSize="15" FontWeight="Bold" Width="200" Height="50" Margin="20" Grid.Row="2" Background="#FFB7D7DD" Click="btn_notification_Click">
-                <Button.Effect>
-                    <DropShadowEffect Color="#FFB5E1F3" BlurRadius="7" Direction="270"/>
-                </Button.Effect>
-            </Button>
         </Grid>
 
     </Border>
