@@ -238,83 +238,112 @@ namespace Nemo.Database
 
         public DataTable viewAssignedMachines(string username)
         {
-            string query =
-                    "select m.Name,m.ID,m.Start_date as Date,p.name as Line"+
-                    " from Machine as m join Line_has_machine as lm on m.ID = lm.machine_id"+
-                    " join Production_line as p on p.ID = lm.Line_id"+
-                    " join Employee as sup on sup.ID = p.Supervisor_id"+
-                    " where userName = '"+username+"'";
+            string query = "EXEC h_viewAssignedMachines @username='" + username + "'  ";
             return dbMan.ExcuteReader(query);
         }
 
         public DataTable getAllLines()
         {
-            string query = "select Name,p.ID as ID,Location,CONCAT(Fname,' ',Lname) as Supervisor from" +
-                " production_line as p join employee as e on Supervisor_id=e.ID ";
+            string query = "EXEC h_getAlllines ";
             return dbMan.ExcuteReader(query);
         }
 
         public DataTable loadWorkerTranscript(string userName)
         {
-            string query = "select CONCAT(e.Fname,' ',e.Lname) as Name, e.ID as ID, e.salary, e.balance," +
-                            "m.Name as Machine, CONCAT(sup.Fname, ' ', sup.Lname) as Supervisor" +
-                            " from employee as e" +
-                            " join Works_on as w on e.ID = w.Emp_id" +
-                            " join Machine as m on m.ID = w.Machine_id" +
-                            " join Line_has_machine as l on l.machine_id = w.Machine_id" +
-                            " join Production_line as p on l.Line_id = p.ID" +
-                            " join Employee as sup on sup.ID = p.Supervisor_id" +
-                            " where e.userName = '"+userName+"'";
+            string query = "EXEC h_loadWorkerTranscript @username='" + userName + "'  ";
 
             return dbMan.ExcuteReader(query);
         }
 
         public DataTable getAssignedLines(string userName)
         {
-            string query = "select Name,p.ID,Location"+
-                           " from Production_line as p , Employee as sup"+
-                           " where p.Supervisor_id = sup.ID and sup.userName ='"+userName+"'";
+            string query = "EXEC h_getAssignedLines @username='" + userName + "'  ";
             return dbMan.ExcuteReader(query);
         }
         public DataTable getWorkersAndMachines(string userName)
         {
-            string query =
-" select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name as Machine" +
-" from Employee as e" +
-" join Works_on as w on e.ID = w.Emp_id" +
-" join Machine as m on m.ID = w.Machine_id" +
-" join Line_has_machine as lm on m.ID = lm.Machine_id" +
-" join Production_line as p on p.ID = lm.Line_id" +
-" join Employee as sup on sup.ID=p.Supervisor_id"+
-" where sup.username='"+userName+"'" +
-" union" +
-" select CONCAT(e.Fname, ' ', e.Lname)AS Name, e.ID as ID, m.Name" +
-" from Employee as e  left join(Works_on as w join Machine as m on m.ID = w.Machine_id) on e.id = w.emp_id" +
-" where jop_title='W' and e.ID not  in (select Emp_id from Works_on where Emp_id = e.id)" +
-" order by m.Name desc";
+            string query = "EXEC h_getWorkersAndMachines @username='"+userName+"'  ";
 
             return dbMan.ExcuteReader(query);
         }
         public DataTable getAllSupervisors()
         {
-            string query = "select concat(fname,' ',lname) as name,ID from employee where jop_title='S'";
+            string query = "EXEC h_getAllSupervisors";
             return dbMan.ExcuteReader(query);
         }
         public int insertLine(string name, string location, int supervisor)
         {
-            string query="insert into production_line  values ('"+name+"','" + location + "'," + supervisor+")";
+            string query="EXEC h_insertLine @name='"+name+"',@location='"+location+"',@supervisor="+supervisor+" ";
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int deleteLine(int lineID)
+        {
+            string query = "EXEC h_deleteLine @lineID=" + lineID + "";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int deleteMachine(int machineID)
+        {
+            string query = "EXEC h_deleteMachine @machineID="+machineID+"";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable getMessages(string username)
+        {
+            string query = "EXEC h_getMessages @username='" + username + "' ";
+            return dbMan.ExcuteReader(query);
+        }
+
+        public DataTable getProduction(string username)
+        {
+            string query = "EXEC h_getProduction @username='"+username+"' ";
+
+
+
+
+            return dbMan.ExcuteReader(query);
+        }
+        public bool doesLineProduces(int lineID,int productID)
+        {
+            string query = "exec h_doeslineproduces @lineId=" + lineID + ",@productID=" + productID + " ";
+
+            int flag = int.Parse(dbMan.ExcuteReader(query).Rows[0]["Count"].ToString());
+
+            if (flag == 0) return false;
+            else return true;
+        }
+        public int insertProduction(int lineID,int productID,int amount)
+        {
+            string query = "exec h_insertProduction @lineId=" + lineID + ",@productID=" + productID + ", @amount=" + amount + " ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        
+        public int updateProdcution(int lineID, int productID, int amount)
+        {
+            string query = "Exec h_updateProdcution @lineId=" + lineID + ",@productID=" + productID + ", @amount=" + amount + "   ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable getLineNameAndID(string username)
+        {
+            string query = "Exec h_getLineNameAndID @username='" + username + "' ";
+            return dbMan.ExcuteReader(query);
+        }
+        public DataTable getAllProducts()
+        {
+            string query = "Exec h_getAllProducts";
+            return dbMan.ExcuteReader(query);
+        }
+        ////////hossam
 
         public int AssignedWorkerId(string id, string machine)
         {
- 
+
             string query1 = "insert into Works_on  values ( '" + int.Parse(machine) + "' , ' " + id + "')";
             string checkQuery = "select Works_on.Emp_id where Works_on.Machine_id =  ' " + int.Parse(machine) + " '";
             if (dbMan.ExecuteNonQuery(checkQuery) == 1)
             {
-              //  query1 = "update Works_on set Machine_id = '" + int.Parse(machine) + "' where Emp_id = ' " + id +" '";
+                //  query1 = "update Works_on set Machine_id = '" + int.Parse(machine) + "' where Emp_id = ' " + id +" '";
                 query1 = "UPDATE  Works_on " +
                 "SET " +
                 "Machine_id = '" + int.Parse(machine) + "' " +
@@ -323,77 +352,6 @@ namespace Nemo.Database
             }
             return dbMan.ExecuteNonQuery(query1);
         }
-
-        public int deleteLine(int lineID)
-        {
-            string query ="delete from production_line where ID="+lineID+"";
-
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public int deleteMachine(int machineID)
-        {
-            string query = "delete from machine where ID=" + machineID + "";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-        public DataTable getMessages(string username)
-        {
-            string query=
-" select CONCAT(e.Fname, ' ', e.Lname) as Name,Subject,Msg"+
-" from MsgTo join msg on msgto.MsgID = Msg.MsgID join Employee as e on e.ID = Msg.SenderId , Employee as r"+
-" where r.userName = '"+username+"'";
-            return dbMan.ExcuteReader(query);
-        }
-
-        public DataTable getProduction(string username)
-        {
-            string query=
-" select l.Name, l.ID, prdct.Name as Prodcut, prds.Daily_amount as Amount"+
-" from Production_line as l"+
-" left join(Produces as prds join Product prdct on prdct.ID = prds.product_id) on l.ID = prds.Line_id"+
-" where Supervisor_id in ( select e.ID from Employee as e where e.userName='"+username+"' )";
-            return dbMan.ExcuteReader(query);
-        }
-        public bool doesLineProduces(int lineID,int productID)
-        {
-            string query = "select count(*) as count from Produces where Line_id="+lineID+" and product_id="+productID+" ";
-            int flag = int.Parse(dbMan.ExcuteReader(query).Rows[0]["Count"].ToString());
-
-            if (flag == 0) return false;
-            else return true;
-        }
-        public int insertProduction(int lineID,int productID,int amount)
-        {
-            string query = "insert into Produces values ("+lineID+","+productID+","+amount+") ";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        
-        public int updateProduction(int lineID,int productID,int amount)
-        {
-            string query = "update Produces " +
-                " SET  Daily_amount = " + amount + " " +
-                " where line_id=" + lineID + " and  product_id = " + productID + " ";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public int updateProdcution(int lineID, int productID, int amount)
-        {
-            string query = "update produces set Daily_amount="+amount+" "+
- " where Line_id = "+lineID+" and product_id = "+productID+"";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public DataTable getLineNameAndID(string username)
-        {
-            string query = "select p.Name, p.ID from Production_line as p join Employee as e on p.Supervisor_id = e.ID where e.userName = '"+username+"'";
-            return dbMan.ExcuteReader(query);
-        }
-        public DataTable getAllProducts()
-        {
-            string query = "select p.Name, p.ID from Product as p";
-            return dbMan.ExcuteReader(query);
-        }
-////////hossam
-
-
         public DataTable SelectHighestPeopleReside()
         {
             string query = "SELECT e.Address, COUNT(Address) AS'Count' " +

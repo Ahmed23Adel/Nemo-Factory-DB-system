@@ -49,6 +49,12 @@ namespace Nemo.Worker
             //this.Close();
         }
 
+        private void btn_logout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new Login().Show();
+        }
+
         private void getTranscript()
         {
             transcript = applayer.loadWorkerTranscript(username);
