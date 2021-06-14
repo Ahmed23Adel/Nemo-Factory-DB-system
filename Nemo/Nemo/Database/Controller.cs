@@ -303,6 +303,7 @@ namespace Nemo.Database
         public int insertLine(string name, string location, int supervisor)
         {
             string query = "EXEC h_insertLine @name='" + name + "',@location='" + location + "',@supervisor=" + supervisor + " ";
+
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -315,6 +316,7 @@ namespace Nemo.Database
         public int deleteMachine(int machineID)
         {
             string query = "EXEC h_deleteMachine @machineID=" + machineID + "";
+
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -324,14 +326,13 @@ namespace Nemo.Database
                             "FROM((MsgTo as mt JOIN Employee as e ON mt.ReceiverId = e.ID) JOIN Msg as m ON m.MsgID = mt.MsgID) " +
                             "WHERE e.userName = '" + userName + "'";
             
+
             return dbMan.ExcuteReader(query);
         }
 
         public DataTable getProduction(string username)
         {
             string query = "EXEC h_getProduction @username='" + username + "' ";
-
-
 
 
             return dbMan.ExcuteReader(query);
@@ -368,6 +369,7 @@ namespace Nemo.Database
         }
         ////////hossam
 
+
         public int AssignedWorkerId(string id, string machine)
         {
 
@@ -386,6 +388,22 @@ namespace Nemo.Database
         }
 
 
+        public int AssignedWorkerId(string id, string machine)
+        {
+
+            string query1 = "insert into Works_on  values ( '" + int.Parse(machine) + "' , ' " + id + "')";
+            string checkQuery = "select Works_on.Emp_id where Works_on.Machine_id =  ' " + int.Parse(machine) + " '";
+            if (dbMan.ExecuteNonQuery(checkQuery) == 1)
+            {
+                //  query1 = "update Works_on set Machine_id = '" + int.Parse(machine) + "' where Emp_id = ' " + id +" '";
+                query1 = "UPDATE  Works_on " +
+                "SET " +
+                "Machine_id = '" + int.Parse(machine) + "' " +
+                "WHERE Emp_id = '" + id + "'";
+                return dbMan.ExecuteNonQuery(query1);
+            }
+            return dbMan.ExecuteNonQuery(query1);
+        }
         public DataTable SelectHighestPeopleReside()
         {
             string query = "exec SelectHighestPeopleReside";

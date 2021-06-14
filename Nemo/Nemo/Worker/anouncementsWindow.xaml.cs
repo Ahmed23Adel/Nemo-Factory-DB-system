@@ -32,7 +32,8 @@ namespace Nemo.Worker
         private void loadData(string username)
         {
             data = appLayer.getMessages(username);
-           // MessageBox.Show(data.Rows[0]["Name"].ToString());
+
+            if (data.Rows.Count != 0) MessageBox.Show(data.Rows[0]["Name"].ToString());
             grid_msgs.ItemsSource = data.DefaultView;
         }
 

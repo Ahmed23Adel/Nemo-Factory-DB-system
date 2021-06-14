@@ -108,11 +108,10 @@ namespace Nemo.Manager
 
             visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked, sendAnounClicked, recAnounClicked, productsClicked);
 
+
             //
+            prodLinePage.getAllLines();
             moreInfo.Content = prodLinePage;
-                
-
-
         }
         /// <summary>
         /// This event is called when user clicks on employees line row to see more .

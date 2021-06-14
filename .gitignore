@@ -10,3 +10,11 @@ Nemo/Nemo/bin/Debug/Nemo.pdb
 Nemo/Nemo/obj/Debug/Nemo.csprojAssemblyReference.cache
 Nemo/Nemo/obj/Debug/Nemo.exe
 Nemo/Nemo/obj/Debug/Nemo.pdb
+*.baml
+Nemo/.vs/Nemo/v16/.suo
+*.exe
+*.pdb
+*.cache
+*.resources
+*.pdb
+*.lref
