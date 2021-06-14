@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800"
+        Title="Settings" Height="400" Width="400"
         Closing="Window_Closing"
         >
     <Border Background="{StaticResource WordBlueBrush}"
@@ -20,16 +20,15 @@
             </Grid.Background>
 
             <!--this stack panel contains all of the data-->
-            <StackPanel>
 
                 <!--Log in button-->
                 <Button  Click="Logout" 
                         Content="Log out" 
-                        HorizontalAlignment="Right" 
+                        HorizontalAlignment="Center" 
+                         VerticalAlignment="Center"
                         FontWeight="Bold" 
                          Margin="16 16 16 16"
                         Style="{StaticResource Login}"/>
-            </StackPanel>
         </Grid>
     </Border>
 </Window>

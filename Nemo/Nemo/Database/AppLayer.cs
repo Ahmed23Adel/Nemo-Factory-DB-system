@@ -49,6 +49,15 @@ namespace Nemo.Database
 
         }
 
+        public DataTable GetProductionLineAtId(string lineId)
+        {
+            return controller.GetProductionLineAtId(lineId);
+        }
+        public DataTable GetAllSupervisors()
+        {
+            return controller.GetAllSupervisors();
+        }
+
         public DataTable GetBasicDataForUserNamePass(string userName, string pass)
         {
             DataTable dt = controller.isUserNamePassExist(userName, pass);
@@ -56,7 +65,31 @@ namespace Nemo.Database
                 return new DataTable();
             return dt;
         }
+        public int DeleteProductionLineAtId(string lineId)
+        {
+            return controller.DeleteProductionLineAtId(lineId);
+        }
+        public int UpdateProductionLineAtId(string lineId, string name, string Location, string Supervisor_id)
+        {
+            if (string.IsNullOrEmpty(name))
+                name = "NULL";
+            else
+                name = "'" + name + "'";
+            
+            if (string.IsNullOrEmpty(Location))
+                Location = "NULL";
+            else
+                Location = "'" + Location + "'";
+            
+            if (string.IsNullOrEmpty(Supervisor_id))
+                Supervisor_id = "NULL";
+            else
+                Supervisor_id = "'" + Supervisor_id + "'";
 
+            return controller.UpdateProductionLineAtId(lineId, name, Location, Supervisor_id);
+
+
+        }
         public DataTable SelectAllEmps()
         {
             return controller.selectAllEmps();
@@ -275,12 +308,16 @@ namespace Nemo.Database
             return controller.RemoveMachineAtId(id);
         }
 
-        public int UpdateMachineAtId(string id, string name, string date)
+        public int UpdateMachineAtId(string id, string name, string date, string oldLineId,string newLindId)
         {
             if (string.IsNullOrEmpty(name))
                 name = "NULL";
             if (string.IsNullOrEmpty(date))
                 date = "NULL";
+            if (controller.UpdateLinkMachineToProductionLine(newLindId, id, oldLineId) == 0)
+            {
+                controller.LinkMachineToProductionLine(newLindId, id);
+            }
             return controller.UpdateMachineAtId(id, name, date);
         }
 
@@ -365,7 +402,22 @@ namespace Nemo.Database
         {
             return controller.GetAllMachines();
         }
+
+        public string GetLastMachine()
+        {
+            DataTable dt = controller.GetLastMachine();
+            return dt.Rows[0]["ID"].ToString();
+
+        }
         
+        
+        public string GetLastProduct()
+        {
+            DataTable dt = controller.GetLastProduct();
+            return dt.Rows[0]["ID"].ToString();
+
+        }
+
 
         //Stats
         public DataTable GetMaleFemale()
@@ -429,6 +481,199 @@ namespace Nemo.Database
             return controller.updateProdcution(lineID, productID, amount);
         }
 
+        public DataTable GetTargetVsProduced()
+        {
+            return controller.GetTargetVsProduced();
+        }
+        public double GetTotalCost()
+        {
+            return controller.GetTotalCost();
+        }
+        public double GetTotalSal()
+        {
+            int currentMonth = DateTime.Now.Month;
+            return controller.GetTotalSal(currentMonth);
+        }
+        public DataTable GetTotalEmpsOverYears()
+        {
+
+            DataTable dt = controller.GetTotalEmpsOverYears();
+            if(dt.Rows.Count>0)
+            {
+                dt.Columns["EmpsCount"].ReadOnly = false;
+                int sum = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sum = sum + int.Parse(dt.Rows[i]["EmpsCount"].ToString());
+                    dt.Rows[i]["EmpsCount"] = sum.ToString();
+
+                }
+                return dt;
+            }
+            return new DataTable();
+            
+        }
+
+        public DataTable GetProductionoOverYears()
+        {
+            return controller.GetProductionoOverYears();
+        }
+
+        public DataTable GetProductAmtOverAllYearsAccu(string prodLineId, string productId)
+        {
+            DataTable dt= controller.GetProductAmtOverAllYearsAccu(prodLineId, productId); 
+            if(dt.Rows.Count>0)
+            {
+                dt.Columns["sumInYear"].ReadOnly = false;
+                int sum = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sum = sum + int.Parse(dt.Rows[i]["sumInYear"].ToString());
+                    dt.Rows[i]["sumInYear"] = sum.ToString();
+
+                }
+                return dt;
+            }
+            return new DataTable();
+            
+        }
+        
+        public DataTable GetProductAmtOverAllYears(string prodLineId, string productId)
+        {
+            return controller.GetProductAmtOverAllYearsAccu(prodLineId, productId); 
+        }
+
+        public DataTable GetAllProductionLine()
+        {
+            return controller.GetAllProductionLine();
+        }
+        public DataTable GetAllProductsAtProductionLine(string productionLine)
+        {
+            return controller.GetAllProductsAtProductionLine(productionLine);
+        }
+        public DataTable GetProductionOverThisYearAcu(string prodLineId, string product_id, string year)
+        {
+            string currentYear = DateTime.Now.Year.ToString();
+            DataTable dt= controller.GetProductionOverThisYear(prodLineId, product_id, year);
+            if (dt.Rows.Count > 0)
+            {
+                dt.Columns["monAmount"].ReadOnly = false;
+                int sum = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sum = sum + int.Parse(dt.Rows[i]["monAmount"].ToString());
+                    dt.Rows[i]["monAmount"] = sum.ToString();
+
+                }
+                return dt;
+            }
+            return new DataTable();
+            
+
+        }
+        
+        public DataTable GetProductionOverThisYear(string prodLineId, string product_id, string year)
+        {
+            string currentYear = DateTime.Now.Year.ToString();
+            return controller.GetProductionOverThisYear(prodLineId, product_id, year);
+
+        }
+        public DataTable GetTargedVsActual()
+        {
+            return controller.GetTargedVsActual();
+        }
+        public DataTable GetMachinesOverYearsAcu()
+        {
+            string currentYear = DateTime.Now.Year.ToString();
+            DataTable dt = controller.GetMachinesOverYears(currentYear);
+            if(dt.Rows.Count>0)
+            {
+                dt.Columns["sumMachines"].ReadOnly = false;
+                int sum = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sum = sum + int.Parse(dt.Rows[i]["sumMachines"].ToString());
+                    dt.Rows[i]["sumMachines"] = sum.ToString();
+
+                }
+                return dt;
+            }
+            return new DataTable();
+            
+        }
+        public DataTable GetAllProducts()
+        {
+            return controller.GetAllProducts();
+        }
+        public int InsertNewProduct(string name, string cost)
+        {
+            if (string.IsNullOrEmpty(name))
+                name = "NULL";
+            else
+                name = "'" + name + "'";
+            
+            if (string.IsNullOrEmpty(cost))
+                cost = "NULL";
+            else
+                cost = "" + cost + "";
+            return controller.InsertNewProduct(name, cost);
+        }
+
+        public DataTable GetProductAtId(string id)
+        {
+            return controller.GetProductAtId(id);
+        }
+        public DataTable UpdateProductAtId(string id, string name, string cost)
+        {
+            if (string.IsNullOrEmpty(name))
+                name = "NULL";
+            else
+                name = "'" + name + "'";
+
+            if (string.IsNullOrEmpty(cost))
+                cost = "NULL";
+            else
+                cost = "" + cost + "";
+            return controller.UpdateProductAtId(id, name, cost);
+        }
+        public int DeleteProductAtId(string id)
+        {
+            return controller.DeleteProductAtId(id);
+        }
+        public DataTable SelectEmpsLikeName(string name)
+        {
+            
+            return controller.SelectEmpsLikeName(name);
+        }
+        public DataTable searchAndFilter(FiltersClasses.EmpFilter empFilter)
+        {
+            return controller.searchAndFilterEmployees(empFilter.GetSqlQuery());
+        }
+        public DataTable searchAndFilterMachines(FiltersClasses.MachineFilter machiesFilter)
+        {
+            return controller.searchAndFilterMachines(machiesFilter.GetSqlQuery());
+        }
+        public int LinkMachineToProductionLine(string Line_id, string Machine_id)
+        {
+            return controller.LinkMachineToProductionLine(Line_id, Machine_id);
+        }
+        
+        public int LinkProductToProductoinLine(string Line_id, string product_id)
+        {
+            return controller.LinkProductToProductoinLine(Line_id, product_id);
+        }
+
+        public void UpdateLinkProductToProductionLine(string product_id, string oldLine_id, string newLine_id)
+        {
+            if (controller.UpdateLinkProductToProductionLine(product_id, oldLine_id, newLine_id) == 0)
+            {
+                controller.LinkProductToProductoinLine(newLine_id, product_id);
+            }
+        }
+
+
+
 
     }
+
 }

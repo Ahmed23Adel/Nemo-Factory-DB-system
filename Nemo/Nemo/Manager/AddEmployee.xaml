@@ -137,7 +137,10 @@
                              FontSize="20" 
                              Margin="8 8 8 8" 
                              Foreground="White" 
-                             Background="Transparent"/>
+                             Background="Transparent"
+                             PreviewTextInput="MaskNumericInput" 
+                             DataObject.Pasting="MaskNumericPaste"
+                             />
                     <!--Birth dat word-->
                     <TextBlock Text="Birth date: "
                                Grid.Column="2"

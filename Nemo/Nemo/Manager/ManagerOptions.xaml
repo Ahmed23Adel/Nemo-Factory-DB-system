@@ -362,6 +362,49 @@
                         </Grid>
                         <!--End of machine -->
                         <Separator Width="200" Margin="1 1 1 1"/>
+                        
+                        <!--Products-->
+                        <Grid Height="50" UIElement.PreviewMouseDown="productsClickEvent">
+                            <Grid.ColumnDefinitions>
+                                <!--For orange rectangle-->
+                                <ColumnDefinition Width="0.3*"/>
+                                <!--For icon-->
+                                <ColumnDefinition Width="2*"/>
+                                <!--For "Production line" word-->
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                            <StackPanel Orientation="Horizontal" >
+                                <!--To be vertical line, X1 and X2 must be the sampe point, only defins the length-->
+                                <Line x:Name="productsClicked"
+                                      X1="0" 
+                                      X2="0" 
+                                      Y1="0" 
+                                      Y2="50" 
+                                      Stroke="{StaticResource WordOrangeBrush}" 
+                                      StrokeThickness="15" Margin="0,0,0,0"/>
+                            </StackPanel>
+
+                            <!--Icon for machines-->
+                            <Image  Grid.Column="1" 
+                                    Margin="2 10 0 10">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200"
+                                                 UriSource="../Images/products.ico"/>
+                                </Image.Source>
+                            </Image>
+
+                            <TextBlock Grid.Column="2" 
+                                   Text="Products" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White"
+                                   />
+                        </Grid>
+                        <!--End of machine -->
+                        <Separator Width="200" Margin="1 1 1 1"/>
 
                         <!--Send Announment-->
                         <Grid Height="50" UIElement.PreviewMouseDown="sendAnnounceEvent">

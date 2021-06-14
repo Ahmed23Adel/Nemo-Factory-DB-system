@@ -251,5 +251,6 @@ namespace Nemo.Manager
             MakeSound.MakeClick();
             parentInstance.Show();
         }
+        
     }
 }

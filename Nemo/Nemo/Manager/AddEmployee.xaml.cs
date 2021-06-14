@@ -63,10 +63,17 @@ namespace Nemo.Manager
             if (IsDataValid())
             {
                 MakeSound.MakeSent();
-                InsertEmployee();
-                this.Close();
-                //it calls ModShow to update data in employees table
-                parentInstance.ModShow();
+                if (InsertEmployee() == 1)
+                {
+                    this.Close();
+                    //it calls ModShow to update data in employees table
+                    parentInstance.ModShow();
+                }
+                else
+                {
+                    MessageBox.Show("Username already exist in our database");
+                }
+                
                 
             }
         }
@@ -83,8 +90,10 @@ namespace Nemo.Manager
                 return "M";//Manager
             if (index == "2")
                 return "W";//Worker
-            else
+            else if (index == "3")
                 return "S";//Supervisor
+            else
+                return "";
         }
         /// <summary>
         /// This event is to be fired if user click on cancel button
@@ -103,40 +112,60 @@ namespace Nemo.Manager
         /// <returns></returns>
         private bool IsDataValid()
         {
+            if (!string.IsNullOrEmpty(nationalId.Text) && (nationalId.Text.Length != 14))
+            {
+                MessageBox.Show("National id lengthe is less or greater thatn 14 numbers");
+                return false;
+            }
+            if (string.IsNullOrEmpty(fName.Text))
+            {
+                MessageBox.Show("First name is Null, please enter it");
+                return false;
+            }
+            if (string.IsNullOrEmpty(lName.Text))
+            {
+                MessageBox.Show("Last name is Null, please enter it");
+                return false;
+            }
             //First name shouldn't have any digits
             if (fName.Text.Any(char.IsDigit))
             {
-                IfNum0PrintFOrS("User name contains numbers; please change it and try again", "But you swore! user name is still wrong");
+                MessageBox.Show("User name contains numbers; please change it and try again", "But you swore! user name is still wrong");
                 return false;
             }
             //last naem shouldn't have any digits
             if (lName.Text.Any(char.IsDigit))
             {
-                IfNum0PrintFOrS("Last name contains numbers; please change it and try again", "But you swore! Last name is still wrong");
+                MessageBox.Show("Last name contains numbers; please change it and try again", "But you swore! Last name is still wrong");
                 return false;
             }
             //Balance shouldn't have any letters
             if (salary.Text.Any(char.IsLetter))
             {
-                IfNum0PrintFOrS("Balance contains letters; please change it and try again", "But you swore! Balance is still wrong");
+                MessageBox.Show("Balance contains letters; please change it and try again", "But you swore! Balance is still wrong");
                 return false;
             }
-            //National id shouldn't have any letters
+            if (!string.IsNullOrEmpty(salary.Text )&& double.Parse(salary.Text) < 0)
+            {
+                MessageBox.Show("salary can't have negative value");
+                return false;
+            }
+            // National id shouldn't have any letters
             if (nationalId.Text.Any(char.IsLetter))
             {
-                IfNum0PrintFOrS("Natoinal id contains letters; please change it and try again", "But you swore! National id is still wrong");
+                MessageBox.Show("Natoinal id contains letters; please change it and try again", "But you swore! National id is still wrong");
                 return false;
             }
             //userName shouldn't be empty
             if (string.IsNullOrEmpty(userNameField.Text))
             {
-                IfNum0PrintFOrS("user name is empty; I'm not gonne fill it for you! please change it and try again", "But you swore! user name is still empty");
+                MessageBox.Show("user name is empty; I'm not gonne fill it for you! please change it and try again", "But you swore! user name is still empty");
                 return false;
             }
             //pasword should be empty
             if (string.IsNullOrEmpty(pass.Text))
             {
-                IfNum0PrintFOrS("Password is empty; I'm not gonne fill it for you! please change it and try again", "But you swore! Password is still empty");
+                MessageBox.Show("Password is empty; I'm not gonne fill it for you! please change it and try again", "But you swore! Password is still empty");
                 return false;
             }
             return true;
@@ -161,7 +190,7 @@ namespace Nemo.Manager
         /// <summary>
         /// Insert new employee from entered data
         /// </summary>
-        public void InsertEmployee()
+        public int InsertEmployee()
         {
             MakeSound.MakeSent();
 
@@ -169,7 +198,7 @@ namespace Nemo.Manager
             string indexGender = gender.SelectedIndex.ToString();
             string indexStatus = status.SelectedIndex.ToString();
 
-            appLayer.InsertEmp(fName.Text.Trim()
+            return appLayer.InsertEmp(fName.Text.Trim()
                 , lName.Text.Trim(),
                 salary.Text.Trim(),
                 bdate.Text.Trim(),
@@ -204,6 +233,29 @@ namespace Nemo.Manager
             if (index == "2")
                 return "S";//Worker
             return "";
+        }
+
+        private void MaskNumericInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !TextIsNumeric(e.Text);
+        }
+
+        private void MaskNumericPaste(object sender, DataObjectPastingEventArgs e)
+        {
+            if (e.DataObject.GetDataPresent(typeof(string)))
+            {
+                string input = (string)e.DataObject.GetData(typeof(string));
+                if (!TextIsNumeric(input)) e.CancelCommand();
+            }
+            else
+            {
+                e.CancelCommand();
+            }
+        }
+
+        private bool TextIsNumeric(string input)
+        {
+            return input.All(c => Char.IsDigit(c) || Char.IsControl(c));
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

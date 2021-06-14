@@ -80,8 +80,8 @@ namespace Nemo.Manager
 
         public void LoadAvgSalaries()
         {
-            DataTable dt = appLayer.GetAvgSalaries();
-            avgSal.ItemsSource = dt.DefaultView;
+           // DataTable dt = appLayer.GetAvgSalaries();
+          //  avgSal.ItemsSource = dt.DefaultView;
         }
 
         public void LoadReligions()

@@ -142,16 +142,14 @@ namespace Nemo.Manager
             parentInstance.Hide();
             MakeSound.MakeClick();
         }
-        /*
-         * private void AddLine(object sender, RoutedEventArgs e)
+        
+        private void search(object sender, RoutedEventArgs e)
         {
-            new AddEmployee(parentInstance).Show();
+            new searchEmps(parentInstance).Show();
             parentInstance.Hide();
+            MakeSound.MakeClick();
         }
-         */
-        /// <summary>
-        /// It loads again the dat in dataGrid by removing last values and select them again.
-        /// </summary>
+       
         public void Refresh()
         {
             allEmps.ItemsSource = null;

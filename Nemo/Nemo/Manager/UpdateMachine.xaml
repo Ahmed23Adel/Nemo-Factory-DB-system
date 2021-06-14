@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo.Manager"
         mc:Ignorable="d"
-        Title="UpdateMachine" Height="450" Width="800">
+        Title="UpdateMachine" Height="450" Width="800"
+        Closing="Window_Closing"
+        >
     <Border Background="{StaticResource WordBlueBrush}"
             Margin="14">
         <Grid >
@@ -58,6 +60,28 @@
                                  Grid.Column="3"
                                 FontSize="20" 
                                 Margin="8 8 8 8" />
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="To work in production line: " 
+                               Grid.Column="0"
+                               FontSize="20" 
+                               Margin="8 8 8 8" 
+                               Foreground="White" />
+
+                            <!--First name value-->
+                            <ComboBox x:Name="lines" 
+                                 Grid.Column="3"
+                                FontSize="20" 
+                                Margin="8 8 8 8"
+                                DisplayMemberPath="Name"
+                                SelectedValuePath="ID"
+                                      />
                         </Grid>
                     </StackPanel>
                 </Grid>

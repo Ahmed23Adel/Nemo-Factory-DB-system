@@ -23,6 +23,7 @@ namespace Nemo.Manager
         string id;
         ManagerOptoins parentInstance;
         Database.AppLayer appLayer;
+        string oldProdLineId;
 
         int numError;
         public UpdateMachine(string id, ManagerOptoins parentInstance)
@@ -32,14 +33,33 @@ namespace Nemo.Manager
             this.parentInstance = parentInstance;
             appLayer = Database.AppLayer.GetInstance();
             numError = 0;
+            LoadProductionLines();
             loadData();
         }
+        public void LoadProductionLines()
+        {
+            
 
+        }
         public void loadData()
         {
             DataTable dt = appLayer.GetMachineAtId(id);
             name.Text = dt.Rows[0]["Name"].ToString();
             startDate.Text = dt.Rows[0]["Start_date"].ToString();
+            oldProdLineId = dt.Rows[0]["prodLine"].ToString();
+            DataTable dtLines = appLayer.GetAllProductionLine();
+            lines.ItemsSource = dtLines.DefaultView;
+
+            for (int i = 0; i < dtLines.Rows.Count; i++)
+            {
+                
+                if ( !string.IsNullOrEmpty(dt.Rows[0]["prodLine"].ToString())&&  int.Parse(dtLines.Rows[i]["ID"].ToString()) == int.Parse(dt.Rows[0]["prodLine"].ToString()))
+                {
+                    lines.SelectedIndex = i;
+                    break;
+                }
+            }
+
         }
 
         /// <summary>
@@ -73,20 +93,20 @@ namespace Nemo.Manager
         /// <param name="e"></param>
         private void UpdateInfo(object sender, RoutedEventArgs e)
         {
-            if (true)
-            {
-                MakeSound.MakeClick();
-                //make sure that user is sure to update info
-                if (MessageBox.Show("Are you sure you want to update this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    MakeSound.MakeSent();
-                    UpdateMachineAtId();
-                    this.Close();
-                    //it calls ModShow to update data in employees table
-                    parentInstance.ModShow();
-                }
+            MakeSound.MakeSent();
 
+            //MakeSound.MakeClick();
+            //make sure that user is sure to update info
+            if (MessageBox.Show("Are you sure you want to update this employee?", "Are you sure Nemo?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                MakeSound.MakeSent();
+                UpdateMachineAtId();
+                this.Close();
+                //it calls ModShow to update data in employees table
+                parentInstance.ModShow();
             }
+
+            
 
         }
         public bool IsDataValid()
@@ -115,12 +135,16 @@ namespace Nemo.Manager
         }
         private void UpdateMachineAtId()
         {
-            appLayer.UpdateMachineAtId(id, name.Text, startDate.Text);
-
+            appLayer.UpdateMachineAtId(id, name.Text, startDate.Text, oldProdLineId, lines.SelectedValue.ToString());
+            MakeSound.MakeSent();
         }
 
 
-
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MakeSound.MakeClick();
+            parentInstance.Show();
+        }
 
 
 

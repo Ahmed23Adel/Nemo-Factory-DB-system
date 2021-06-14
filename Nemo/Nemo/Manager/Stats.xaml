@@ -1,0 +1,407 @@
+﻿<Window x:Class="Nemo.Manager.Stats"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:Nemo.Manager"
+        mc:Ignorable="d"
+        Title="Stats" Height="700" Width="1000">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="650" CanContentScroll="True">
+
+        <Border Background="{StaticResource WordBlueBrush}" Margin="14">
+            <Grid >
+                <Grid.Background>
+                    <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png" />
+                </Grid.Background>
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" >
+                            <Border BorderBrush="{StaticResource WordOrangeBrush}" BorderThickness="3" Margin="4 4 4 4">
+
+                                <StackPanel >
+                                <TextBlock Text="Number of employees"
+                                       Background="{StaticResource WordOrangeBrush}"
+                                       Padding="16 16 16 16"
+                                       Margin="4 4 4 4"
+                                       FontSize="20"
+                                       Foreground="White"
+                                       />
+                                <TextBlock x:Name="mangersCount"
+                                Text="Managers :30"
+                                       FontSize="15"
+                                       Foreground="White"
+                                       Margin="16 0 16 8"
+                                       />
+
+                                <TextBlock x:Name="SupervisorsCount"
+                                Text="Supervisors :30"
+                                       FontSize="15"
+                                       Foreground="White"
+                                       Margin="16 0 16 8"
+                                       />
+
+                                <TextBlock x:Name="workersCount"
+                                Text="Workers :30"
+                                       FontSize="15"
+                                       Foreground="White"
+                                       Margin="16 0 16 8"
+                                       />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                        <lvc:AngularGauge Grid.Column="1" Grid.Row="1" Value="{Binding Value}" FromValue="0" ToValue="100" x:Name="totalCost"
+                          LabelsStep="10" TicksStep="25" Wedge="300"
+                          TicksForeground="White" Foreground="White" 
+                          FontWeight="Bold" FontSize="16"
+                          SectionsInnerRadius=".5">
+                            <lvc:AngularGauge.Sections>
+                                <lvc:AngularSection FromValue="0" ToValue="50" Fill="#F8A725"/>
+                                <lvc:AngularSection FromValue="50" ToValue="100" Fill="#FF3939"/>
+                            </lvc:AngularGauge.Sections>
+                        </lvc:AngularGauge>
+                        
+                        <lvc:AngularGauge Grid.Column="2" Grid.Row="1" Value="{Binding Value}" FromValue="0" ToValue="100" x:Name="totalSal"
+                          LabelsStep="10" TicksStep="25" Wedge="300"
+                          TicksForeground="White" Foreground="White" 
+                          FontWeight="Bold" FontSize="16"
+                          SectionsInnerRadius=".5">
+                            <lvc:AngularGauge.Sections>
+                                <lvc:AngularSection FromValue="0" ToValue="50" Fill="#F8A725"/>
+                                <lvc:AngularSection FromValue="50" ToValue="100" Fill="#FF3939"/>
+                            </lvc:AngularGauge.Sections>
+                        </lvc:AngularGauge>
+                        <lvc:PieChart Grid.Column="3" 
+                                  Height="200" 
+                                  LegendLocation="Bottom"
+                                  Hoverable="False" 
+                                  DataTooltip="{x:Null}"
+                                  x:Name="maleToFemale"
+                                  Series="{Binding SeriesCollection}"
+                                  >
+
+                        </lvc:PieChart>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="1"
+                                   x:Name="totalCostIn"
+                                   Text="Total cost produced in K"
+                                   HorizontalAlignment="Center"
+                                   FontSize="15"
+                                   Foreground="White"
+                                    Margin="4 4 4 4"
+                                   />
+                        <TextBlock Grid.Column="2"
+                                    x:Name="totalSalIn"
+                                   Text="Total Salaries in K"
+                                   HorizontalAlignment="Center"
+                                   FontSize="15"
+                                   Foreground="White"
+                                    Margin="4 4 4 4"
+                                   />
+                        
+                        <TextBlock Grid.Column="3"
+                                   Text="Males and females percentage"
+                                   HorizontalAlignment="Center"
+                                   FontSize="15"
+                                   Foreground="White"
+                                    Margin="4 4 4 4"
+                                   />
+                    </Grid>
+                    <TextBlock x:Name="diffProdSal"
+                        Text="Total produced-total salaries = 2300"
+                                   FontSize="20"
+                                   Foreground="White"
+                                    Margin="4 4 4 4"
+                               />
+                    <Separator Margin="16 16 16 16"/>
+                    <TextBlock Text="Number of employee over years"
+                                   FontSize="20"
+                                   Margin="4 4 4 4"
+                                   Foreground="#014001"
+                               />
+                    <lvc:CartesianChart Series="{Binding SeriesCollectionNumEmps}" LegendLocation="Right" 
+                                        
+                                        Height="200">
+                        
+                        <lvc:CartesianChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>#014001</Color>
+                            </lvc:ColorsCollection>
+                        </lvc:CartesianChart.SeriesColors>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Count" LabelFormatter="{Binding count}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Year" Labels="{Binding year}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+                    <Separator Margin="16 16 16 16"/>
+                    <TextBlock Text="Average salaries"
+                                   FontSize="20"
+                                   Margin="4 4 4 4"
+                                   Foreground="White"
+                               />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0"
+                                          x:Name="avgSal"
+                                          Height="180" 
+                                          Width="900" 
+                                          Margin="8 8 8 8" 
+                                          HorizontalAlignment="Left" 
+                                          VerticalAlignment="Top" 
+                                          Background="Transparent" 
+                                         Foreground="Black"  
+                                         RowBackground="Transparent"
+                                         ItemsSource="{Binding Path=Collection}"
+                                          AutoGenerateColumns="False" 
+                                         Style="{StaticResource dGrid}"
+                                         CanUserAddRows="False"
+                              
+                                      >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Production line " 
+                                                    FontSize="20" Width="*"
+                                                    Foreground="White"
+                                                    Binding="{Binding Path=Production_line,  Mode=OneWay}"
+                                                    />
+
+                                <DataGridTextColumn Header="Average salaries" 
+                                                    FontSize="20" Width="*"
+                                                    Foreground="White"
+                                                    Binding="{Binding Path=Average,  Mode=OneWay}"
+                                                    />
+                            </DataGrid.Columns>
+
+
+                        </DataGrid>
+                    </Grid>
+
+                    <TextBlock Text="Top 5 Production lines (based on daily produced)"
+                                   Foreground="White" 
+                                   Margin="16 8 16 8"
+                                   FontSize="15"/>
+                    <DataGrid  x:Name="topProdLines"
+                                  Height="150" 
+                                  Width="700" 
+                                  Margin="8 8 8 8" 
+                                  HorizontalAlignment="Stretch" 
+                                  VerticalAlignment="Top" 
+                                  Background="Transparent" 
+                                 Foreground="Black"  
+                                 RowBackground="Transparent"
+                                 ItemsSource="{Binding Path=Collection}"
+                                  AutoGenerateColumns="False" 
+                                 Style="{StaticResource dGrid}"
+                                 CanUserAddRows="False"
+                              
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Production line" 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            
+                                            Binding="{Binding Path=prodLine,  Mode=OneWay}"
+                                            />
+
+                            <DataGridTextColumn Header="Start date " 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            Binding="{Binding Path=Product,  Mode=OneWay}"
+                                            />
+
+                            <DataGridTextColumn Header="Daily amount" 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            Binding="{Binding Path=Daily_amount,  Mode=OneWay}"
+                                            />
+                            <DataGridTextColumn Header="Supervisor" 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            Binding="{Binding Path=supervisor,  Mode=OneWay}"
+                                            />
+                        </DataGrid.Columns>
+
+
+                    </DataGrid>
+                    <TextBlock Text="Production amount over years"
+                                   FontSize="20"
+                                   Foreground="White"
+                                    Margin="4 4 4 4"
+                               />
+                    <lvc:CartesianChart Series="{Binding SeriesCollectionProdAmt}" LegendLocation="Right" 
+                                        
+                                        Height="200">
+    
+                        
+                        
+                        <lvc:CartesianChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>#014001</Color>
+                            </lvc:ColorsCollection>
+                           
+                        </lvc:CartesianChart.SeriesColors>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Productoin amount" LabelFormatter="{Binding amt}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Year" Labels="{Binding yearPA}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+
+                    <Button  Click="seeMore" 
+                    Content="See more" 
+                    HorizontalAlignment="Right" 
+                    FontWeight="Bold" 
+                    Margin="16 16 16 16"
+                    Style="{StaticResource updateEmp}"/>
+                    <TextBlock Text="Target vs Acutal produced "
+                                   FontSize="20"
+                                   Margin="4 4 4 4"
+                                   Foreground="White"
+                               />
+
+                    <lvc:CartesianChart Series="{Binding SeriesCollectionTargetAtucal}" LegendLocation="Right" 
+                                        
+                                        Height="200">
+
+                        <lvc:CartesianChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>#014001</Color>
+                                <Color>#FFA500</Color>
+                            </lvc:ColorsCollection>
+                        </lvc:CartesianChart.SeriesColors>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Count" LabelFormatter="{Binding countTA}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Year" Labels="{Binding monthTA}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+
+                    <Separator Margin="16 16 16 16"/>
+
+                    <TextBlock Text="Oldest 20 machies, may be you need to update"
+                                   Foreground="White" 
+                                   Margin="16 8 16 8"
+                                   FontSize="15"/>
+                    <DataGrid  x:Name="oldMachines"
+                                  Height="150" 
+                                  Width="900" 
+                                  Margin="8 8 8 8" 
+                                  HorizontalAlignment="Left" 
+                                  VerticalAlignment="Top" 
+                                  Background="Transparent" 
+                                 Foreground="Black"  
+                                 RowBackground="Transparent"
+                                 ItemsSource="{Binding Path=Collection}"
+                                  AutoGenerateColumns="False" 
+                                 Style="{StaticResource dGrid}"
+                                 CanUserAddRows="False"
+                              
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Machine name" 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            Binding="{Binding Path=Name,  Mode=OneWay}"
+                                            />
+
+                            <DataGridTextColumn Header="Start date " 
+                                            FontSize="20" Width="*"
+                                            Foreground="White"
+                                            Binding="{Binding Path=Start_date,  Mode=OneWay}"
+                                            />
+
+                        </DataGrid.Columns>
+
+
+                    </DataGrid>
+                    <TextBlock Text="Number of machines over years"
+                                   Foreground="White" 
+                                   Margin="16 8 16 8"
+                                   FontSize="15"/>
+                    <lvc:CartesianChart Series="{Binding SeriesCollectionCountMachines}" LegendLocation="Right" 
+                                        
+                                        Height="200">
+
+                        <lvc:CartesianChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>#014001</Color>
+                                <Color>#FFA500</Color>
+                            </lvc:ColorsCollection>
+                        </lvc:CartesianChart.SeriesColors>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Count" LabelFormatter="{Binding countMa}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Year" Labels="{Binding yearMa}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+
+                    <Separator Margin="16 16 8 8"/>
+
+                    <Label Content="Histogram of addresses of employees"  Foreground="White" FontSize="20"  Margin="4 4 4 4"/>
+                    <lvc:CartesianChart Series="{Binding SeriesCollectionPlaces}"
+                                                Height="200"
+                                                LegendLocation="Left"
+                                                Foreground="{StaticResource WordOrangeBrush}"
+                                                Width="Auto"
+                                                >
+                        <lvc:CartesianChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>Orange</Color>
+                            </lvc:ColorsCollection>
+                        </lvc:CartesianChart.SeriesColors>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Address" Labels="{Binding Address}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Count" LabelFormatter="{Binding countPlaces}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                    </lvc:CartesianChart>
+
+                    <Separator Margin="16 16 8 8"/>
+                    <Label Content="Histogram of religions of employees" Foreground="White" FontSize="20" Margin="4 4 4 4"/>
+
+                    <lvc:CartesianChart Series="{Binding SeriesCollectionRel}"
+                                                Height="200"
+                                                LegendLocation="Left"
+                                                Foreground="{StaticResource WordOrangeBrush}"
+                                                Width="Auto"
+                                                >
+                        <lvc:CartesianChart.SeriesColors>
+                            <lvc:ColorsCollection>
+                                <Color>Orange</Color>
+                            </lvc:ColorsCollection>
+                        </lvc:CartesianChart.SeriesColors>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Religion" Labels="{Binding Religion}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Count" LabelFormatter="{Binding Countr}" Foreground="{StaticResource WordOrangeBrush}" FontSize="20"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                    </lvc:CartesianChart>
+
+
+                    <Separator Margin="16 16 8 8"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</Window>

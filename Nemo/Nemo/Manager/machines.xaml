@@ -37,19 +37,39 @@
                 <!--StackPanel that contains add button and Grid View-->
                 <StackPanel>
                     <!--Image for add button to add new Employee-->
-                    <Image UIElement.MouseDown="InsertNewMachine"
-                    Height="30"
-                    Margin="16  4 16 4"
-                    RenderTransformOrigin="0.5,0.57"
-                    Width="35" 
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Right">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                        <Image.Source>
-                            <BitmapImage DecodePixelWidth="400" UriSource="../Images/plus.ico"/>
-                        </Image.Source>
-                    </Image>
+                        <Image UIElement.MouseDown="search"
+                                    Grid.Column="1"
+                                    Height="30"
+                                    Margin="16  4 16 4"
+                                    RenderTransformOrigin="0.5,0.57"
+                                    Width="35" 
+                                    >
 
+                            <Image.Source>
+                                <BitmapImage DecodePixelWidth="400" UriSource="../Images/search.ico"/>
+                            </Image.Source>
+                        </Image>
+
+                        <Image UIElement.MouseDown="InsertNewMachine"
+                                    Grid.Column="2"
+                                    Height="30"
+                                    RenderTransformOrigin="0.5,0.57"
+                                    Width="35" >
+
+                            <Image.Source>
+                                <BitmapImage DecodePixelWidth="400" UriSource="../Images/plus.ico"/>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+
+               
                     <DataGrid
                     x:Name="allMachines"
                     Margin="14 14 14 14" 

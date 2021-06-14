@@ -67,6 +67,8 @@
     <Compile Include="Database\AppLayer.cs" />
     <Compile Include="DEFs.cs" />
     <Compile Include="Exceptions\JopTitleNotFound.cs" />
+    <Compile Include="FiltersClasses\EmpFilter.cs" />
+    <Compile Include="FiltersClasses\MachineFilter.cs" />
     <Compile Include="MakeSound.cs" />
     <Compile Include="Manager\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
@@ -77,12 +79,24 @@
     <Compile Include="Manager\AddMachine.xaml.cs">
       <DependentUpon>AddMachine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\AddProductionLine.xaml.cs">
+      <DependentUpon>AddProductionLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager\AnnouceTo.xaml.cs">
       <DependentUpon>AnnouceTo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\DataGridViewRow.cs" />
     <Compile Include="Manager\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Filter\filterMachine.xaml.cs">
+      <DependentUpon>filterMachine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\FirlterEmps.xaml.cs">
+      <DependentUpon>FirlterEmps.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\machines.xaml.cs">
       <DependentUpon>machines.xaml</DependentUpon>
@@ -93,8 +107,17 @@
     <Compile Include="Manager\production_lines.xaml.cs">
       <DependentUpon>production_lines.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Products.xaml.cs">
+      <DependentUpon>Products.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager\RecievedMsgs.xaml.cs">
       <DependentUpon>RecievedMsgs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\searchEmps.xaml.cs">
+      <DependentUpon>searchEmps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Search\SearchMachines.xaml.cs">
+      <DependentUpon>SearchMachines.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\SendAnnounc.xaml.cs">
       <DependentUpon>SendAnnounc.xaml</DependentUpon>
@@ -105,11 +128,23 @@
     <Compile Include="Manager\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Stats.xaml.cs">
+      <DependentUpon>Stats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\StatsProdSeeMore.xaml.cs">
+      <DependentUpon>StatsProdSeeMore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\UpadteProduct.xaml.cs">
+      <DependentUpon>UpadteProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager\UpdateEmployee.xaml.cs">
       <DependentUpon>UpdateEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\UpdateMachine.xaml.cs">
       <DependentUpon>UpdateMachine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\UpdateProductionLine.xaml.cs">
+      <DependentUpon>UpdateProductionLine.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager\ViewMyProfile.xaml.cs">
       <DependentUpon>ViewMyProfile.xaml</DependentUpon>
@@ -177,11 +212,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manager\AddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\AddProductionLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Manager\AnnouceTo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Manager\employees.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Filter\filterMachine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\FirlterEmps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,9 +248,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manager\Products.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Manager\RecievedMsgs.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manager\searchEmps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\Search\SearchMachines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manager\SendAnnounc.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -213,11 +276,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Manager\Stats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\StatsProdSeeMore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\UpadteProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Manager\UpdateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manager\UpdateMachine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\UpdateProductionLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -367,6 +446,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\anouncments.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\products.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\female.ico" />
+    <Resource Include="Images\male.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\married.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\single.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

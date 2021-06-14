@@ -74,5 +74,12 @@ namespace Nemo.Manager
             allMachines.ItemsSource = null;
             loadData();
         }
+
+        private void search(object sender, MouseButtonEventArgs e)
+        {
+            new Search.SearchMachines(parentInstance).Show();
+            parentInstance.Hide();
+            MakeSound.MakeClick();
+        }
     }
 }

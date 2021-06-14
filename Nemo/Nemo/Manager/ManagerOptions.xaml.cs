@@ -22,6 +22,7 @@ namespace Nemo.Manager
         machines machinePage;
         SendAnnounc sendAnnoundPage;
         RecievedMsgs recievedMsgsPage;
+        Products productsPage;
         //Should be got from Login window, to get the rest of info such as name.
         string userName;
         string pasword;
@@ -38,6 +39,7 @@ namespace Nemo.Manager
             this.machineClicked.Visibility = Visibility.Hidden;
             this.recAnounClicked.Visibility = Visibility.Hidden;
             this.sendAnounClicked.Visibility = Visibility.Hidden;
+            this.productsClicked.Visibility = Visibility.Hidden;
 
             //create instances of pages instead of creating new instance of them every time user click on on different tap.
             statsPage = new Statistics();
@@ -46,6 +48,7 @@ namespace Nemo.Manager
             machinePage = new machines(this);
             sendAnnoundPage = new SendAnnounc(this,userName,pasword);
             recievedMsgsPage = new RecievedMsgs(userName,pasword);
+            productsPage = new Products(this);
 
             this.userName = userName;
             this.pasword = pasword;
@@ -79,9 +82,10 @@ namespace Nemo.Manager
             MakeSound.MakeClick();
 
             //Here I set statsClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
-            visibleFirstHideRest(statsClicked, prodLinedClicked, empsClicked, machineClicked,sendAnounClicked,recAnounClicked);
+            visibleFirstHideRest(statsClicked, prodLinedClicked, empsClicked, machineClicked,sendAnounClicked,recAnounClicked,productsClicked);
             //I set the MoreInfo to stas page 
-            moreInfo.Content = statsPage;
+            //moreInfo.Content = statsPage;
+            new Stats().Show();
         }
         
         private void settings(object sender, MouseButtonEventArgs e)
@@ -102,7 +106,7 @@ namespace Nemo.Manager
         {
             MakeSound.MakeClick();
 
-            visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked, sendAnounClicked, recAnounClicked);
+            visibleFirstHideRest(prodLinedClicked, statsClicked, empsClicked, machineClicked, sendAnounClicked, recAnounClicked, productsClicked);
 
             //
             moreInfo.Content = prodLinePage;
@@ -121,7 +125,7 @@ namespace Nemo.Manager
             MakeSound.MakeClick();
 
             //Here I set empsClicked(Orangle rectangle to hint user click on it) to visible, and all other rectangle to hidded.
-            visibleFirstHideRest(empsClicked, prodLinedClicked, statsClicked, machineClicked, sendAnounClicked, recAnounClicked);
+            visibleFirstHideRest(empsClicked, prodLinedClicked, statsClicked, machineClicked, sendAnounClicked, recAnounClicked, productsClicked);
             //I set the empPage to stas page 
             moreInfo.Content = empPage;
         }
@@ -135,7 +139,7 @@ namespace Nemo.Manager
         {
             MakeSound.MakeClick();
 
-            visibleFirstHideRest(machineClicked, empsClicked, prodLinedClicked, statsClicked, sendAnounClicked, recAnounClicked);
+            visibleFirstHideRest(machineClicked, empsClicked, prodLinedClicked, statsClicked, sendAnounClicked, recAnounClicked, productsClicked);
             moreInfo.Content = machinePage;
         }
         
@@ -143,7 +147,7 @@ namespace Nemo.Manager
         {
             MakeSound.MakeClick();
 
-            visibleFirstHideRest(sendAnounClicked,machineClicked, empsClicked, prodLinedClicked, statsClicked, recAnounClicked);
+            visibleFirstHideRest(sendAnounClicked,machineClicked, empsClicked, prodLinedClicked, statsClicked, recAnounClicked, productsClicked);
             moreInfo.Content = sendAnnoundPage;
         }
         
@@ -152,8 +156,17 @@ namespace Nemo.Manager
             MakeSound.MakeClick();
 
 
-            visibleFirstHideRest(recAnounClicked,machineClicked, empsClicked, prodLinedClicked, statsClicked, sendAnounClicked);
+            visibleFirstHideRest(recAnounClicked,machineClicked, empsClicked, prodLinedClicked, statsClicked, sendAnounClicked, productsClicked);
             moreInfo.Content = recievedMsgsPage;
+        }
+        
+        private void productsClickEvent(object sender, MouseButtonEventArgs e)
+        {
+            MakeSound.MakeClick();
+
+
+            visibleFirstHideRest(productsClicked,recAnounClicked, machineClicked, empsClicked, prodLinedClicked, statsClicked, sendAnounClicked);
+            moreInfo.Content = productsPage;
         }
 
         /// <summary>
@@ -247,7 +260,7 @@ namespace Nemo.Manager
         /// <param name="l2"></param>
         /// <param name="l3"></param>
         /// <param name="l4"></param>
-        private void visibleFirstHideRest(Line l1, Line l2, Line l3, Line l4,Line l5, Line l6)
+        private void visibleFirstHideRest(Line l1, Line l2, Line l3, Line l4,Line l5, Line l6,Line l7)
         {
             //only one to visible
             l1.Visibility = Visibility.Visible;
@@ -257,6 +270,7 @@ namespace Nemo.Manager
             l4.Visibility = Visibility.Hidden;
             l5.Visibility = Visibility.Hidden;
             l6.Visibility = Visibility.Hidden;
+            l7.Visibility = Visibility.Hidden;
         }
 
 
@@ -271,6 +285,8 @@ namespace Nemo.Manager
             empPage.Refresh();
             machinePage.Refresh();
             recievedMsgsPage.Refresh();
+            productsPage.Refresh();
+            prodLinePage.Refresh();
             this.Show();
         }
         /// <summary>

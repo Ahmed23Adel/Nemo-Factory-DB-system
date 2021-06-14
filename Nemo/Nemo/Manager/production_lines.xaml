@@ -28,7 +28,7 @@
 
 
                 <!--Image for add button to add new Employee-->
-                <Image UIElement.MouseDown="Image_MouseDown"
+                <Image UIElement.MouseDown="addLine"
                     Height="30"
                     Margin="16  4 16 4"
                     RenderTransformOrigin="0.5,0.57"
@@ -55,9 +55,13 @@
 
                     <DataGrid.ContextMenu>
                         <ContextMenu>
+                            <MenuItem Name="item_update" 
+                                  Header="Update" Click="itm_update_Click"/>
+
                             <MenuItem Name="itm_delete" 
                                   Header="delete" Click="itm_delete_Click"/>
-
+                            
+                            
                         </ContextMenu>
                     </DataGrid.ContextMenu>
 

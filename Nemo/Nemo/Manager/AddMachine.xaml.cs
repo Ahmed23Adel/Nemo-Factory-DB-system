@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,8 +28,16 @@ namespace Nemo.Manager
             InitializeComponent();
             appLayer = Database.AppLayer.GetInstance();
             this.parentInstance = parentInstance;
+
+            LoadProductionLines();
         }
 
+        public void LoadProductionLines()
+        {
+            DataTable dtLines= appLayer.GetAllProductionLine();
+            lines.ItemsSource = dtLines.DefaultView;
+            
+        }
         private void InsertMachineClicked(object sender, RoutedEventArgs e)
         {
             if (isDataValid())
@@ -59,7 +68,20 @@ namespace Nemo.Manager
         public void InsertNewMahice()
         {
             appLayer.InsertMachine(name.Text.Trim(), startDate.Text.Trim()) ;
+            InsertMacProd();
+        }
+        
+        public void InsertMacProd()
+        {
+            string macId = appLayer.GetLastMachine();
+            if(lines.SelectedIndex!=-1)
+                 appLayer.LinkMachineToProductionLine(lines.SelectedValue.ToString(), macId) ;
 
+        }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MakeSound.MakeClick();
+            parentInstance.Show();
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Nemo
             //I added an event when user click enter(return) this event should be triggerd instead of clicking on Login button
             password.PreviewKeyDown += EnterClicked;
             userName.PreviewKeyDown += EnterClicked;
+            appLayer.GetTargetVsProduced();
 
            
 
@@ -60,15 +61,15 @@ namespace Nemo
                 ifNum0PrintFOrS("Password is Empty, I'm not going to fill it for you! fill it and try again. ", "But you swore! password is still wrong");
                 return false;
             }
-            if (userName.Text.Length > 50)
+            if (userName.Text.Length > 14)
             {
                 ifNum0PrintFOrS("User name length is more than 50 characters, please fix it and try again.", "But you swore! user name is still so long; it's more than 50 characters");
                 return false;
             }
             
-            if (password.Password.Length > 50)
+            if (password.Password.Length > 14)
             {
-                ifNum0PrintFOrS("password length is more than 50 characters, please fix it and try again.", "But you swore! password is still so long; it's more than 50 characters");
+                ifNum0PrintFOrS("password length is more than 14 characters, please fix it and try again.", "But you swore! password is still so long; it's more than 50 characters");
                 return false;
             }
             return true;

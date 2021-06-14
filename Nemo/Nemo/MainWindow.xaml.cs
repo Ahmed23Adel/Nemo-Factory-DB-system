@@ -24,6 +24,7 @@ namespace Nemo
         {
             InitializeComponent();
             new Login().Show();
+            //new Manager.ManagerOptoins("201901464", "123").Show();
             MakeSound.GetInstance();
             this.Close();
         }
