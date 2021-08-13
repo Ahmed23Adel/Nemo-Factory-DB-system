@@ -2,6 +2,10 @@
 Nemo (Factory-DB-system)
 We provide here a system for a factory, which basically consists of production lines, each producing one product and have some employees and supervisor associated with it; in addition to the manager who can see everything and see useful statistics that helps him taking good decision; with a very kind user interface.
 
+Language used: c#
+frameworks: wpf
+database: sql with microsoft sql server
+
 here is some useful statistics 
 
 ![image-2](https://user-images.githubusercontent.com/69484554/129358259-14397cae-450f-42b4-bdda-58d55d6b4204.png)
@@ -51,6 +55,20 @@ and for supervisor who run a whole production line and see more data, and insert
 
 can insert daily amount produced
  ![image-14](https://user-images.githubusercontent.com/69484554/129358933-6a94e059-4efe-4fdd-aa84-4d855bafb73a.png)
+ 
+ 
+ 
+ here is pic of relational database.
+ 
+ 
+![unnamed](https://user-images.githubusercontent.com/69484554/129359875-6157b553-2208-457b-bdb1-6147b8863ed8.png)
+
+
+ 
+the presention,and  sql code that populate the database, are associated with the code
+sql: https://github.com/Ahmed23Adel/Nemo-Factory-DB-system/blob/main/SQLQuery1.sql
+presentation: https://github.com/Ahmed23Adel/Nemo-Factory-DB-system/blob/main/Nemo.pptx
+ 
 
 
 
