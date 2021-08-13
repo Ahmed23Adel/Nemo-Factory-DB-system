@@ -64,6 +64,17 @@ can insert daily amount produced
 ![unnamed](https://user-images.githubusercontent.com/69484554/129359875-6157b553-2208-457b-bdb1-6147b8863ed8.png)
 
 
+here is an ER for database:
+
+
+<img width="702" alt="Screen Shot 2021-08-13 at 3 05 10 PM" src="https://user-images.githubusercontent.com/69484554/129361334-d4389627-d911-4289-aa02-42fc3738fc07.png">
+
+
+relational schema:
+
+
+![Relational Model](https://user-images.githubusercontent.com/69484554/129361455-b94147e9-affe-4577-b632-e79f4c2d2def.jpeg)
+
  
 the presention,and  sql code that populate the database, are associated with the code
 sql: https://github.com/Ahmed23Adel/Nemo-Factory-DB-system/blob/main/SQLQuery1.sql
